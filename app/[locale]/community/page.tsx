@@ -30,21 +30,23 @@ export default function CommunityPage() {
 
   return (
     <main className="min-h-screen">
-      {/* Hero with Poster */}
-      <ScrollReveal>
-        <section className="relative py-12 overflow-hidden">
-          <div className="container mx-auto px-4">
-            <motion.img
-              initial={{ opacity: 0, scale: 0.95 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.8 }}
-              src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Affiche%20Kernel%20Forge%20Academy.png-km9Xou1MF4bDNLZ4sqkXNoMiDQLHmF.jpeg"
-              alt="Kernel Forge Academy"
-              className="w-full h-auto rounded-2xl shadow-2xl"
-            />
-          </div>
-        </section>
-      </ScrollReveal>
+      {/* Full-Width Hero Banner */}
+      <section className="relative w-full h-screen max-h-[600px] overflow-hidden bg-secondary">
+        <motion.div
+          initial={{ opacity: 0, scale: 1.05 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 1.2 }}
+          className="absolute inset-0"
+        >
+          <img
+            src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Affiche%20Kernel%20Forge%20Academy.png-km9Xou1MF4bDNLZ4sqkXNoMiDQLHmF.jpeg"
+            alt="Kernel Forge Academy"
+            className="w-full h-full object-cover"
+          />
+          {/* Gradient Overlay */}
+          <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
+        </motion.div>
+      </section>
 
       {/* Title Section */}
       <ScrollReveal>
