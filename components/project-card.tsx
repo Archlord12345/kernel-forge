@@ -1,4 +1,4 @@
-import { ProjectOverride } from '@/lib/supabase'
+import { ProjectOverride } from '@/lib/local-data'
 import { Star, Code, ExternalLink } from 'lucide-react'
 
 export function ProjectCard({ project }: { project: ProjectOverride }) {

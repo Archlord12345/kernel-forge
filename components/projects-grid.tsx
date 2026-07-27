@@ -1,7 +1,7 @@
 'use client'
 
 import { useEffect, useState } from 'react'
-import { supabase } from '@/lib/supabase'
+import { localDataClient } from '@/lib/local-data'
 import { ProjectCard } from '@/components/project-card'
 import { Loader } from 'lucide-react'
 
@@ -17,7 +17,7 @@ export function ProjectsGrid() {
   async function fetchProjects() {
     setLoading(true)
     try {
-      let query = supabase.from('project_overrides').select('*')
+      let query = localDataClient.from('project_overrides').select('*')
 
       if (filter !== 'all') {
         query = query.eq('category', filter)

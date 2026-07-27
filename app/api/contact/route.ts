@@ -1,4 +1,4 @@
-import { supabase } from '@/lib/supabase'
+import { localDataClient } from '@/lib/local-data'
 import { NextRequest, NextResponse } from 'next/server'
 
 export async function POST(request: NextRequest) {
@@ -15,7 +15,7 @@ export async function POST(request: NextRequest) {
     }
 
     // Insert into database
-    const { error, data } = await supabase
+    const { error, data } = await localDataClient
       .from('contact_messages')
       .insert([
         {

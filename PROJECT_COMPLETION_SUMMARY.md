@@ -49,7 +49,7 @@
 - Server-side rendering (Next.js)
 
 ### **✅ Intégrations**
-- Supabase (database + auth)
+- Local data (database + auth)
 - Cloudinary (image management)
 - GitHub API (project sync)
 - Resend (email)
@@ -79,11 +79,11 @@ Password: KernelForge2026!Test
 
 ## 🌐 Variables d'Environnement Requises
 
-### **Groupe 1: Supabase (OBLIGATOIRE)**
+### **Groupe 1: Local data (OBLIGATOIRE)**
 ```
-NEXT_PUBLIC_SUPABASE_URL=
-NEXT_PUBLIC_SUPABASE_ANON_KEY=
-SUPABASE_SERVICE_ROLE_KEY=
+LOCAL_DATA_CLIENT=
+LOCAL_DATA_CLIENT=
+LOCAL_DATA_CLIENT=
 ```
 
 ### **Groupe 2: Cloudinary (RECOMMANDÉ)**
@@ -112,7 +112,7 @@ CONTACT_EMAIL=contact@kernelforge.dev
 
 ## 📊 Structure de la Base de Données
 
-5 tables Supabase configurées avec RLS:
+5 tables Local data configurées avec RLS:
 
 1. **profiles** - Profils utilisateurs
 2. **project_overrides** - Projets/Repos GitHub
@@ -128,7 +128,7 @@ Voir `SETUP_GUIDE.md` pour le SQL complet.
 
 | Service | URL |
 |---------|-----|
-| Supabase | https://supabase.com/dashboard |
+| Local data | https://local data.com/dashboard |
 | Cloudinary | https://cloudinary.com/console |
 | GitHub | https://github.com/settings/tokens |
 | Resend | https://resend.com/dashboard |
@@ -159,12 +159,12 @@ kernel-forge/
 │   ├── animations/               # Animation components
 │   └── ...
 ├── lib/
-│   ├── supabase.ts
+│   ├── local data.ts
 │   └── utils.ts
 ├── messages/
 │   ├── en.json                  # English translations
 │   └── fr.json                  # French translations
-├── supabase/migrations/
+├── local data/migrations/
 │   └── 001_initial_schema.sql   # Database schema
 ├── .env.local.example            # Template d'env
 ├── SETUP_GUIDE.md               # Guide complet
@@ -179,7 +179,7 @@ kernel-forge/
 ### **Avant le lancement:**
 
 - [ ] Tous les `.env` configurés correctement
-- [ ] Supabase database créée et migrée
+- [ ] Local data database créée et migrée
 - [ ] 3 comptes admin créés
 - [ ] Mots de passe admin changés
 - [ ] Cloudinary configuré
@@ -187,7 +187,7 @@ kernel-forge/
 - [ ] Resend email testé
 - [ ] SSL/HTTPS activé
 - [ ] Domain DNS configuré
-- [ ] Backup Supabase activé
+- [ ] Backup Local data activé
 - [ ] Monitoring/Sentry configuré
 - [ ] Logs Vercel vérifiés
 
@@ -255,8 +255,8 @@ Toutes les pages sont testées et responsive.
 
 ## 🔐 Sécurité
 
-- Row-Level Security (RLS) sur Supabase
-- Mots de passe hashés (Supabase auth)
+- Row-Level Security (RLS) sur Local data
+- Mots de passe hashés (Local data auth)
 - CORS configuré
 - Rate limiting recommandé
 - SQL injections prévenues (paramétrisé)
@@ -312,7 +312,7 @@ git push origin main
 - **Next.js 16**: https://nextjs.org/docs
 - **Tailwind CSS v4**: https://tailwindcss.com
 - **Framer Motion**: https://framer.com/motion
-- **Supabase**: https://supabase.com/docs
+- **Local data**: https://local data.com/docs
 - **Cloudinary**: https://cloudinary.com/documentation
 
 ---
@@ -322,7 +322,7 @@ git push origin main
 **Si vous avez des questions:**
 1. Vérifier `SETUP_GUIDE.md`
 2. Vérifier les fichiers de documentation
-3. Vérifier les logs Vercel/Supabase
+3. Vérifier les logs Vercel/Local data
 4. Contacter le support des services
 
 ---
@@ -347,7 +347,7 @@ git push origin main
 - **Lignes de code**: ~5000+
 - **Composants React**: 15+
 - **Pages**: 9
-- **Tables Supabase**: 5
+- **Tables Local data**: 5
 - **Messages i18n**: 150+
 - **Animations**: 20+
 - **Fichiers de config**: 10+

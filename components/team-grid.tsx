@@ -1,7 +1,7 @@
 'use client'
 
 import { useEffect, useState } from 'react'
-import { supabase } from '@/lib/supabase'
+import { localDataClient } from '@/lib/local-data'
 import { TeamMemberCard } from '@/components/team-member-card'
 import { Loader } from 'lucide-react'
 
@@ -30,7 +30,7 @@ export function TeamGrid() {
 
   async function fetchMembers() {
     try {
-      const { data, error } = await supabase
+      const { data, error } = await localDataClient
         .from('members')
         .select(`
           *,

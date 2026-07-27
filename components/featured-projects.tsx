@@ -2,7 +2,7 @@ import Link from 'next/link'
 import { Star, Code } from 'lucide-react'
 
 export async function FeaturedProjects() {
-  // Mock projects data - use this when Supabase is not configured
+  // Mock projects data - use this when local database is not configured
   const projects = [
       {
         id: '1',

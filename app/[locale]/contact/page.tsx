@@ -40,7 +40,7 @@ export default function ContactPage() {
               transition={{ duration: 0.8 }}
               className="text-5xl md:text-6xl font-black mb-4 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent"
             >
-              {t('title')}
+              Contact Us
             </motion.h1>
             <motion.p
               initial={{ opacity: 0, y: 20 }}
@@ -48,7 +48,7 @@ export default function ContactPage() {
               transition={{ duration: 0.8, delay: 0.1 }}
               className="text-lg text-muted-foreground"
             >
-              {t('subtitle')}
+              Have a question or an idea? Send us a message.
             </motion.p>
           </div>
         </section>
@@ -108,7 +108,7 @@ export default function ContactPage() {
                 viewport={{ once: true }}
                 className="text-3xl font-bold text-center mb-12"
               >
-                {t('sendMessage')}
+                Send us a message
               </motion.h2>
               <ContactForm />
             </motion.div>

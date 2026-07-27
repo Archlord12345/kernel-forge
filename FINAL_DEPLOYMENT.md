@@ -55,7 +55,7 @@
 
 ### Variables d'Environnement
 Tous les mock data créés dans `.env.local.mock`:
-- SUPABASE (Database)
+- LOCAL DATA (built-in)
 - CLOUDINARY (Images)
 - GITHUB (Projects)
 - RESEND (Email)
@@ -146,7 +146,7 @@ Test:     test@kernelforge.dev / KernelForge2026!Test
 ## Prochaines Étapes
 
 1. Copier `.env.local.mock` en `.env.local`
-2. Configurer les 4 services (Supabase, Cloudinary, GitHub, Resend)
+2. Configurer les 4 services (Local data, Cloudinary, GitHub, Resend)
 3. Lancer `pnpm dev`
 4. Tester toutes les pages
 5. Déployer sur Vercel

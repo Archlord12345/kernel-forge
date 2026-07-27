@@ -1,7 +1,7 @@
 'use client'
 
 import { useEffect, useState } from 'react'
-import { supabase } from '@/lib/supabase'
+import { localDataClient } from '@/lib/local-data'
 import { Loader, Plus, Edit, Trash2 } from 'lucide-react'
 import { ProjectForm } from '@/components/admin/project-form'
 
@@ -17,7 +17,7 @@ export default function AdminProjectsPage() {
 
   async function loadProjects() {
     try {
-      const { data, error } = await supabase
+      const { data, error } = await localDataClient
         .from('project_overrides')
         .select('*')
         .order('featured', { ascending: false })
@@ -36,7 +36,7 @@ export default function AdminProjectsPage() {
     if (!confirm('Are you sure you want to delete this project?')) return
 
     try {
-      const { error } = await supabase.from('project_overrides').delete().eq('id', id)
+      const { error } = await localDataClient.from('project_overrides').delete().eq('id', id)
       if (error) throw error
       setProjects(projects.filter((p) => p.id !== id))
     } catch (error) {

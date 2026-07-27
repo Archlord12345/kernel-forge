@@ -1,7 +1,7 @@
 'use client'
 
 import { useState } from 'react'
-import { supabase } from '@/lib/supabase'
+import { localDataClient } from '@/lib/local-data'
 import { Loader } from 'lucide-react'
 
 interface ProjectFormProps {
@@ -34,17 +34,17 @@ export function ProjectForm({ project, onSave, onCancel }: ProjectFormProps) {
         featured: formData.featured,
         featured_order: formData.featured ? formData.featured_order : null,
         category: formData.category || null,
-        tags: formData.tags ? formData.tags.split(',').map((t) => t.trim()) : null,
+        tags: formData.tags ? formData.tags.split(',').map((t: string) => t.trim()) : null,
       }
 
       if (project?.id) {
-        const { error } = await supabase
+        const { error } = await localDataClient
           .from('project_overrides')
           .update(data)
           .eq('id', project.id)
         if (error) throw error
       } else {
-        const { error } = await supabase.from('project_overrides').insert([data])
+        const { error } = await localDataClient.from('project_overrides').insert([data])
         if (error) throw error
       }
 

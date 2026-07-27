@@ -3,7 +3,7 @@
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { LayoutDashboard, Code2, Users, Settings, MessageSquare, LogOut } from 'lucide-react'
-import { supabase } from '@/lib/supabase'
+import { localDataClient } from '@/lib/local-data'
 
 const menuItems = [
   { name: 'Dashboard', href: '/admin', icon: LayoutDashboard },
@@ -17,7 +17,7 @@ export function AdminSidebar() {
   const pathname = usePathname()
 
   async function handleLogout() {
-    await supabase.auth.signOut()
+    await localDataClient.auth.signOut()
     window.location.href = '/'
   }
 

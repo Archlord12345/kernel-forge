@@ -1,10 +1,5 @@
-import { Analytics } from '@vercel/analytics/next'
 import type { Metadata, Viewport } from 'next'
-import { Inter, JetBrains_Mono } from 'next/font/google'
 import './globals.css'
-
-const inter = Inter({ subsets: ['latin'] })
-const jetbrainsMono = JetBrains_Mono({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
   title: 'Kernel Forge - Open Source Software Collective at UY1',
@@ -31,13 +26,6 @@ export const metadata: Metadata = {
         alt: 'Kernel Forge Logo',
         type: 'image/png',
       },
-      {
-        url: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Affiche%20Kernel%20Forge%20Academy.png-km9Xou1MF4bDNLZ4sqkXNoMiDQLHmF.jpeg',
-        width: 1200,
-        height: 675,
-        alt: 'Kernel Forge Academy Poster',
-        type: 'image/jpeg',
-      },
     ],
   },
   twitter: {
@@ -46,7 +34,7 @@ export const metadata: Metadata = {
     creator: '@kernel_forge',
     title: 'Kernel Forge - Open Source Software Collective',
     description: 'Join our student software development collective at UY1.',
-    images: ['https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202026-07-21%20at%2016.14.57-3sws87d7kKN9W5WMT4IcP74PjoJ2tp.jpeg'],
+    images: ['/kernel-forge-logo.png'],
   },
   icons: {
     icon: '/kernel-forge-logo.png',
@@ -72,10 +60,9 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html className={`${inter.className} bg-background`}>
+    <html className="bg-background">
       <body className="antialiased">
         {children}
-        {process.env.NODE_ENV === 'production' && <Analytics />}
       </body>
     </html>
   )
