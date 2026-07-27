@@ -58,7 +58,7 @@ export function Footer() {
 
           {/* Quick Links */}
           <motion.div variants={itemVariants}>
-            <h3 className="font-bold text-foreground mb-4">{t('links')}</h3>
+            <h3 className="font-bold text-foreground mb-4">Quick Links</h3>
             <ul className="space-y-2">
               {quickLinks.map((link) => (
                 <li key={link.href}>

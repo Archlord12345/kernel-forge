@@ -1,12 +1,9 @@
 'use client'
 
-import { useTranslations } from 'next-intl'
 import { motion } from 'framer-motion'
 import { ScrollReveal } from '@/components/animations/scroll-reveal'
-import { StaggerContainer } from '@/components/animations/stagger-container'
 
 export default function CommunityPage() {
-  const t = useTranslations('community')
 
   const values = [
     {
@@ -60,7 +57,7 @@ export default function CommunityPage() {
               transition={{ duration: 0.8 }}
               className="text-5xl md:text-6xl font-black mb-4 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent"
             >
-              {t('title')}
+              Our Community
             </motion.h1>
             <motion.p
               initial={{ opacity: 0, y: 20 }}
@@ -69,7 +66,7 @@ export default function CommunityPage() {
               transition={{ duration: 0.8, delay: 0.1 }}
               className="text-xl text-muted-foreground max-w-2xl mx-auto"
             >
-              {t('subtitle')}
+              Join our vibrant community of passionate developers, designers, and creators
             </motion.p>
           </div>
         </section>
@@ -86,7 +83,7 @@ export default function CommunityPage() {
               className="inline-block"
             >
               <p className="text-3xl md:text-4xl font-black text-balance">
-                <span className="text-primary">{t('buildLearnShare')}</span>
+                <span className="text-primary">Build, Learn, Share, Contribute, Innovate, Repeat.</span>
               </p>
             </motion.div>
           </div>
@@ -103,7 +100,7 @@ export default function CommunityPage() {
               viewport={{ once: true }}
               className="text-4xl font-bold text-center mb-16"
             >
-              {t('values')}
+              Our Core Values
             </motion.h2>
 
             <motion.div
@@ -148,7 +145,7 @@ export default function CommunityPage() {
                 viewport={{ once: true }}
                 className="text-4xl font-bold mb-8"
               >
-                {t('mission')}
+                Our Mission
               </motion.h2>
               <motion.p
                 initial={{ opacity: 0, y: 20 }}

@@ -1,11 +1,9 @@
 'use client'
 
-import { useTranslations } from 'next-intl'
 import { motion } from 'framer-motion'
 import { ScrollReveal } from '@/components/animations/scroll-reveal'
 
 export default function AboutPage() {
-  const t = useTranslations('about')
 
   return (
     <main className="min-h-screen">
@@ -19,7 +17,7 @@ export default function AboutPage() {
               transition={{ duration: 0.8 }}
               className="text-5xl md:text-6xl font-black mb-4 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent"
             >
-              {t('title')}
+              About Kernel Forge
             </motion.h1>
             <motion.p
               initial={{ opacity: 0, y: 20 }}
@@ -27,7 +25,7 @@ export default function AboutPage() {
               transition={{ duration: 0.8, delay: 0.1 }}
               className="text-lg text-muted-foreground"
             >
-              {t('subtitle')}
+              Learn about our mission and values
             </motion.p>
           </div>
         </section>
@@ -49,7 +47,7 @@ export default function AboutPage() {
                 viewport={{ once: true }}
                 className="text-4xl font-bold mb-8"
               >
-                {t('story')}
+                Our Story
               </motion.h2>
 
               <div className="space-y-6 text-lg text-muted-foreground leading-relaxed">
@@ -59,7 +57,7 @@ export default function AboutPage() {
                   transition={{ delay: 0.1 }}
                   viewport={{ once: true }}
                 >
-                  {t('founded')} - a place where passionate developers come together to create meaningful open-source software.
+                  Kernel Forge was founded - a place where passionate developers come together to create meaningful open-source software.
                 </motion.p>
 
                 <motion.p
@@ -68,7 +66,7 @@ export default function AboutPage() {
                   transition={{ delay: 0.2 }}
                   viewport={{ once: true }}
                 >
-                  {t('dedication')}. We believe that the best innovations come from collaboration, and that sharing knowledge is key to growth.
+                  Our dedication is unwavering. We believe that the best innovations come from collaboration, and that sharing knowledge is key to growth.
                 </motion.p>
 
                 <motion.p

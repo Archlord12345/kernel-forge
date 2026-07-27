@@ -1,13 +1,11 @@
 'use client'
 
-import { useTranslations } from 'next-intl'
 import { motion } from 'framer-motion'
 import { ScrollReveal } from '@/components/animations/scroll-reveal'
 import { ContactForm } from '@/components/contact-form'
 import { Mail, MapPin, Zap } from 'lucide-react'
 
 export default function ContactPage() {
-  const t = useTranslations('contact')
 
   const contactMethods = [
     {

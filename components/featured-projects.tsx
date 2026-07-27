@@ -1,20 +1,9 @@
 import Link from 'next/link'
-import { supabase } from '@/lib/supabase'
 import { Star, Code } from 'lucide-react'
 
 export async function FeaturedProjects() {
-  try {
-    const { data, error } = await supabase
-      .from('project_overrides')
-      .select('*')
-      .eq('featured', true)
-      .order('featured_order', { ascending: true })
-      .limit(6)
-
-    if (error) throw error
-
-    // Mock projects if no data
-    const projects = data && data.length > 0 ? data : [
+  // Mock projects data - use this when Supabase is not configured
+  const projects = [
       {
         id: '1',
         github_repo_url: 'https://github.com/kernel-forge/awesome-web',
@@ -41,7 +30,7 @@ export async function FeaturedProjects() {
       },
     ]
 
-    return (
+  return (
       <section className="py-20 md:py-32 bg-background">
         <div className="container mx-auto px-4">
           {/* Section Header */}
@@ -119,8 +108,4 @@ export async function FeaturedProjects() {
         </div>
       </section>
     )
-  } catch (error) {
-    console.error('Error loading featured projects:', error)
-    return null
-  }
 }
