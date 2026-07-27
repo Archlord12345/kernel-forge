@@ -30,20 +30,20 @@ export default function CommunityPage() {
 
   return (
     <main className="min-h-screen">
-      {/* Banner - Top Section Only */}
-      <section className="relative w-full h-[200px] md:h-[250px] overflow-hidden bg-secondary border-b-4 border-primary">
+      {/* Banner - Top Section Only - Fits to size */}
+      <section className="relative w-full h-[200px] md:h-[280px] overflow-hidden bg-gradient-to-b from-secondary to-background border-b-4 border-primary flex items-center justify-center">
         <motion.div
           initial={{ opacity: 0, scale: 1.05 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1.2 }}
-          className="absolute inset-0"
+          className="w-full h-full flex items-center justify-center"
         >
           <img
             src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Affiche%20Kernel%20Forge%20Academy.png-km9Xou1MF4bDNLZ4sqkXNoMiDQLHmF.jpeg"
-            alt="Kernel Forge Academy"
-            className="w-full h-full object-cover"
+            alt="Kernel Forge Academy Community"
+            className="w-full h-full object-contain"
+            loading="eager"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
         </motion.div>
       </section>
 

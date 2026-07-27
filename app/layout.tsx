@@ -25,10 +25,17 @@ export const metadata: Metadata = {
     description: 'A student software development collective dedicated to building, learning, and contributing to open-source software at the University of Yaoundé I.',
     images: [
       {
-        url: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202026-07-21%20at%2016.14.57-3sws87d7kKN9W5WMT4IcP74PjoJ2tp.jpeg',
+        url: '/kernel-forge-logo.png',
+        width: 400,
+        height: 400,
+        alt: 'Kernel Forge Logo',
+        type: 'image/png',
+      },
+      {
+        url: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Affiche%20Kernel%20Forge%20Academy.png-km9Xou1MF4bDNLZ4sqkXNoMiDQLHmF.jpeg',
         width: 1200,
-        height: 1200,
-        alt: 'Kernel Forge Mascot - Linux Penguin with Orange Gear',
+        height: 675,
+        alt: 'Kernel Forge Academy Poster',
         type: 'image/jpeg',
       },
     ],
@@ -42,21 +49,12 @@ export const metadata: Metadata = {
     images: ['https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202026-07-21%20at%2016.14.57-3sws87d7kKN9W5WMT4IcP74PjoJ2tp.jpeg'],
   },
   icons: {
-    icon: [
-      {
-        url: '/icon-light-32x32.png',
-        media: '(prefers-color-scheme: light)',
-      },
-      {
-        url: '/icon-dark-32x32.png',
-        media: '(prefers-color-scheme: dark)',
-      },
-      {
-        url: '/icon.svg',
-        type: 'image/svg+xml',
-      },
-    ],
-    apple: '/apple-icon.png',
+    icon: '/kernel-forge-logo.png',
+    apple: '/kernel-forge-logo.png',
+    other: {
+      rel: 'logo',
+      url: '/kernel-forge-logo.png',
+    },
   },
 }
 

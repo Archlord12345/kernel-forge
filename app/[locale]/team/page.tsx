@@ -5,28 +5,46 @@ import { ScrollReveal } from '@/components/animations/scroll-reveal'
 
 const teamMembers = [
   {
-    name: 'Jean Claude',
-    role: 'Founder & Lead Developer',
-    bio: 'Passionate about open-source and mentoring',
-    avatar: '👨‍💻',
+    name: 'NGHOMSI FEUKOUO RAVEL',
+    role: 'Chef de projet & Développeur n8n/Backend',
+    bio: 'Leader de projet passionné par l\'open source et l\'automatisation',
+    avatar: '👨‍💼',
   },
   {
-    name: 'Marie Dupont',
-    role: 'Co-Founder & Designer',
-    bio: 'UI/UX enthusiast and creative mind',
-    avatar: '👩‍🎨',
+    name: 'Succès',
+    role: 'Analyste Réseau & Développeur Frontend',
+    bio: 'Expert en infrastructure réseau et développement web moderne',
+    avatar: '🌐',
   },
   {
-    name: 'Alain Nkosi',
-    role: 'Backend Developer',
-    bio: 'Systems engineer and DevOps specialist',
-    avatar: '⚙️',
+    name: 'MIGUEL KARMA',
+    role: 'Analyste en Cybersécurité & Développeur',
+    bio: 'Spécialiste en sécurité informatique et développement système',
+    avatar: '🔐',
   },
   {
-    name: 'Fatima Hassan',
-    role: 'Frontend Developer',
-    bio: 'React expert and accessibility advocate',
+    name: 'Tchinda-BL4Z3',
+    role: 'Développeur',
+    bio: 'Développeur passionné par les solutions innovantes',
     avatar: '💻',
+  },
+  {
+    name: 'JUVÉNAL',
+    role: 'Développeur',
+    bio: 'Contributeur actif aux projets open source',
+    avatar: '🔧',
+  },
+  {
+    name: 'BIDIAZ',
+    role: 'Concepteur & Développeur UX/UI',
+    bio: 'Designer créatif avec expertise en développement front-end',
+    avatar: '🎨',
+  },
+  {
+    name: 'Charles-Kamga',
+    role: 'Analyste en Cybersécurité',
+    bio: 'Spécialiste en protection et audit de sécurité',
+    avatar: '🛡️',
   },
 ]
 
