@@ -1,0 +1,75 @@
+{
+  "nav": {
+    "home": "Home",
+    "projects": "Projects",
+    "team": "Team",
+    "community": "Community",
+    "about": "About",
+    "contact": "Contact"
+  },
+  "common": {
+    "welcome": "Welcome to Kernel Forge",
+    "description": "Open Source Software Collective at the University of Yaoundé I",
+    "learnMore": "Learn More",
+    "getInTouch": "Get In Touch",
+    "viewProjects": "View Projects",
+    "joinCommunity": "Join Community",
+    "followUs": "Follow Us"
+  },
+  "hero": {
+    "title": "Build. Learn. Innovate.",
+    "subtitle": "Join Kernel Forge Academy, where passionate developers create amazing open-source software",
+    "cta": "Explore Our Projects",
+    "motto": "Code. Forge. Impact. Repeat."
+  },
+  "projects": {
+    "title": "Our Projects",
+    "subtitle": "Discover the innovative open-source software we&apos;re building",
+    "featured": "Featured Projects",
+    "viewAll": "View All",
+    "categories": {
+      "web": "Web",
+      "cli": "CLI Tools",
+      "library": "Libraries",
+      "other": "Other"
+    }
+  },
+  "team": {
+    "title": "Our Team",
+    "subtitle": "Meet the talented people behind Kernel Forge",
+    "founders": "Founders",
+    "contributors": "Contributors",
+    "joinUs": "Join Our Team"
+  },
+  "community": {
+    "title": "Community",
+    "subtitle": "Be part of something amazing",
+    "values": "Our Values",
+    "mission": "Our Mission",
+    "vision": "Our Vision",
+    "buildLearnShare": "Build • Learn • Share • Contribute • Innovate"
+  },
+  "about": {
+    "title": "About Kernel Forge",
+    "subtitle": "Our Story and Mission",
+    "founded": "Founded at the University of Yaoundé I",
+    "dedication": "Dedicated to building open-source software and fostering innovation",
+    "story": "Our Story"
+  },
+  "contact": {
+    "title": "Get In Touch",
+    "subtitle": "We&apos;d love to hear from you",
+    "email": "Email",
+    "phone": "Phone",
+    "location": "Location",
+    "message": "Message",
+    "sendMessage": "Send Message",
+    "followSocial": "Follow Us on Social Media"
+  },
+  "footer": {
+    "copyright": "© 2026 Kernel Forge. All rights reserved.",
+    "links": "Quick Links",
+    "social": "Follow Us",
+    "contact": "Contact"
+  }
+}

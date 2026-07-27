@@ -1,0 +1,75 @@
+{
+  "nav": {
+    "home": "Accueil",
+    "projects": "Projets",
+    "team": "Équipe",
+    "community": "Communauté",
+    "about": "À propos",
+    "contact": "Contact"
+  },
+  "common": {
+    "welcome": "Bienvenue sur Kernel Forge",
+    "description": "Collectif de développement logiciel à l'Université de Yaoundé I",
+    "learnMore": "En savoir plus",
+    "getInTouch": "Nous contacter",
+    "viewProjects": "Voir les projets",
+    "joinCommunity": "Rejoindre la communauté",
+    "followUs": "Nous suivre"
+  },
+  "hero": {
+    "title": "Créer. Apprendre. Innover.",
+    "subtitle": "Rejoignez l'Académie Kernel Forge, où des développeurs passionnés créent des logiciels open-source incroyables",
+    "cta": "Découvrez nos projets",
+    "motto": "Code. Forge. Impact. Répétez."
+  },
+  "projects": {
+    "title": "Nos Projets",
+    "subtitle": "Découvrez les logiciels open-source innovants que nous construisons",
+    "featured": "Projets en vedette",
+    "viewAll": "Voir tous",
+    "categories": {
+      "web": "Web",
+      "cli": "Outils CLI",
+      "library": "Bibliothèques",
+      "other": "Autres"
+    }
+  },
+  "team": {
+    "title": "Notre Équipe",
+    "subtitle": "Rencontrez les talents derrière Kernel Forge",
+    "founders": "Fondateurs",
+    "contributors": "Contributeurs",
+    "joinUs": "Rejoignez notre équipe"
+  },
+  "community": {
+    "title": "Communauté",
+    "subtitle": "Faites partie de quelque chose d'extraordinaire",
+    "values": "Nos Valeurs",
+    "mission": "Notre Mission",
+    "vision": "Notre Vision",
+    "buildLearnShare": "Créer • Apprendre • Partager • Contribuer • Innover"
+  },
+  "about": {
+    "title": "À propos de Kernel Forge",
+    "subtitle": "Notre Histoire et Notre Mission",
+    "founded": "Fondé à l'Université de Yaoundé I",
+    "dedication": "Dédié à la création de logiciels open-source et à l'innovation",
+    "story": "Notre Histoire"
+  },
+  "contact": {
+    "title": "Nous Contacter",
+    "subtitle": "Nous aimerions vous entendre",
+    "email": "E-mail",
+    "phone": "Téléphone",
+    "location": "Localisation",
+    "message": "Message",
+    "sendMessage": "Envoyer le message",
+    "followSocial": "Nous suivre sur les réseaux sociaux"
+  },
+  "footer": {
+    "copyright": "© 2026 Kernel Forge. Tous les droits réservés.",
+    "links": "Liens rapides",
+    "social": "Nous suivre",
+    "contact": "Contact"
+  }
+}
