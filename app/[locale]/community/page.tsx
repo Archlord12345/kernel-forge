@@ -30,8 +30,8 @@ export default function CommunityPage() {
 
   return (
     <main className="min-h-screen">
-      {/* Full-Width Hero Banner */}
-      <section className="relative w-full h-screen max-h-[600px] overflow-hidden bg-secondary">
+      {/* Banner - Top Section Only */}
+      <section className="relative w-full h-[200px] md:h-[250px] overflow-hidden bg-secondary border-b-4 border-primary">
         <motion.div
           initial={{ opacity: 0, scale: 1.05 }}
           animate={{ opacity: 1, scale: 1 }}
@@ -43,8 +43,7 @@ export default function CommunityPage() {
             alt="Kernel Forge Academy"
             className="w-full h-full object-cover"
           />
-          {/* Gradient Overlay */}
-          <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
         </motion.div>
       </section>
 

@@ -161,6 +161,51 @@
   }
 }
 
+/* Duolingo-inspired Design Tokens (adapted for Kernel Forge) */
+:root {
+  /* Design System Colors - Kernel Forge Edition */
+  --color-kernel-orange: #FF6B35;      /* Primary action - replaces Ecto Green */
+  --color-kernel-lime: #a5ed6e;        /* Outlined action borders */
+  --color-kernel-mint: #65D080;        /* Accent/secondary highlight */
+  --color-kernel-blue: #1cb0f6;        /* Secondary action borders */
+  --color-kernel-dark: #1a1410;        /* Dark heading/border */
+  --color-kernel-cream: #faf8f3;       /* Background - replaces Paper White */
+  --color-graphite: #3c3c3c;           /* Primary text */
+  --color-ash: #777777;                /* Secondary text */
+  --color-charcoal: #4b4b4b;           /* Body text */
+
+  /* Typography Scale (Duolingo-inspired) */
+  --text-caption: 13px;
+  --text-body: 15px;
+  --text-heading-sm: 19px;
+  --text-heading: 32px;
+  --text-display: 48px;
+
+  /* Spacing (4px base unit) */
+  --spacing-xs: 4px;
+  --spacing-sm: 8px;
+  --spacing-md: 12px;
+  --spacing-lg: 16px;
+  --spacing-xl: 24px;
+  --spacing-2xl: 32px;
+  --spacing-3xl: 48px;
+  --spacing-4xl: 64px;
+
+  /* Border Radius */
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+
+  /* Borders */
+  --border-thin: 1px;
+  --border-thick: 2px;
+  --border-extra-thick: 3px;
+
+  /* Layout */
+  --max-width: 1200px;
+  --section-gap: 100px;
+}
+
 @layer base {
   * {
     @apply border-border outline-ring/50;
