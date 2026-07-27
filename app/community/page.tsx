@@ -50,11 +50,10 @@ export default function CommunityPage() {
       <Header />
       
       {/* Hero Section with Academy Poster */}
-      <section className="relative py-12 overflow-hidden">
-        <img 
-          src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Affiche%20Kernel%20Forge%20Academy.png-km9Xou1MF4bDNLZ4sqkXNoMiDQLHmF.jpeg" 
-          alt="Kernel Forge Academy - Build Learn Share Contribute Innovate Repeat" 
-          className="w-full h-auto object-cover rounded-xl shadow-lg"
+      <section className="community-banner">
+        <img
+          src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Affiche%20Kernel%20Forge%20Academy.png-km9Xou1MF4bDNLZ4sqkXNoMiDQLHmF.jpeg"
+          alt="Kernel Forge Academy - Build Learn Share Contribute Innovate Repeat"
         />
       </section>
 
@@ -62,7 +61,7 @@ export default function CommunityPage() {
         <div className="container mx-auto px-4">
           {/* Page Header */}
           <div className="max-w-3xl mx-auto text-center mb-16">
-            <h1 className="text-4xl md:text-5xl font-bold mb-4 text-foreground">
+            <h1 className="font-feather text-4xl md:text-6xl font-black mb-4 text-primary">
               Our Community
             </h1>
             <p className="text-lg text-muted-foreground">
@@ -75,7 +74,7 @@ export default function CommunityPage() {
             {values.map((value) => {
               const Icon = value.icon
               return (
-                <div key={value.title} className="p-8 rounded-xl bg-card border border-border hover:border-primary transition-colors">
+                <div key={value.title} className="duo-card p-8 hover:border-[var(--color-lingot-lime)] transition-colors">
                   <Icon className="w-12 h-12 text-primary mb-4" />
                   <h3 className="text-xl font-bold text-foreground mb-3">{value.title}</h3>
                   <p className="text-muted-foreground">{value.description}</p>
@@ -85,7 +84,7 @@ export default function CommunityPage() {
           </div>
 
           {/* Call to Action */}
-          <div className="bg-primary rounded-xl p-8 md:p-12 text-center max-w-2xl mx-auto">
+          <div className="bg-primary rounded-xl border-b-[3px] border-[#46a302] p-8 md:p-12 text-center max-w-2xl mx-auto">
             <h2 className="text-2xl md:text-3xl font-bold text-primary-foreground mb-4">
               Ready to Join?
             </h2>
@@ -94,7 +93,7 @@ export default function CommunityPage() {
             </p>
             <a
               href="/contact"
-              className="inline-flex px-8 py-3 rounded-lg bg-primary-foreground text-primary font-semibold hover:shadow-lg transition-all"
+              className="duo-outline inline-flex px-8 py-3 transition-all"
             >
               Get in Touch
             </a>

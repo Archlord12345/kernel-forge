@@ -31,7 +31,7 @@ export default function CommunityPage() {
   return (
     <main className="min-h-screen">
       {/* Banner - Top Section Only - Fits to size */}
-      <section className="relative w-full h-[200px] md:h-[280px] overflow-hidden bg-gradient-to-b from-secondary to-background border-b-4 border-primary flex items-center justify-center">
+      <section className="community-banner">
         <motion.div
           initial={{ opacity: 0, scale: 1.05 }}
           animate={{ opacity: 1, scale: 1 }}
@@ -41,7 +41,7 @@ export default function CommunityPage() {
           <img
             src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Affiche%20Kernel%20Forge%20Academy.png-km9Xou1MF4bDNLZ4sqkXNoMiDQLHmF.jpeg"
             alt="Kernel Forge Academy Community"
-            className="w-full h-full object-contain"
+            className=""
             loading="eager"
           />
         </motion.div>
@@ -56,7 +56,7 @@ export default function CommunityPage() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
-              className="text-5xl md:text-6xl font-black mb-4 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent"
+              className="font-feather text-5xl md:text-6xl font-black mb-4 text-primary"
             >
               Our Community
             </motion.h1>
@@ -75,7 +75,7 @@ export default function CommunityPage() {
 
       {/* Motto Section */}
       <ScrollReveal>
-        <section className="py-16 bg-gradient-to-r from-primary/10 via-accent/10 to-primary/10">
+        <section className="py-16 bg-background">
           <div className="container mx-auto px-4 text-center">
             <motion.div
               whileInView={{ scale: 1 }}
@@ -83,7 +83,7 @@ export default function CommunityPage() {
               viewport={{ once: true }}
               className="inline-block"
             >
-              <p className="text-3xl md:text-4xl font-black text-balance">
+              <p className="text-3xl md:text-4xl font-black text-balance duo-outline px-6 py-4">
                 <span className="text-primary">Build, Learn, Share, Contribute, Innovate, Repeat.</span>
               </p>
             </motion.div>
@@ -118,7 +118,7 @@ export default function CommunityPage() {
                   transition={{ delay: index * 0.1 }}
                   viewport={{ once: true }}
                   whileHover={{ y: -8 }}
-                  className="p-8 rounded-2xl bg-card border border-border hover:border-primary/50 transition-all duration-300"
+                  className="duo-card p-8 hover:border-[var(--color-lingot-lime)] transition-all duration-300"
                 >
                   <div className="text-5xl mb-4">{value.icon}</div>
                   <h3 className="text-2xl font-bold mb-3">{value.title}</h3>
@@ -132,7 +132,7 @@ export default function CommunityPage() {
 
       {/* Mission Section */}
       <ScrollReveal>
-        <section className="py-20 md:py-32 bg-secondary/30">
+        <section className="py-20 md:py-32 bg-background">
           <div className="container mx-auto px-4">
             <motion.div
               initial={{ opacity: 0 }}

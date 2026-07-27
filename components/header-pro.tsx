@@ -20,7 +20,7 @@ export function Header() {
   ]
 
   return (
-    <header className="border-b border-border bg-background/95 backdrop-blur-sm sticky top-0 z-50">
+    <header className="border-b-2 border-[#e5e5e5] bg-background/95 backdrop-blur-sm sticky top-0 z-50">
       <nav className="container mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
           {/* Logo */}
@@ -29,13 +29,13 @@ export function Header() {
             className="flex items-center gap-2 group"
           >
             <motion.img 
-              src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202026-07-21%20at%2016.14.57-3sws87d7kKN9W5WMT4IcP74PjoJ2tp.jpeg" 
+              src="/kernel-forge-logo.png" 
               alt="Kernel Forge Logo" 
-              className="w-10 h-10"
+              className="h-11 w-11 rounded-xl border-2 border-[var(--color-lingot-lime)] object-contain p-1"
               whileHover={{ scale: 1.1, rotate: 5 }}
               whileTap={{ scale: 0.95 }}
             />
-            <span className="font-bold text-lg hidden sm:inline text-foreground">
+            <span className="font-black text-lg hidden sm:inline text-primary tracking-wide">
               Kernel Forge
             </span>
           </Link>
@@ -49,10 +49,10 @@ export function Header() {
               >
                 <Link
                   href={item.href}
-                  className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors relative group"
+                  className="text-sm font-bold uppercase tracking-[0.08em] text-muted-foreground hover:text-primary transition-colors relative group"
                 >
                   {item.name}
-                  <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary group-hover:w-full transition-all duration-300" />
+                  <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-[var(--color-lingot-lime)] group-hover:w-full transition-all duration-300" />
                 </Link>
               </motion.div>
             ))}
@@ -66,7 +66,7 @@ export function Header() {
             {/* Mobile Menu Button */}
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="lg:hidden p-2 hover:bg-secondary rounded-lg transition-colors"
+              className="lg:hidden p-2 hover:bg-secondary rounded-xl border-2 border-transparent hover:border-[var(--color-lingot-lime)] transition-colors"
             >
               {isMobileMenuOpen ? (
                 <X className="w-5 h-5" />
@@ -93,7 +93,7 @@ export function Header() {
                     key={item.href}
                     href={item.href}
                     onClick={() => setIsMobileMenuOpen(false)}
-                    className="px-3 py-2 rounded-lg text-sm font-medium text-muted-foreground hover:text-primary hover:bg-secondary transition-all"
+                    className="px-3 py-2 rounded-xl text-sm font-bold text-muted-foreground hover:text-primary hover:bg-secondary transition-all"
                   >
                     {item.name}
                   </Link>
