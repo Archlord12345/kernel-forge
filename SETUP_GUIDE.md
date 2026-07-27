@@ -20,17 +20,17 @@ pnpm dev
 
 Créer un fichier `.env.local` à la racine du projet avec les paramètres suivants:
 
-### **A. Supabase (Base de données & Authentication)**
+### **A. Local data (Base de données & Authentication)**
 
 ```env
-# === SUPABASE CONFIGURATION ===
-NEXT_PUBLIC_SUPABASE_URL=https://your-project.supabase.co
-NEXT_PUBLIC_SUPABASE_ANON_KEY=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...
-SUPABASE_SERVICE_ROLE_KEY=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...
+# === LOCAL DATA CONFIGURATION ===
+LOCAL_DATA_CLIENT=https://your-project.local data.co
+LOCAL_DATA_CLIENT=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...
+LOCAL_DATA_CLIENT=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...
 ```
 
 **Comment obtenir ces clés:**
-1. Aller sur https://supabase.com
+1. Aller sur https://local data.com
 2. Créer un nouveau projet
 3. Aller dans Settings → API
 4. Copier `Project URL` et `anon key`
@@ -94,11 +94,11 @@ CONTACT_EMAIL=contact@kernelforge.dev
 
 ```env
 # === DATABASE SCHEMA SETUP ===
-# Exécuter les migrations Supabase avec:
-# pnpm supabase db push
+# Exécuter les migrations Local data avec:
+# pnpm local data db push
 
 # Vérifier l'état des migrations:
-# pnpm supabase db show
+# pnpm local data db show
 ```
 
 ---
@@ -136,7 +136,7 @@ Rôle:     Member
 
 ---
 
-## 📊 Configuration Supabase - Tables & Schéma
+## 📊 Configuration Local data - Tables & Schéma
 
 ### **Tables à créer:**
 
@@ -244,18 +244,18 @@ CREATE POLICY "Admins can update settings" ON site_settings FOR UPDATE USING (
 
 ---
 
-## 🗄️ Migration Supabase
+## 🗄️ Migration Local data
 
 Exécuter le fichier migration fourni:
 
 ```bash
 # Copier le fichier de migration
-cp supabase/migrations/001_initial_schema.sql ~/your-migration-file.sql
+cp local seeded data in lib/local-data.ts ~/your-migration-file.sql
 
-# Via Supabase CLI
-pnpm supabase db push
+# Via Local data CLI
+pnpm local data db push
 
-# Ou via l'interface web Supabase:
+# Ou via l'interface web Local data:
 # 1. Aller dans SQL Editor
 # 2. Créer une nouvelle requête
 # 3. Copier-coller le contenu du fichier migration
@@ -266,7 +266,7 @@ pnpm supabase db push
 
 ## 🔑 Configuration de l'Authentification
 
-### **Activer Email/Password dans Supabase:**
+### **Activer Email/Password dans Local data:**
 
 1. Aller dans Authentication → Providers
 2. S'assurer que "Email" est activé
@@ -275,7 +275,7 @@ pnpm supabase db push
 
 ### **Ajouter les identifiants admin:**
 
-Via Supabase Console:
+Via Local data Console:
 1. Aller dans Authentication → Users
 2. Créer les 3 utilisateurs avec les emails fournis
 3. Générer des mots de passe temporaires
@@ -305,7 +305,7 @@ NEXT_PUBLIC_GA_ID=G-XXXXXXXXXX
 ### **Avant le lancement en production:**
 
 - [ ] Tous les `.env` sont configurés
-- [ ] Supabase est déployé en production
+- [ ] Local data est déployé en production
 - [ ] Les migrations de base de données sont appliquées
 - [ ] Les 3 comptes admin sont créés
 - [ ] Cloudinary est configuré
@@ -338,8 +338,8 @@ git push origin main
 
 ## 🐛 Troubleshooting
 
-### **Erreur: "SUPABASE_URL is required"**
-→ Ajouter `NEXT_PUBLIC_SUPABASE_URL` dans `.env.local`
+### **Erreur: "LOCAL_DATA_CLIENT is required"**
+→ Ajouter `LOCAL_DATA_CLIENT` dans `.env.local`
 
 ### **Erreur: "Images can't be loaded"**
 → Vérifier les permissions Cloudinary ou utiliser des URLs publiques
@@ -348,14 +348,14 @@ git push origin main
 → Vérifier que `RESEND_API_KEY` est valide
 
 ### **Page Admin ne charge pas**
-→ Vérifier l'authentification Supabase et le rôle utilisateur
+→ Vérifier l'authentification Local data et le rôle utilisateur
 
 ---
 
 ## 📞 Support
 
 Pour plus d'aide:
-- Documentation Supabase: https://supabase.com/docs
+- Documentation Local data: https://local data.com/docs
 - Documentation Cloudinary: https://cloudinary.com/documentation
 - Documentation Next.js: https://nextjs.org/docs
 

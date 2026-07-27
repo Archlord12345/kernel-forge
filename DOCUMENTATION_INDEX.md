@@ -95,7 +95,7 @@ test@kernelforge.dev            / KernelForge2026!Test
 
 ### **4 Clés à configurer dans `.env.local`**
 ```
-1. SUPABASE_URL + KEYS
+1. LOCAL_DATA_CLIENT + KEYS
 2. CLOUDINARY + KEYS
 3. GITHUB_TOKEN
 4. RESEND_API_KEY
@@ -109,7 +109,7 @@ test@kernelforge.dev            / KernelForge2026!Test
 
 | Service | Lien | Fichier |
 |---------|------|---------|
-| Supabase | https://supabase.com | `SETUP_GUIDE.md` sec. A |
+| Local data | https://local data.com | `SETUP_GUIDE.md` sec. A |
 | Cloudinary | https://cloudinary.com | `SETUP_GUIDE.md` sec. B |
 | GitHub | https://github.com/settings/tokens | `SETUP_GUIDE.md` sec. C |
 | Resend | https://resend.com | `SETUP_GUIDE.md` sec. D |
@@ -126,7 +126,7 @@ test@kernelforge.dev            / KernelForge2026!Test
 - TypeScript: https://typescriptlang.org
 
 **Intégrations:**
-- Supabase: https://supabase.com/docs
+- Local data: https://local data.com/docs
 - Cloudinary: https://cloudinary.com/documentation
 
 ---
@@ -154,7 +154,7 @@ Voir `README_FINAL.md` → Section "Déploiement final"
 - Pages: 9
 - Composants React: 15+
 - Lignes de code: 5000+
-- Tables Supabase: 5
+- Tables Local data: 5
 - Fichiers de config: 10+
 - Langues: 2 (EN/FR)
 - Documentation: 13 fichiers
@@ -165,7 +165,7 @@ Voir `README_FINAL.md` → Section "Déploiement final"
 ## ✅ ÉTAPES CRITIQUES À NE PAS OUBLIER
 
 1. **CHANGER les mots de passe admin** (sec. 1)
-2. **Configurer Supabase** (sec. 2)
+2. **Configurer Local data** (sec. 2)
 3. **Configurer `.env.local`** (sec. 3)
 4. **Tester localement** (sec. 4)
 5. **Déployer sur Vercel** (sec. 5)

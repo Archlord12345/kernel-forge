@@ -1,7 +1,7 @@
 'use client'
 
 import { useState } from 'react'
-import { supabase } from '@/lib/supabase'
+import { localDataClient } from '@/lib/local-data'
 import { Loader, Check } from 'lucide-react'
 
 export function ContactForm() {
@@ -19,7 +19,7 @@ export function ContactForm() {
     setLoading(true)
 
     try {
-      const { error } = await supabase.from('contact_messages').insert([
+      const { error } = await localDataClient.from('contact_messages').insert([
         {
           name: formData.name,
           email: formData.email,

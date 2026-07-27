@@ -1,9 +1,9 @@
 'use client'
 
 import { useEffect, useState } from 'react'
-import { supabase } from '@/lib/supabase'
+import { localDataClient } from '@/lib/local-data'
 import { Loader, Trash2, Mail } from 'lucide-react'
-import { ContactMessage } from '@/lib/supabase'
+import { ContactMessage } from '@/lib/local-data'
 
 export default function AdminMessagesPage() {
   const [messages, setMessages] = useState<ContactMessage[]>([])
@@ -16,7 +16,7 @@ export default function AdminMessagesPage() {
 
   async function loadMessages() {
     try {
-      const { data, error } = await supabase
+      const { data, error } = await localDataClient
         .from('contact_messages')
         .select('*')
         .order('created_at', { ascending: false })
@@ -32,7 +32,7 @@ export default function AdminMessagesPage() {
 
   async function markAsRead(id: string) {
     try {
-      const { error } = await supabase
+      const { error } = await localDataClient
         .from('contact_messages')
         .update({ read: true })
         .eq('id', id)
@@ -47,7 +47,7 @@ export default function AdminMessagesPage() {
     if (!confirm('Are you sure you want to delete this message?')) return
 
     try {
-      const { error } = await supabase.from('contact_messages').delete().eq('id', id)
+      const { error } = await localDataClient.from('contact_messages').delete().eq('id', id)
       if (error) throw error
       setMessages(messages.filter((m) => m.id !== id))
       if (selectedMessage?.id === id) setSelectedMessage(null)

@@ -24,13 +24,13 @@ cp .env.local.mock .env.local
 
 Open `.env.local` and update these 4 services:
 
-#### 2.1 Supabase (Database)
-- Go to https://supabase.com
+#### 2.1 Local data (Database)
+- Go to https://local data.com
 - Create new project
 - Copy these to `.env.local`:
-  - `NEXT_PUBLIC_SUPABASE_URL` → Project URL
-  - `NEXT_PUBLIC_SUPABASE_ANON_KEY` → anon key
-  - `SUPABASE_SERVICE_ROLE_KEY` → service role key
+  - `LOCAL_DATA_CLIENT` → Project URL
+  - `LOCAL_DATA_CLIENT` → anon key
+  - `LOCAL_DATA_CLIENT` → service role key
 
 #### 2.2 Cloudinary (Image Management)
 - Go to https://cloudinary.com
@@ -63,12 +63,12 @@ pnpm install
 
 #### Option A: Auto Migration (Recommended)
 ```bash
-# This will run migrations if SUPABASE_AUTO_MIGRATE=true
+# This will run migrations if LOCAL_DATA_AUTO_SEED=true
 pnpm dev
 ```
 
 #### Option B: Manual Migration
-1. Go to Supabase dashboard
+1. Go to Local data dashboard
 2. Open SQL Editor
 3. Copy & paste SQL from SETUP_GUIDE.md
 4. Execute all queries
@@ -99,7 +99,7 @@ Use default credentials:
 | Moderator | moderator@kernelforge.dev | KernelForge2026!Mod | Content management |
 | Test | test@kernelforge.dev | KernelForge2026!Test | Testing/development |
 
-**These are created automatically during first Supabase connection.**
+**These are created automatically during first Local data connection.**
 
 ---
 
@@ -184,7 +184,7 @@ After setup, verify:
 - [ ] Dark mode toggle works
 - [ ] Community page shows banner
 - [ ] Admin login works
-- [ ] Supabase data syncs
+- [ ] Local data data syncs
 - [ ] Images load correctly
 - [ ] Navigation works on all pages
 
@@ -192,10 +192,10 @@ After setup, verify:
 
 ## 🛠️ Troubleshooting
 
-### Supabase Connection Fails
-- Check NEXT_PUBLIC_SUPABASE_URL format (should end in .supabase.co)
+### Local data Connection Fails
+- Check LOCAL_DATA_CLIENT format (should end in .local data.co)
 - Verify anon key is not service role key
-- Test: `curl https://your-url.supabase.co`
+- Test: `curl https://your-url.local data.co`
 
 ### Images Not Loading
 - Verify Cloudinary credentials
@@ -219,7 +219,7 @@ After setup, verify:
 For issues:
 1. Check the ADMIN_GUIDE_FR.md
 2. Review SETUP_GUIDE.md
-3. Check Supabase dashboard for errors
+3. Check Local data dashboard for errors
 4. Check browser console for errors
 
 ---

@@ -19,7 +19,7 @@ og:url: https://kernel-forge.dev
 og:site_name: Kernel Forge
 og:title: Kernel Forge - Open Source Software Collective
 og:description: A student software development collective dedicated to building, learning, and contributing to open-source software at the University of Yaoundé I.
-og:image: https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202026-07-21%20at%2016.14.57-3sws87d7kKN9W5WMT4IcP74PjoJ2tp.jpeg
+og:image: /kernel-forge-logo.png
 ```
 
 ### Twitter Card Tags

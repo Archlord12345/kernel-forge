@@ -39,7 +39,7 @@ export default function CommunityPage() {
           className="w-full h-full flex items-center justify-center"
         >
           <img
-            src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Affiche%20Kernel%20Forge%20Academy.png-km9Xou1MF4bDNLZ4sqkXNoMiDQLHmF.jpeg"
+            src="/kernel-forge-logo.png"
             alt="Kernel Forge Academy Community"
             className="w-full h-full object-contain"
             loading="eager"

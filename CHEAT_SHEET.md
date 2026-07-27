@@ -24,8 +24,8 @@ cp .env.local.example .env.local
 # Ajouter les 4 clés (voir ci-dessous)
 ```
 
-### 3. Supabase (5 min)
-- Créer compte: https://supabase.com
+### 3. Local data (5 min)
+- Créer compte: https://local data.com
 - Créer projet
 - Copier URL + clés dans `.env.local`
 - Exécuter migrations (voir SETUP_GUIDE.md)
@@ -41,10 +41,10 @@ pnpm dev
 ## 🔑 4 CLÉ À AJOUTER DANS `.env.local`
 
 ```env
-# 1. SUPABASE (base de données)
-NEXT_PUBLIC_SUPABASE_URL=https://xxx.supabase.co
-NEXT_PUBLIC_SUPABASE_ANON_KEY=eyJ...
-SUPABASE_SERVICE_ROLE_KEY=eyJ...
+# 1. LOCAL DATA (intégré)
+LOCAL_DATA_CLIENT=https://xxx.local data.co
+LOCAL_DATA_CLIENT=eyJ...
+LOCAL_DATA_CLIENT=eyJ...
 
 # 2. CLOUDINARY (images)
 NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME=xxx
@@ -65,7 +65,7 @@ CONTACT_EMAIL=contact@kernelforge.dev
 
 ## 🌍 URLS IMPORTANTES
 
-- **Supabase**: https://supabase.com/dashboard
+- **Local data**: https://local data.com/dashboard
 - **Cloudinary**: https://cloudinary.com/console
 - **GitHub Tokens**: https://github.com/settings/tokens
 - **Resend**: https://resend.com/dashboard
@@ -112,7 +112,7 @@ git push origin main
 | Erreur | Solution |
 |--------|----------|
 | Module not found | `pnpm install` |
-| Supabase error | Vérifier `.env.local` |
+| Local data error | Vérifier `.env.local` |
 | Images don't load | Vérifier Cloudinary |
 | Contact form fail | Vérifier RESEND_API_KEY |
 
@@ -151,7 +151,7 @@ pnpm format           # Formater le code
 
 - [ ] `pnpm install`
 - [ ] `.env.local` configuré
-- [ ] Supabase créé
+- [ ] Local data créé
 - [ ] `pnpm dev` marche
 - [ ] `http://localhost:3000` accessible
 - [ ] Login avec admin@kernelforge.dev marche
@@ -164,7 +164,7 @@ pnpm format           # Formater le code
 
 - Changer les mots de passe admin ASAP!
 - Vercel déploie auto sur chaque `git push main`
-- Supabase RLS déjà configuré (sécurité)
+- Local data RLS déjà configuré (sécurité)
 - Dark mode fonctionne automatiquement
 - Les 2 langues (EN/FR) sont déjà complètes
 

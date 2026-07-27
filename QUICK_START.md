@@ -16,15 +16,15 @@ cp .env.local.example .env.local
 
 ### **Étape 3: Configurer les services (5-10 minutes)**
 
-#### **A. Supabase (Base de données)**
-1. Créer un compte sur https://supabase.com
+#### **A. Local data (Base de données)**
+1. Créer un compte sur https://local data.com
 2. Créer un nouveau projet
 3. Copier `Project URL` et `anon key` depuis Settings → API
 4. Remplir dans `.env.local`:
 ```env
-NEXT_PUBLIC_SUPABASE_URL=https://xxxx.supabase.co
-NEXT_PUBLIC_SUPABASE_ANON_KEY=eyJ...
-SUPABASE_SERVICE_ROLE_KEY=eyJ...
+LOCAL_DATA_CLIENT=https://xxxx.local data.co
+LOCAL_DATA_CLIENT=eyJ...
+LOCAL_DATA_CLIENT=eyJ...
 ```
 
 #### **B. Cloudinary (Images)**
@@ -59,17 +59,17 @@ CONTACT_EMAIL=contact@kernelforge.dev
 
 ### **Étape 4: Configurer la base de données**
 
-Via Supabase Console, exécuter le SQL de migration:
+Via Local data Console, exécuter le SQL de migration:
 ```bash
 # Télécharger le fichier
-cat supabase/migrations/001_initial_schema.sql
+cat local seeded data in lib/local-data.ts
 ```
 
-Copier et exécuter dans Supabase SQL Editor.
+Copier et exécuter dans Local data SQL Editor.
 
 ### **Étape 5: Créer les comptes admin**
 
-Via Supabase Auth, ajouter les 3 utilisateurs:
+Via Local data Auth, ajouter les 3 utilisateurs:
 
 ```
 Admin:
@@ -96,11 +96,11 @@ pnpm dev
 ## ✅ Checklist d'installation
 
 - [ ] `.env.local` créé avec tous les paramètres
-- [ ] Supabase URL et clés ajoutées
+- [ ] Local data URL et clés ajoutées
 - [ ] Cloudinary configuré
 - [ ] GitHub token généré
 - [ ] Resend API key ajoutée
-- [ ] Migration Supabase exécutée
+- [ ] Migration Local data exécutée
 - [ ] 3 comptes admin créés
 - [ ] `pnpm dev` fonctionne
 - [ ] Pages accéder sans erreur
@@ -110,7 +110,7 @@ pnpm dev
 ## 🌐 URLs importantes
 
 - **Développement**: http://localhost:3000
-- **Supabase Console**: https://supabase.com/dashboard
+- **Local data Console**: https://local data.com/dashboard
 - **Cloudinary Dashboard**: https://cloudinary.com/console
 - **GitHub Settings**: https://github.com/settings/tokens
 - **Resend Dashboard**: https://resend.com/dashboard
@@ -145,13 +145,13 @@ pnpm dev
 
 ## 🐛 Erreurs courantes
 
-### "Cannot find module '@supabase/supabase-js'"
+### "Cannot find module 'local data client'"
 ```bash
 pnpm install
 ```
 
-### "Supabase URL is not configured"
-Vérifier que `.env.local` a `NEXT_PUBLIC_SUPABASE_URL`
+### "Local data URL is not configured"
+Vérifier que `.env.local` a `LOCAL_DATA_CLIENT`
 
 ### "Images not loading"
 Vérifier Cloudinary permissions dans `.env.local`

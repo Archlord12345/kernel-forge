@@ -1,7 +1,7 @@
 'use client'
 
 import { useEffect, useState } from 'react'
-import { supabase } from '@/lib/supabase'
+import { localDataClient } from '@/lib/local-data'
 import { Code2, Users, MessageSquare, TrendingUp } from 'lucide-react'
 
 export default function AdminDashboard() {
@@ -20,10 +20,10 @@ export default function AdminDashboard() {
   async function loadStats() {
     try {
       const [projectsData, membersData, messagesData, unreadData] = await Promise.all([
-        supabase.from('project_overrides').select('id', { count: 'exact', head: true }),
-        supabase.from('members').select('id', { count: 'exact', head: true }),
-        supabase.from('contact_messages').select('id', { count: 'exact', head: true }),
-        supabase.from('contact_messages').select('id', { count: 'exact', head: true }).eq('read', false),
+        localDataClient.from('project_overrides').select('id', { count: 'exact', head: true }),
+        localDataClient.from('members').select('id', { count: 'exact', head: true }),
+        localDataClient.from('contact_messages').select('id', { count: 'exact', head: true }),
+        localDataClient.from('contact_messages').select('id', { count: 'exact', head: true }).eq('read', false),
       ])
 
       setStats({

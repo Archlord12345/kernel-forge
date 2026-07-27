@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     description: 'Meet the talented people behind Kernel Forge',
     images: [
       {
-        url: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202026-07-21%20at%2016.14.57-3sws87d7kKN9W5WMT4IcP74PjoJ2tp.jpeg',
+        url: '/kernel-forge-logo.png',
         width: 1200,
         height: 1200,
         alt: 'Kernel Forge Team',

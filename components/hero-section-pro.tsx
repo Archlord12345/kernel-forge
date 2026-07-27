@@ -1,12 +1,12 @@
 'use client'
 
 import Link from 'next/link'
-import { motion } from 'framer-motion'
+import { motion, type Variants } from 'framer-motion'
 import { ChevronDown } from 'lucide-react'
 
 export function HeroSection() {
 
-  const containerVariants = {
+  const containerVariants: Variants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
@@ -17,7 +17,7 @@ export function HeroSection() {
     },
   }
 
-  const itemVariants = {
+  const itemVariants: Variants = {
     hidden: { opacity: 0, y: 20 },
     visible: {
       opacity: 1,
@@ -48,7 +48,7 @@ export function HeroSection() {
             className="mb-8 relative"
           >
             <img
-              src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Affiche%20Kernel%20Forge%20Academy.png-km9Xou1MF4bDNLZ4sqkXNoMiDQLHmF.jpeg"
+              src="/kernel-forge-logo.png"
               alt="Kernel Forge Academy"
               className="w-full max-w-2xl mx-auto rounded-2xl shadow-2xl"
             />

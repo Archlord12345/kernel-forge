@@ -11,7 +11,7 @@ export const metadata: Metadata = {
     description: 'Discover the story and mission behind Kernel Forge, a student software development collective.',
     images: [
       {
-        url: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Affiche%20Kernel%20Forge%20Academy.png-km9Xou1MF4bDNLZ4sqkXNoMiDQLHmF.jpeg',
+        url: '/kernel-forge-logo.png',
         width: 1600,
         height: 900,
         alt: 'Kernel Forge Academy Building',

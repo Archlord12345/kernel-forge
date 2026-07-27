@@ -23,7 +23,7 @@ export function Header() {
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2 group">
             <img 
-              src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202026-07-21%20at%2016.14.57-3sws87d7kKN9W5WMT4IcP74PjoJ2tp.jpeg" 
+              src="/kernel-forge-logo.png" 
               alt="Kernel Forge Logo" 
               className="w-10 h-10 group-hover:scale-110 transition-transform"
             />

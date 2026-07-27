@@ -12,7 +12,7 @@ export const metadata: Metadata = {
     description: 'Join our vibrant community of developers and creators dedicated to open-source innovation.',
     images: [
       {
-        url: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Affiche%20Kernel%20Forge%20Academy.png-km9Xou1MF4bDNLZ4sqkXNoMiDQLHmF.jpeg',
+        url: '/kernel-forge-logo.png',
         width: 1600,
         height: 900,
         alt: 'Kernel Forge Academy Building',
@@ -52,7 +52,7 @@ export default function CommunityPage() {
       {/* Hero Section with Academy Poster */}
       <section className="relative py-12 overflow-hidden">
         <img 
-          src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Affiche%20Kernel%20Forge%20Academy.png-km9Xou1MF4bDNLZ4sqkXNoMiDQLHmF.jpeg" 
+          src="/kernel-forge-logo.png" 
           alt="Kernel Forge Academy - Build Learn Share Contribute Innovate Repeat" 
           className="w-full h-auto object-cover rounded-xl shadow-lg"
         />

@@ -21,7 +21,7 @@ A full-stack Next.js application for Kernel Forge, a student software developmen
 
 ### Technical Features
 - Responsive mobile-first design with light/dark mode support
-- Real-time data fetching with Supabase
+- Local-first data fetching with seeded data and browser persistence
 - Server-side rendering with Next.js 16
 - TypeScript for type safety
 - Tailwind CSS for styling with custom cream/orange/green theme
@@ -30,7 +30,7 @@ A full-stack Next.js application for Kernel Forge, a student software developmen
 
 ### Prerequisites
 - Node.js 18+ (pnpm)
-- Supabase account and project
+- No external service account, database, or environment file required
 
 ### Installation
 
@@ -41,19 +41,7 @@ A full-stack Next.js application for Kernel Forge, a student software developmen
    pnpm install
    ```
 
-2. **Set up environment variables:**
-   Create a `.env.local` file in the project root:
-   ```
-   NEXT_PUBLIC_SUPABASE_URL=your_supabase_url
-   NEXT_PUBLIC_SUPABASE_ANON_KEY=your_supabase_anon_key
-   ```
-
-3. **Set up Supabase database:**
-   - Create a new Supabase project
-   - Run the SQL migration from `supabase/migrations/001_initial_schema.sql` in the Supabase SQL editor
-   - This creates tables for profiles, members, projects, messages, and settings
-
-4. **Start the development server:**
+2. **Start the development server:**
    ```bash
    pnpm dev
    ```
@@ -98,15 +86,17 @@ components/
 └── cta-section.tsx       # Call to action section
 
 lib/
-└── supabase.ts           # Supabase client and type definitions
+└── local-data.ts         # Local data client, seed data, and type definitions
 ```
 
-## Database Schema
+## Local Data Schema
+
+The app uses an in-repository local data client with seeded data and browser `localStorage` persistence for client-side edits. The API route uses the same local client in memory, so the project can build and run without Supabase or any external service credentials.
 
 ### Tables
 
 **profiles**
-- Extends auth.users with additional profile information
+- Stores local profile information
 - Fields: username, full_name, avatar_url, bio, role, github_username, twitter_handle
 
 **members**
@@ -169,10 +159,10 @@ Submit a contact form message.
 
 ## Authentication
 
-The admin dashboard uses Supabase Auth. Future implementations should:
-1. Add email/password authentication
-2. Protect `/admin/*` routes with auth middleware
-3. Implement role-based access control (RBAC)
+The admin dashboard currently runs locally without external authentication. Future implementations can optionally add:
+1. Email/password authentication
+2. Protection for `/admin/*` routes with auth middleware
+3. Role-based access control (RBAC)
 
 ## Deployment
 
@@ -184,10 +174,7 @@ git commit -m "Initial commit"
 git push
 ```
 
-Then connect your GitHub repository to Vercel and configure the environment variables in the Vercel project settings.
-
-### Environment Variables (Vercel)
-Set the same `NEXT_PUBLIC_SUPABASE_*` variables in your Vercel project settings.
+Then connect your GitHub repository to your host. No database service, analytics service, or runtime environment variables are required for the default local-first setup.
 
 ## Contributing
 

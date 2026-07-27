@@ -10,32 +10,32 @@ const projects = [
     name: 'Kernel OS',
     description: 'A lightweight Linux kernel implementation for educational purposes',
     category: 'OS',
-    image: 'https://via.placeholder.com/400x300?text=Kernel+OS',
+    image: '/placeholder.jpg',
     featured: true,
   },
   {
     name: 'Forge CLI',
     description: 'Command-line tool for managing open-source projects',
     category: 'CLI',
-    image: 'https://via.placeholder.com/400x300?text=Forge+CLI',
+    image: '/placeholder.jpg',
   },
   {
     name: 'CodeForge',
     description: 'Web-based collaborative code editor for teams',
     category: 'Web',
-    image: 'https://via.placeholder.com/400x300?text=CodeForge',
+    image: '/placeholder.jpg',
   },
   {
     name: 'DevKit',
     description: 'Developer toolkit library for rapid development',
     category: 'Library',
-    image: 'https://via.placeholder.com/400x300?text=DevKit',
+    image: '/placeholder.jpg',
   },
   {
     name: 'Metrics',
     description: 'Real-time project metrics and analytics dashboard',
     category: 'Web',
-    image: 'https://via.placeholder.com/400x300?text=Metrics',
+    image: '/placeholder.jpg',
   },
 ]
 

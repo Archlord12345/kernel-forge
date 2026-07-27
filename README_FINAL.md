@@ -66,10 +66,10 @@ Password: KernelForge2026!Test
 Copier depuis `.env.local.example` et remplir:
 
 ```env
-# 1. SUPABASE (Base de données) - OBLIGATOIRE
-NEXT_PUBLIC_SUPABASE_URL=https://xxx.supabase.co
-NEXT_PUBLIC_SUPABASE_ANON_KEY=eyJ...
-SUPABASE_SERVICE_ROLE_KEY=eyJ...
+# 1. LOCAL DATA (intégré) - OBLIGATOIRE
+LOCAL_DATA_CLIENT=https://xxx.local data.co
+LOCAL_DATA_CLIENT=eyJ...
+LOCAL_DATA_CLIENT=eyJ...
 
 # 2. CLOUDINARY (Images) - RECOMMANDÉ
 NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME=xxx
@@ -104,12 +104,12 @@ cp .env.local.example .env.local
 ```
 
 ### 3️⃣ Base de données
-- Créer compte Supabase
+- Créer compte Local data
 - Créer nouveau projet
 - Exécuter les migrations SQL depuis `SETUP_GUIDE.md`
 
 ### 4️⃣ Créer les comptes admin
-Via Supabase Console → Auth → Users
+Via Local data Console → Auth → Users
 - Créer les 3 comptes avec les emails fournis
 
 ### 5️⃣ Tester localement
@@ -158,7 +158,7 @@ La photo community est maintenant affichée en **full-width** et couvre toute la
 
 1. ✅ Changer les mots de passe admin (voir ci-dessus)
 2. ✅ Activer HTTPS/SSL (Vercel le fait automatiquement)
-3. ✅ Configurer les backups Supabase
+3. ✅ Configurer les backups Local data
 4. ✅ Ajouter monitoring/Sentry (optionnel)
 
 ---
@@ -167,7 +167,7 @@ La photo community est maintenant affichée en **full-width** et couvre toute la
 
 | Service | Temps | Lien |
 |---------|-------|------|
-| Supabase | 5 min | https://supabase.com |
+| Local data | 5 min | https://local data.com |
 | Cloudinary | 3 min | https://cloudinary.com |
 | GitHub Token | 2 min | https://github.com/settings/tokens |
 | Resend (Email) | 3 min | https://resend.com |
@@ -234,7 +234,7 @@ Une fois connecté avec `admin@kernelforge.dev`:
 ## 🆘 SI VOUS AVEZ UN PROBLÈME
 
 1. Vérifier `.env.local` est correctement configuré
-2. Vérifier que Supabase est accessible
+2. Vérifier que Local data est accessible
 3. Vérifier les logs Vercel
 4. Consulter `SETUP_GUIDE.md` section Troubleshooting
 5. Vérifier la console du navigateur (F12 → Console)
@@ -244,7 +244,7 @@ Une fois connecté avec `admin@kernelforge.dev`:
 ## 📞 RESSOURCES RAPIDES
 
 - **Documentation Next.js**: https://nextjs.org/docs
-- **Documentation Supabase**: https://supabase.com/docs
+- **Documentation Local data**: https://local data.com/docs
 - **Documentation Tailwind**: https://tailwindcss.com
 - **Support Vercel**: https://vercel.com/help
 
@@ -255,7 +255,7 @@ Une fois connecté avec `admin@kernelforge.dev`:
 - Pages: 9
 - Composants: 15+
 - Lignes de code: 5000+
-- Tables Supabase: 5
+- Tables Local data: 5
 - Langues: 2 (EN/FR)
 - Fichiers de config: 10+
 
@@ -277,7 +277,7 @@ Une fois connecté avec `admin@kernelforge.dev`:
 
 Avant de lancer:
 - [ ] Tous les `.env` configurés
-- [ ] Supabase database créée
+- [ ] Local data database créée
 - [ ] 3 comptes admin créés
 - [ ] `pnpm dev` fonctionne
 - [ ] Pages accessibles sans erreur

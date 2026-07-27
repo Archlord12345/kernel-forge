@@ -88,7 +88,7 @@ export default function AboutPage() {
         <section className="py-20 md:py-32 bg-secondary/30">
           <div className="container mx-auto px-4">
             <motion.img
-              src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Affiche%20Kernel%20Forge%20Academy.png-km9Xou1MF4bDNLZ4sqkXNoMiDQLHmF.jpeg"
+              src="/kernel-forge-logo.png"
               alt="Kernel Forge Academy"
               className="w-full max-w-2xl mx-auto rounded-2xl shadow-2xl"
               initial={{ opacity: 0, scale: 0.95 }}
