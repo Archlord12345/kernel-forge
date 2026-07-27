@@ -22,9 +22,11 @@ export function Header() {
         <div className="flex items-center justify-between">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2 group">
-            <div className="w-10 h-10 rounded-lg bg-primary flex items-center justify-center text-primary-foreground font-bold text-lg group-hover:shadow-lg transition-shadow">
-              K
-            </div>
+            <img 
+              src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202026-07-21%20at%2016.14.57-3sws87d7kKN9W5WMT4IcP74PjoJ2tp.jpeg" 
+              alt="Kernel Forge Logo" 
+              className="w-10 h-10 group-hover:scale-110 transition-transform"
+            />
             <span className="font-bold text-lg hidden sm:inline text-foreground">Kernel Forge</span>
           </Link>
 

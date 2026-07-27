@@ -4,8 +4,21 @@ import { Users, BookOpen, Code2, Lightbulb } from 'lucide-react'
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Community - Kernel Forge',
-  description: 'Join our vibrant community of developers and creators',
+  title: 'Community - Kernel Forge Academy | Open Source Software Collective',
+  description: 'Join our vibrant community of developers, designers, and creators. Build, learn, share, contribute, and innovate with Kernel Forge Academy.',
+  keywords: ['community', 'developers', 'open source', 'collaboration', 'learning'],
+  openGraph: {
+    title: 'Community - Kernel Forge Academy',
+    description: 'Join our vibrant community of developers and creators dedicated to open-source innovation.',
+    images: [
+      {
+        url: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Affiche%20Kernel%20Forge%20Academy.png-km9Xou1MF4bDNLZ4sqkXNoMiDQLHmF.jpeg',
+        width: 1600,
+        height: 900,
+        alt: 'Kernel Forge Academy Building',
+      },
+    ],
+  },
 }
 
 export default function CommunityPage() {
@@ -35,6 +48,16 @@ export default function CommunityPage() {
   return (
     <main className="min-h-screen bg-background text-foreground">
       <Header />
+      
+      {/* Hero Section with Academy Poster */}
+      <section className="relative py-12 overflow-hidden">
+        <img 
+          src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Affiche%20Kernel%20Forge%20Academy.png-km9Xou1MF4bDNLZ4sqkXNoMiDQLHmF.jpeg" 
+          alt="Kernel Forge Academy - Build Learn Share Contribute Innovate Repeat" 
+          className="w-full h-auto object-cover rounded-xl shadow-lg"
+        />
+      </section>
+
       <section className="py-20 md:py-32">
         <div className="container mx-auto px-4">
           {/* Page Header */}

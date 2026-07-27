@@ -5,8 +5,21 @@ import { TeamGrid } from '@/components/team-grid'
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Team - Kernel Forge',
-  description: 'Meet the talented people behind Kernel Forge',
+  title: 'Our Team - Kernel Forge Contributors',
+  description: 'Meet the talented developers, designers, and creators behind Kernel Forge. Connect with our passionate team members working on open-source innovation.',
+  keywords: ['team', 'developers', 'contributors', 'software engineers', 'creators'],
+  openGraph: {
+    title: 'Our Team - Kernel Forge',
+    description: 'Meet the talented people behind Kernel Forge',
+    images: [
+      {
+        url: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202026-07-21%20at%2016.14.57-3sws87d7kKN9W5WMT4IcP74PjoJ2tp.jpeg',
+        width: 1200,
+        height: 1200,
+        alt: 'Kernel Forge Team',
+      },
+    ],
+  },
 }
 
 export default function TeamPage() {

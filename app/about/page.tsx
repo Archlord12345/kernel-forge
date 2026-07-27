@@ -3,8 +3,21 @@ import { Footer } from '@/components/footer'
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'About - Kernel Forge',
-  description: 'Learn about Kernel Forge and our mission',
+  title: 'About Kernel Forge - Our Mission & Vision',
+  description: 'Learn about Kernel Forge Academy, a student software development collective at the University of Yaoundé I dedicated to open-source innovation and community building.',
+  keywords: ['about', 'mission', 'vision', 'open source collective', 'student developers', 'UY1'],
+  openGraph: {
+    title: 'About Kernel Forge - Our Mission & Vision',
+    description: 'Discover the story and mission behind Kernel Forge, a student software development collective.',
+    images: [
+      {
+        url: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Affiche%20Kernel%20Forge%20Academy.png-km9Xou1MF4bDNLZ4sqkXNoMiDQLHmF.jpeg',
+        width: 1600,
+        height: 900,
+        alt: 'Kernel Forge Academy Building',
+      },
+    ],
+  },
 }
 
 export default function AboutPage() {

@@ -5,8 +5,21 @@ import { Metadata } from 'next'
 import { Mail, MapPin, MessageSquare } from 'lucide-react'
 
 export const metadata: Metadata = {
-  title: 'Contact - Kernel Forge',
-  description: 'Get in touch with Kernel Forge',
+  title: 'Contact Kernel Forge - Get In Touch',
+  description: 'Reach out to Kernel Forge. We&apos;d love to hear from you about collaboration, partnerships, or joining our community of open-source developers.',
+  keywords: ['contact', 'get in touch', 'collaboration', 'partnership', 'email'],
+  openGraph: {
+    title: 'Contact Kernel Forge - Get In Touch',
+    description: 'Get in touch with Kernel Forge. We&apos;d love to hear from you!',
+    images: [
+      {
+        url: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202026-07-21%20at%2016.14.57-3sws87d7kKN9W5WMT4IcP74PjoJ2tp.jpeg',
+        width: 1200,
+        height: 1200,
+        alt: 'Kernel Forge',
+      },
+    ],
+  },
 }
 
 export default function ContactPage() {

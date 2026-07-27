@@ -5,8 +5,21 @@ import { ProjectsGrid } from '@/components/projects-grid'
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Projects - Kernel Forge',
-  description: 'Explore all open-source projects created by Kernel Forge',
+  title: 'Open Source Projects - Kernel Forge',
+  description: 'Discover innovative open-source software projects built by our community. Explore web apps, CLI tools, libraries, and more from Kernel Forge.',
+  keywords: ['open source projects', 'software', 'GitHub', 'web applications', 'development tools'],
+  openGraph: {
+    title: 'Open Source Projects - Kernel Forge',
+    description: 'Discover the innovative open-source software built by our community',
+    images: [
+      {
+        url: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Affiche%20Kernel%20Forge%20Academy.png-km9Xou1MF4bDNLZ4sqkXNoMiDQLHmF.jpeg',
+        width: 1600,
+        height: 900,
+        alt: 'Kernel Forge Academy',
+      },
+    ],
+  },
 }
 
 export default function ProjectsPage() {
