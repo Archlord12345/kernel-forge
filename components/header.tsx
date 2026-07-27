@@ -17,17 +17,17 @@ export function Header() {
   const pathname = usePathname()
 
   return (
-    <header className="border-b border-border bg-background/95 backdrop-blur-sm sticky top-0 z-50">
+    <header className="border-b-2 border-[#e5e5e5] bg-background/95 backdrop-blur-sm sticky top-0 z-50">
       <nav className="container mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2 group">
             <img 
-              src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202026-07-21%20at%2016.14.57-3sws87d7kKN9W5WMT4IcP74PjoJ2tp.jpeg" 
+              src="/kernel-forge-logo.png" 
               alt="Kernel Forge Logo" 
-              className="w-10 h-10 group-hover:scale-110 transition-transform"
+              className="h-11 w-11 rounded-xl border-2 border-[var(--color-lingot-lime)] object-contain p-1 transition-transform group-hover:scale-110"
             />
-            <span className="font-bold text-lg hidden sm:inline text-foreground">Kernel Forge</span>
+            <span className="font-black text-lg hidden sm:inline text-primary tracking-wide">Kernel Forge</span>
           </Link>
 
           {/* Navigation */}

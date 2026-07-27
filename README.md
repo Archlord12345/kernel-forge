@@ -220,3 +220,17 @@ For issues or questions, please:
 ---
 
 **Kernel Forge** - Code. Forge. Impact. Repeat.
+
+## Deploying on Vercel
+
+This project is configured for a straightforward Vercel deployment via `vercel.json`.
+
+1. Import the repository in Vercel and keep the detected framework as **Next.js**.
+2. Use the default commands from `vercel.json`:
+   - Install: `pnpm install --frozen-lockfile`
+   - Build: `pnpm build`
+   - Output: `.next`
+3. Add these environment variables in Vercel Project Settings:
+   - `NEXT_PUBLIC_SUPABASE_URL`
+   - `NEXT_PUBLIC_SUPABASE_ANON_KEY`
+4. Deploy. Vercel Analytics is already enabled in production.
