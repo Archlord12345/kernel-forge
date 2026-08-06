@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { Search, MoreVertical, Send, Paperclip } from 'lucide-react';
+import { Search, MoveVertical as MoreVertical, Send, Paperclip, MessageSquare } from 'lucide-react';
 import { getData, Message } from '@/lib/data';
 
 export default function StudentMessages() {
@@ -28,22 +28,22 @@ export default function StudentMessages() {
           <div className="p-4 border-b border-slate-200 bg-white">
             <div className="relative">
               <Search className="w-4 h-4 absolute left-3 top-1/2 -translate-y-1/2 text-slate-400" />
-              <input 
-                type="text" 
-                placeholder="Rechercher une conversation..." 
+              <input
+                type="text"
+                placeholder="Rechercher une conversation..."
                 className="w-full pl-9 pr-4 py-2 bg-slate-100 border-transparent rounded-lg text-sm focus:outline-none focus:bg-white focus:border-blue-600 focus:ring-1 focus:ring-blue-600 transition-all"
               />
             </div>
           </div>
-          
+
           <div className="flex-1 overflow-y-auto">
             {messages.map(msg => (
-              <div 
+              <div
                 key={msg.id}
                 onClick={() => setSelectedId(msg.id)}
                 className={`p-4 border-b border-slate-100 cursor-pointer transition-colors flex gap-3 ${selectedId === msg.id ? 'bg-blue-50/50' : 'hover:bg-slate-100 bg-white'}`}
               >
-                <div className="w-10 h-10 rounded-full bg-blue-100 text-blue-700 flex items-center justify-center font-bold shrink-0 text-sm">
+                <div className="w-10 h-10 rounded-full bg-gradient-to-br from-blue-100 to-blue-200 text-blue-700 flex items-center justify-center font-bold shrink-0 text-sm">
                   {msg.from.charAt(0)}
                 </div>
                 <div className="flex-1 min-w-0">
@@ -71,7 +71,7 @@ export default function StudentMessages() {
             {/* Chat Header */}
             <div className="h-16 border-b border-slate-200 px-6 flex items-center justify-between shrink-0">
               <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-full bg-blue-100 text-blue-700 flex items-center justify-center font-bold text-sm">
+                <div className="w-10 h-10 rounded-full bg-gradient-to-br from-blue-100 to-blue-200 text-blue-700 flex items-center justify-center font-bold text-sm">
                   {selectedMessage.from.charAt(0)}
                 </div>
                 <div>
@@ -86,13 +86,12 @@ export default function StudentMessages() {
 
             {/* Chat Messages */}
             <div className="flex-1 overflow-y-auto p-6 space-y-6 bg-slate-50/50">
-              {/* Dummy messages for the visual effect */}
               <div className="flex justify-center">
                 <span className="text-xs font-medium text-slate-400 bg-slate-100 px-3 py-1 rounded-full">Aujourd'hui</span>
               </div>
-              
+
               <div className="flex items-end gap-2 max-w-lg">
-                <div className="w-8 h-8 rounded-full bg-blue-100 text-blue-700 flex items-center justify-center font-bold text-xs shrink-0 mb-1">
+                <div className="w-8 h-8 rounded-full bg-gradient-to-br from-blue-100 to-blue-200 text-blue-700 flex items-center justify-center font-bold text-xs shrink-0 mb-1">
                   {selectedMessage.from.charAt(0)}
                 </div>
                 <div className="bg-white border border-slate-200 p-3.5 rounded-2xl rounded-bl-sm shadow-sm text-sm text-slate-700 leading-relaxed">
@@ -101,7 +100,7 @@ export default function StudentMessages() {
                 <span className="text-xs text-slate-400 mb-1">10:15</span>
               </div>
 
-               <div className="flex items-end gap-2 max-w-lg self-end ml-auto">
+              <div className="flex items-end gap-2 max-w-lg self-end ml-auto justify-end">
                 <span className="text-xs text-slate-400 mb-1">10:20</span>
                 <div className="bg-blue-900 p-3.5 rounded-2xl rounded-br-sm shadow-sm text-sm text-white leading-relaxed">
                   Oui bien sûr, les graphes orientés ou non-orientés ? Je peux vous envoyer le document récapitulatif.
@@ -116,9 +115,9 @@ export default function StudentMessages() {
                   <Paperclip className="w-5 h-5" />
                 </button>
                 <div className="flex-1 bg-slate-100 rounded-full px-4 py-2.5 flex items-center">
-                  <input 
-                    type="text" 
-                    placeholder="Écrivez votre message..." 
+                  <input
+                    type="text"
+                    placeholder="Écrivez votre message..."
                     className="w-full bg-transparent border-none focus:outline-none text-sm text-slate-700 placeholder-slate-400"
                   />
                 </div>
@@ -138,5 +137,3 @@ export default function StudentMessages() {
     </div>
   );
 }
-// Add this import that was missing above
-import { MessageSquare } from 'lucide-react';

@@ -1,5 +1,4 @@
-
-import { Users, FileText, CheckCircle, Video, BookOpen, Clock, AlertCircle } from 'lucide-react';
+import { Users, FileText, CircleCheck as CheckCircle, Video, BookOpen, Clock, CircleAlert as AlertCircle, ArrowRight } from 'lucide-react';
 import {
   BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer
 } from 'recharts';
@@ -20,20 +19,21 @@ export default function TeacherDashboard() {
         </div>
       </div>
 
+      {/* Stats */}
       <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
-        <StatCard title="Cours" value="4" icon={BookOpen} color="bg-blue-50 text-blue-600" />
-        <StatCard title="Étudiants" value="186" icon={Users} color="bg-teal-50 text-teal-600" />
-        <StatCard title="À corriger" value="23" icon={FileText} color="bg-red-50 text-red-600" alert />
-        <StatCard title="Notes en attente" value="2" icon={CheckCircle} color="bg-amber-50 text-amber-600" />
-        <StatCard title="Visios prévues" value="3" icon={Video} color="bg-indigo-50 text-indigo-600" />
+        <StatCard title="Cours" value="4" icon={BookOpen} color="from-blue-500 to-blue-600" />
+        <StatCard title="Étudiants" value="186" icon={Users} color="from-teal-500 to-teal-600" />
+        <StatCard title="À corriger" value="23" icon={FileText} color="from-red-500 to-red-600" alert />
+        <StatCard title="Notes en attente" value="2" icon={CheckCircle} color="from-amber-500 to-amber-600" />
+        <StatCard title="Visios prévues" value="3" icon={Video} color="from-indigo-500 to-indigo-600" />
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
         {/* Main Column */}
         <div className="lg:col-span-2 space-y-6">
-          
+
           <div className="bg-white border border-slate-200 rounded-xl shadow-sm p-6">
-            <h2 className="font-semibold text-slate-800 mb-4">Mes cours aujourd'hui</h2>
+            <h2 className="font-semibold text-slate-800 mb-5">Mes cours aujourd'hui</h2>
             <div className="space-y-3">
               <CourseRow time="08:30" name="Algorithmique L2" room="Amphi A" students="120" status="terminé" />
               <CourseRow time="14:00" name="Intelligence Artificielle" room="Salle B204" students="45" status="en_cours" />
@@ -72,18 +72,20 @@ export default function TeacherDashboard() {
               <AssignmentRow title="TD 4 - Arbres" course="Algorithmique L2" count="8" />
             </div>
             <div className="p-3 bg-slate-50 text-center border-t border-slate-100">
-              <button className="text-sm font-medium text-blue-600 hover:text-blue-800">Tout voir</button>
+              <button className="group text-sm font-medium text-blue-600 hover:text-blue-800 flex items-center gap-1 mx-auto">
+                Tout voir <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
+              </button>
             </div>
           </div>
 
-           <div className="bg-white border border-slate-200 rounded-xl shadow-sm p-5">
+          <div className="bg-white border border-slate-200 rounded-xl shadow-sm p-5">
             <h2 className="font-semibold text-slate-800 mb-4 text-sm uppercase tracking-wider">Accès Rapide</h2>
             <div className="space-y-2">
-              <button className="w-full flex items-center gap-3 p-3 rounded-lg border border-slate-200 hover:border-blue-300 hover:bg-blue-50 transition-colors text-left group">
+              <button className="group w-full flex items-center gap-3 p-3 rounded-lg border border-slate-200 hover:border-blue-300 hover:bg-blue-50 transition-colors text-left">
                 <div className="bg-blue-100 text-blue-700 p-2 rounded-md group-hover:bg-blue-600 group-hover:text-white transition-colors"><CheckCircle className="w-4 h-4" /></div>
                 <div className="text-sm font-medium text-slate-700 group-hover:text-blue-900">Saisir des notes</div>
               </button>
-              <button className="w-full flex items-center gap-3 p-3 rounded-lg border border-slate-200 hover:border-teal-300 hover:bg-teal-50 transition-colors text-left group">
+              <button className="group w-full flex items-center gap-3 p-3 rounded-lg border border-slate-200 hover:border-teal-300 hover:bg-teal-50 transition-colors text-left">
                 <div className="bg-teal-100 text-teal-700 p-2 rounded-md group-hover:bg-teal-600 group-hover:text-white transition-colors"><FileText className="w-4 h-4" /></div>
                 <div className="text-sm font-medium text-slate-700 group-hover:text-teal-900">Publier un support</div>
               </button>
@@ -97,10 +99,10 @@ export default function TeacherDashboard() {
 
 function StatCard({ title, value, icon: Icon, color, alert }: { title: string, value: string, icon: any, color: string, alert?: boolean }) {
   return (
-    <div className="bg-white border border-slate-200 rounded-xl p-4 shadow-sm relative group">
+    <div className="bg-white border border-slate-200 rounded-xl p-4 shadow-sm relative group hover:shadow-md transition-shadow">
       {alert && <div className="absolute top-0 right-0 w-2 h-2 m-3 bg-red-500 rounded-full animate-pulse"></div>}
-      <div className={`w-8 h-8 rounded-lg flex items-center justify-center mb-3 transition-transform group-hover:scale-110 ${color}`}>
-        <Icon className="w-4 h-4" />
+      <div className={`w-8 h-8 rounded-lg bg-gradient-to-br ${color} flex items-center justify-center mb-3 transition-transform group-hover:scale-110`}>
+        <Icon className="w-4 h-4 text-white" />
       </div>
       <p className="text-slate-500 text-xs font-medium uppercase tracking-wider mb-0.5">{title}</p>
       <h3 className="text-xl font-bold text-slate-900">{value}</h3>
@@ -110,7 +112,7 @@ function StatCard({ title, value, icon: Icon, color, alert }: { title: string, v
 
 function CourseRow({ time, name, room, students, status }: any) {
   return (
-    <div className="flex items-center justify-between p-3 rounded-lg border border-slate-100 hover:border-slate-200 transition-colors">
+    <div className="flex items-center justify-between p-3 rounded-lg border border-slate-100 hover:border-slate-200 hover:bg-slate-50/50 transition-colors">
       <div className="flex items-center gap-4">
         <div className="text-sm font-mono font-medium text-slate-500 w-12">{time}</div>
         <div>

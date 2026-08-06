@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { FileText, Filter, CheckCircle2, Clock, AlertCircle } from 'lucide-react';
+import { FileText, CircleCheck as CheckCircle2, Clock, CircleAlert as AlertCircle, Calendar } from 'lucide-react';
 import { getData, Assignment } from '@/lib/data';
 
 export default function StudentAssignments() {
@@ -27,18 +27,37 @@ export default function StudentAssignments() {
 
   return (
     <div className="space-y-6 max-w-5xl mx-auto pb-12">
-      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
-        <div>
-          <h1 className="text-2xl font-bold text-slate-900 tracking-tight">Devoirs</h1>
-          <p className="text-slate-500 mt-1 text-sm">Gérez vos rendus et suivez vos échéances.</p>
-        </div>
-        
-        <button className="flex items-center gap-2 border border-slate-200 bg-white text-slate-600 px-4 py-2 rounded-lg text-sm font-medium hover:bg-slate-50 transition-colors w-fit">
-          <Filter className="w-4 h-4" />
-          Filtrer par cours
-        </button>
+      <div>
+        <h1 className="text-2xl font-bold text-slate-900 tracking-tight">Devoirs</h1>
+        <p className="text-slate-500 mt-1 text-sm">Gérez vos rendus et suivez vos échéances.</p>
       </div>
 
+      {/* Summary cards */}
+      <div className="grid grid-cols-3 gap-4">
+        <div className="bg-white border border-slate-200 rounded-xl p-4 shadow-sm">
+          <div className="flex items-center gap-2 mb-1">
+            <Clock className="w-4 h-4 text-amber-500" />
+            <span className="text-xs font-medium text-slate-500 uppercase tracking-wider">À rendre</span>
+          </div>
+          <span className="text-2xl font-bold text-slate-900">{assignments.filter(a => a.status === 'pending').length}</span>
+        </div>
+        <div className="bg-white border border-slate-200 rounded-xl p-4 shadow-sm">
+          <div className="flex items-center gap-2 mb-1">
+            <AlertCircle className="w-4 h-4 text-red-500" />
+            <span className="text-xs font-medium text-slate-500 uppercase tracking-wider">En retard</span>
+          </div>
+          <span className="text-2xl font-bold text-slate-900">{assignments.filter(a => a.status === 'late').length}</span>
+        </div>
+        <div className="bg-white border border-slate-200 rounded-xl p-4 shadow-sm">
+          <div className="flex items-center gap-2 mb-1">
+            <CheckCircle2 className="w-4 h-4 text-green-500" />
+            <span className="text-xs font-medium text-slate-500 uppercase tracking-wider">Rendus</span>
+          </div>
+          <span className="text-2xl font-bold text-slate-900">{assignments.filter(a => a.status === 'submitted').length}</span>
+        </div>
+      </div>
+
+      {/* Assignments list */}
       <div className="bg-white border border-slate-200 rounded-xl shadow-sm overflow-hidden">
         <div className="divide-y divide-slate-100">
           {assignments.map((assignment) => (
@@ -54,12 +73,12 @@ export default function StudentAssignments() {
                     <span>•</span>
                     <span className="flex items-center gap-1.5">
                       {getStatusIcon(assignment.status)}
-                      Echéance : {assignment.dueDate}
+                      Échéance : {assignment.dueDate}
                     </span>
                   </div>
                 </div>
               </div>
-              
+
               <div className="flex items-center justify-between sm:justify-end gap-6 sm:w-64 shrink-0 pl-16 sm:pl-0">
                 <div className="text-right">
                   {getStatusBadge(assignment.status)}
@@ -69,7 +88,7 @@ export default function StudentAssignments() {
                     </div>
                   )}
                 </div>
-                
+
                 {assignment.status !== 'submitted' ? (
                   <button className="bg-blue-900 hover:bg-blue-800 text-white px-4 py-2 rounded-lg text-sm font-medium transition-colors shadow-sm whitespace-nowrap">
                     Soumettre
