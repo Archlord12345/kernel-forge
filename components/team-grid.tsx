@@ -19,7 +19,7 @@ const PUBLIC_TEAM = [
 
 export function TeamGrid() {
   const [members, setMembers] = useState<any[]>(PUBLIC_TEAM)
-  const [loading, setLoading] = useState(isSupabaseConfigured)
+  const [loading, setLoading] = useState(false)
 
   useEffect(() => {
     if (!isSupabaseConfigured) return

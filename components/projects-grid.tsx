@@ -19,13 +19,12 @@ const FALLBACK_PROJECTS = [
 
 export function ProjectsGrid() {
   const [projects, setProjects] = useState<any[]>(FALLBACK_PROJECTS)
-  const [loading, setLoading] = useState(isSupabaseConfigured)
+  const [loading, setLoading] = useState(false)
   const [filter, setFilter] = useState('all')
 
   useEffect(() => {
     if (!isSupabaseConfigured) return
     async function fetchProjects() {
-      setLoading(true)
       try {
         let query = supabase.from('project_overrides').select('*')
         if (filter !== 'all') query = query.eq('category', filter)

@@ -7,18 +7,18 @@ import { CTASection } from '@/components/cta-section'
 import { Footer } from '@/components/footer'
 
 export const metadata: Metadata = {
-  title: 'Kernel Forge - Build Open Source Software Together',
-  description: 'Join Kernel Forge, a student software development collective at the University of Yaoundé I. Code, forge impact, and contribute to amazing open-source projects.',
-  keywords: ['open source', 'software development', 'student collective', 'programming', 'Yaoundé', 'UY1'],
+  title: 'Kernel Forge — Logiciel libre à l’Université de Yaoundé I',
+  description: 'Kernel Forge est le collectif open source de l’Université de Yaoundé I : nous construisons, apprenons, partageons et contribuons à des projets logiciels utiles.',
+  keywords: ['Kernel Forge', 'KERNEL FORGE', 'logiciel libre', 'open source Cameroun', 'Université de Yaoundé I', 'UniFlow', 'collectif développeurs Yaoundé'],
   openGraph: {
-    title: 'Kernel Forge - Open Source Software Collective',
-    description: 'A student software development collective dedicated to building, learning, and contributing to open-source software.',
+    title: 'Kernel Forge — Code. Forge. Impact.',
+    description: 'Le collectif étudiant de l’Université de Yaoundé I dédié au logiciel libre et aux projets open source.',
     images: [
       {
-        url: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202026-07-21%20at%2016.14.57-3sws87d7kKN9W5WMT4IcP74PjoJ2tp.jpeg',
-        width: 1200,
-        height: 1200,
-        alt: 'Kernel Forge Mascot',
+        url: '/kernel-forge-academy.png',
+        width: 2048,
+        height: 1152,
+        alt: 'Kernel Forge Academy — Build, Learn, Share, Contribute',
       },
     ],
   },
@@ -27,6 +27,18 @@ export const metadata: Metadata = {
 export default function Home() {
   return (
     <main className="min-h-screen bg-background text-foreground">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'Organization',
+        name: 'Kernel Forge',
+        alternateName: 'KERNEL FORGE',
+        url: 'https://kernelforge.codes',
+        logo: 'https://kernelforge.codes/kernel-forge-logo.png',
+        description: 'Collectif étudiant open source de l’Université de Yaoundé I.',
+        email: 'ravelnghomsi@kernelforge.codes',
+        sameAs: ['https://github.com/KERNEL-FORGE-G', 'https://uniflow.kernelforge.codes/'],
+        address: { '@type': 'PostalAddress', addressLocality: 'Yaoundé', addressCountry: 'CM' },
+      }) }} />
       <Header />
       <HeroSection />
       <Suspense fallback={<div className="h-96 bg-secondary animate-pulse" />}>
