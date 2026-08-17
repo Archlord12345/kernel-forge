@@ -5,6 +5,7 @@ import { HeroSection } from '@/components/hero-section'
 import { FeaturedProjects } from '@/components/featured-projects'
 import { CTASection } from '@/components/cta-section'
 import { Footer } from '@/components/footer'
+import { CommunityLinks } from '@/components/community-links'
 
 export const metadata: Metadata = {
   title: 'Kernel Forge — Logiciel libre à l’Université de Yaoundé I',
@@ -36,7 +37,7 @@ export default function Home() {
         logo: 'https://kernelforge.codes/kernel-forge-logo.png',
         description: 'Collectif étudiant open source de l’Université de Yaoundé I.',
         email: 'ravelnghomsi@kernelforge.codes',
-        sameAs: ['https://github.com/KERNEL-FORGE-G', 'https://uniflow.kernelforge.codes/', 'https://discord.gg/qqhVxZzQg', 'https://t.me/kernelforge', 'https://chat.whatsapp.com/IFkGMr4Ev2KCFAKw9EmEde'],
+        sameAs: ['https://github.com/KERNEL-FORGE-G', 'https://uniflow.kernelforge.codes/', 'https://discord.gg/qqhVxZzQg', 'https://t.me/kernelforge', 'https://chat.whatsapp.com/IFkGMr4Ev2KCFAKw9EmEde', 'https://www.linkedin.com/in/kernelforge'],
         address: { '@type': 'PostalAddress', addressLocality: 'Yaoundé', addressCountry: 'CM' },
       }) }} />
       <Header />
@@ -44,6 +45,7 @@ export default function Home() {
       <Suspense fallback={<div className="h-96 bg-secondary animate-pulse" />}>
         <FeaturedProjects />
       </Suspense>
+      <CommunityLinks />
       <CTASection />
       <Footer />
     </main>
