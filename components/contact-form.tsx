@@ -1,125 +1,42 @@
 'use client'
 
 import { useState } from 'react'
-import { supabase } from '@/lib/supabase'
 import { Loader, Check } from 'lucide-react'
 
 export function ContactForm() {
   const [loading, setLoading] = useState(false)
   const [submitted, setSubmitted] = useState(false)
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    subject: '',
-    message: '',
-  })
+  const [formData, setFormData] = useState({ name: '', email: '', subject: '', message: '' })
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault()
     setLoading(true)
-
     try {
-      const { error } = await supabase.from('contact_messages').insert([
-        {
-          name: formData.name,
-          email: formData.email,
-          subject: formData.subject,
-          message: formData.message,
-        },
-      ])
-
-      if (error) throw error
-
+      const response = await fetch('/api/contact', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(formData) })
+      const result = await response.json()
+      if (!response.ok) throw new Error(result.error || 'Erreur lors de l’envoi')
       setSubmitted(true)
       setFormData({ name: '', email: '', subject: '', message: '' })
-
-      // Reset success message after 5 seconds
       setTimeout(() => setSubmitted(false), 5000)
     } catch (error) {
-      console.error('Error submitting form:', error)
-      alert('Failed to send message. Please try again.')
+      console.error('Erreur d’envoi du formulaire :', error)
+      alert(error instanceof Error ? error.message : 'Impossible d’envoyer le message. Écrivez-nous directement à ravelnghomsi@kernelforge.codes.')
     } finally {
       setLoading(false)
     }
   }
 
+  const update = (key: keyof typeof formData, value: string) => setFormData((current) => ({ ...current, [key]: value }))
+
   return (
-    <form onSubmit={handleSubmit} className="p-8 rounded-xl bg-card border border-border">
-      {submitted && (
-        <div className="mb-6 p-4 rounded-lg bg-accent/20 border border-accent/40 flex items-center gap-3">
-          <Check className="w-5 h-5 text-accent" />
-          <p className="text-sm font-medium text-accent">Message sent successfully! We&apos;ll get back to you soon.</p>
-        </div>
-      )}
-
-      <div className="space-y-4">
-        {/* Name */}
-        <div>
-          <label className="block text-sm font-medium text-foreground mb-2">Name</label>
-          <input
-            type="text"
-            required
-            value={formData.name}
-            onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-            className="w-full px-4 py-2 rounded-lg border border-border bg-background text-foreground placeholder-muted-foreground focus:border-primary focus:outline-none transition-colors"
-            placeholder="Your name"
-          />
-        </div>
-
-        {/* Email */}
-        <div>
-          <label className="block text-sm font-medium text-foreground mb-2">Email</label>
-          <input
-            type="email"
-            required
-            value={formData.email}
-            onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-            className="w-full px-4 py-2 rounded-lg border border-border bg-background text-foreground placeholder-muted-foreground focus:border-primary focus:outline-none transition-colors"
-            placeholder="your@email.com"
-          />
-        </div>
-
-        {/* Subject */}
-        <div>
-          <label className="block text-sm font-medium text-foreground mb-2">Subject</label>
-          <input
-            type="text"
-            required
-            value={formData.subject}
-            onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
-            className="w-full px-4 py-2 rounded-lg border border-border bg-background text-foreground placeholder-muted-foreground focus:border-primary focus:outline-none transition-colors"
-            placeholder="What is this about?"
-          />
-        </div>
-
-        {/* Message */}
-        <div>
-          <label className="block text-sm font-medium text-foreground mb-2">Message</label>
-          <textarea
-            required
-            rows={6}
-            value={formData.message}
-            onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-            className="w-full px-4 py-2 rounded-lg border border-border bg-background text-foreground placeholder-muted-foreground focus:border-primary focus:outline-none transition-colors resize-none"
-            placeholder="Tell us more..."
-          />
-        </div>
-
-        {/* Submit Button */}
-        <button
-          type="submit"
-          disabled={loading}
-          className="w-full px-4 py-3 rounded-lg bg-primary text-primary-foreground font-semibold hover:shadow-lg transition-all disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
-        >
-          {loading ? (
-            <>
-              <Loader className="w-4 h-4 animate-spin" />
-              Sending...
-            </>
-          ) : (
-            'Send Message'
-          )}
-        </button>
+    <form onSubmit={handleSubmit} className="rounded-3xl border border-border bg-card p-6 shadow-sm sm:p-8">
+      {submitted && <div className="mb-6 flex items-center gap-3 rounded-2xl border border-accent/40 bg-accent/20 p-4"><Check className="h-5 w-5 text-accent" /><p className="text-sm font-semibold text-accent">Message envoyé avec succès. Nous reviendrons vers vous rapidement.</p></div>}
+      <div className="space-y-5">
+        <div><label htmlFor="contact-name" className="mb-2 block text-sm font-semibold text-foreground">Nom</label><input id="contact-name" type="text" required value={formData.name} onChange={(e) => update('name', e.target.value)} className="w-full rounded-xl border border-border bg-background px-4 py-3 text-foreground outline-none transition focus:border-primary focus:ring-2 focus:ring-primary/20" placeholder="Votre nom" /></div>
+        <div><label htmlFor="contact-email" className="mb-2 block text-sm font-semibold text-foreground">Adresse e-mail</label><input id="contact-email" type="email" required value={formData.email} onChange={(e) => update('email', e.target.value)} className="w-full rounded-xl border border-border bg-background px-4 py-3 text-foreground outline-none transition focus:border-primary focus:ring-2 focus:ring-primary/20" placeholder="vous@exemple.com" /></div>
+        <div><label htmlFor="contact-subject" className="mb-2 block text-sm font-semibold text-foreground">Sujet</label><input id="contact-subject" type="text" required value={formData.subject} onChange={(e) => update('subject', e.target.value)} className="w-full rounded-xl border border-border bg-background px-4 py-3 text-foreground outline-none transition focus:border-primary focus:ring-2 focus:ring-primary/20" placeholder="L’objet de votre message" /></div>
+        <div><label htmlFor="contact-message" className="mb-2 block text-sm font-semibold text-foreground">Votre message</label><textarea id="contact-message" required rows={6} value={formData.message} onChange={(e) => update('message', e.target.value)} className="w-full resize-none rounded-xl border border-border bg-background px-4 py-3 text-foreground outline-none transition focus:border-primary focus:ring-2 focus:ring-primary/20" placeholder="Décrivez votre idée, votre projet ou votre demande…" /></div>
+        <button type="submit" disabled={loading} className="flex w-full items-center justify-center gap-2 rounded-xl bg-primary px-4 py-3.5 font-black text-primary-foreground shadow-[0_3px_0_#b83c0d] transition hover:-translate-y-0.5 disabled:cursor-not-allowed disabled:opacity-50">{loading ? <><Loader className="h-4 w-4 animate-spin" />Envoi en cours…</> : 'Envoyer le message'}</button>
       </div>
     </form>
   )

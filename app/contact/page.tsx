@@ -5,12 +5,12 @@ import { Metadata } from 'next'
 import { Mail, MapPin, MessageSquare } from 'lucide-react'
 
 export const metadata: Metadata = {
-  title: 'Contact Kernel Forge - Get In Touch',
-  description: 'Reach out to Kernel Forge. We&apos;d love to hear from you about collaboration, partnerships, or joining our community of open-source developers.',
+  title: 'Contacter Kernel Forge - Rejoindre la forge',
+  description: 'Contactez Kernel Forge pour parler collaboration, partenariat, logiciel libre ou rejoindre notre communauté de développeurs.',
   keywords: ['contact', 'get in touch', 'collaboration', 'partnership', 'email'],
   openGraph: {
-    title: 'Contact Kernel Forge - Get In Touch',
-    description: 'Get in touch with Kernel Forge. We&apos;d love to hear from you!',
+    title: 'Contacter Kernel Forge - Rejoindre la forge',
+    description: 'Échangez avec Kernel Forge autour de vos idées, projets et contributions open source.',
     images: [
       {
         url: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202026-07-21%20at%2016.14.57-3sws87d7kKN9W5WMT4IcP74PjoJ2tp.jpeg',
@@ -26,24 +26,24 @@ export default function ContactPage() {
   const contactMethods = [
     {
       icon: Mail,
-      title: 'Email',
-      description: 'Send us an email and we&apos;ll get back to you as soon as possible',
-      value: 'hello@kernelforge.dev',
-      href: 'mailto:hello@kernelforge.dev',
+      title: 'E-mail',
+      description: 'Écrivez-nous et nous vous répondrons dès que possible.',
+      value: 'ravelnghomsi@kernelforge.codes',
+      href: 'mailto:ravelnghomsi@kernelforge.codes',
     },
     {
       icon: MapPin,
-      title: 'Location',
-      description: 'We&apos;re based at the University of Yaoundé I',
+      title: 'Localisation',
+      description: 'Le collectif est basé à l’Université de Yaoundé I.',
       value: 'Yaoundé, Cameroon',
       href: '#',
     },
     {
       icon: MessageSquare,
-      title: 'Social',
-      description: 'Follow us on social media for updates',
-      value: '@kernel_forge',
-      href: 'https://twitter.com/kernel_forge',
+      title: 'Organisation GitHub',
+      description: 'Suivez nos projets et nos contributions open source.',
+      value: 'KERNEL-FORGE-G',
+      href: 'https://github.com/KERNEL-FORGE-G',
     },
   ]
 
@@ -56,10 +56,10 @@ export default function ContactPage() {
             {/* Page Header */}
             <div className="text-center mb-16">
               <h1 className="text-4xl md:text-5xl font-bold mb-4 text-foreground">
-                Get in Touch
+                Contactez Kernel Forge
               </h1>
               <p className="text-lg text-muted-foreground">
-                We&apos;d love to hear from you. Send us a message and we&apos;ll respond as soon as possible.
+                Une idée, un projet ou une envie de contribuer ? Écrivez-nous, nous vous répondrons dès que possible.
               </p>
             </div>
 

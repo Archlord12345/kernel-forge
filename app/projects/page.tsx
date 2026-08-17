@@ -5,12 +5,12 @@ import { ProjectsGrid } from '@/components/projects-grid'
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Open Source Projects - Kernel Forge',
-  description: 'Discover innovative open-source software projects built by our community. Explore web apps, CLI tools, libraries, and more from Kernel Forge.',
+  title: 'Projets open source - Kernel Forge',
+  description: 'Découvrez les logiciels libres construits par la communauté Kernel Forge : applications web, outils, bibliothèques et projets universitaires.',
   keywords: ['open source projects', 'software', 'GitHub', 'web applications', 'development tools'],
   openGraph: {
-    title: 'Open Source Projects - Kernel Forge',
-    description: 'Discover the innovative open-source software built by our community',
+    title: 'Projets open source - Kernel Forge',
+    description: 'Découvrez les logiciels libres construits par la communauté Kernel Forge.',
     images: [
       {
         url: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Affiche%20Kernel%20Forge%20Academy.png-km9Xou1MF4bDNLZ4sqkXNoMiDQLHmF.jpeg',
@@ -31,10 +31,10 @@ export default function ProjectsPage() {
           {/* Page Header */}
           <div className="max-w-3xl mx-auto text-center mb-16">
             <h1 className="text-4xl md:text-5xl font-bold mb-4 text-foreground">
-              Our Projects
+              Nos projets
             </h1>
             <p className="text-lg text-muted-foreground">
-              Discover the innovative open-source software built by our community
+              Explorez les logiciels, outils et expériences que nous construisons et partageons avec la communauté.
             </p>
           </div>
 

@@ -4,12 +4,12 @@ import { Users, BookOpen, Code2, Lightbulb } from 'lucide-react'
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Community - Kernel Forge Academy | Open Source Software Collective',
-  description: 'Join our vibrant community of developers, designers, and creators. Build, learn, share, contribute, and innovate with Kernel Forge Academy.',
+  title: 'Communauté Kernel Forge - Construire ensemble',
+  description: 'Rejoignez la communauté Kernel Forge : construisez, apprenez, partagez et contribuez au logiciel libre depuis Yaoundé.',
   keywords: ['community', 'developers', 'open source', 'collaboration', 'learning'],
   openGraph: {
-    title: 'Community - Kernel Forge Academy',
-    description: 'Join our vibrant community of developers and creators dedicated to open-source innovation.',
+    title: 'Communauté Kernel Forge',
+    description: 'Une communauté de développeurs et créateurs dédiée à l’innovation open source.',
     images: [
       {
         url: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Affiche%20Kernel%20Forge%20Academy.png-km9Xou1MF4bDNLZ4sqkXNoMiDQLHmF.jpeg',
@@ -26,22 +26,22 @@ export default function CommunityPage() {
     {
       icon: Users,
       title: 'Collaborative',
-      description: 'We believe in the power of collaboration and teamwork to achieve great things.',
+      description: 'Nous croyons à la force du travail collectif pour transformer de bonnes idées en projets concrets.',
     },
     {
       icon: Code2,
       title: 'Open Source',
-      description: 'All our projects are open source, transparent, and accessible to everyone.',
+      description: 'Nos projets sont conçus pour être partagés, documentés et accessibles à la communauté.',
     },
     {
       icon: BookOpen,
-      title: 'Learning-Focused',
-      description: 'We prioritize continuous learning and knowledge sharing within our community.',
+      title: 'Apprentissage',
+      description: 'Nous progressons ensemble grâce à la pratique, à la documentation et au partage des connaissances.',
     },
     {
       icon: Lightbulb,
-      title: 'Innovative',
-      description: 'We embrace creativity and encourage innovative solutions to real-world problems.',
+      title: 'Innovante',
+      description: 'Nous cherchons des solutions créatives à des problèmes réels, en particulier dans notre contexte local.',
     },
   ]
 
@@ -52,7 +52,7 @@ export default function CommunityPage() {
       {/* Hero Section with Academy Poster */}
       <section className="community-banner">
         <img
-          src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Affiche%20Kernel%20Forge%20Academy.png-km9Xou1MF4bDNLZ4sqkXNoMiDQLHmF.jpeg"
+          src="/kernel-forge-academy.png"
           alt="Kernel Forge Academy - Build Learn Share Contribute Innovate Repeat"
         />
       </section>
@@ -62,10 +62,10 @@ export default function CommunityPage() {
           {/* Page Header */}
           <div className="max-w-3xl mx-auto text-center mb-16">
             <h1 className="font-feather text-4xl md:text-6xl font-black mb-4 text-primary">
-              Our Community
+              Notre communauté
             </h1>
             <p className="text-lg text-muted-foreground">
-              Join a vibrant community of passionate developers, designers, and creators dedicated to building amazing open-source software.
+              Rejoignez des développeurs, designers et créateurs passionnés qui construisent et partagent des logiciels libres utiles.
             </p>
           </div>
 
@@ -86,16 +86,16 @@ export default function CommunityPage() {
           {/* Call to Action */}
           <div className="bg-primary rounded-xl border-b-[3px] border-[#46a302] p-8 md:p-12 text-center max-w-2xl mx-auto">
             <h2 className="text-2xl md:text-3xl font-bold text-primary-foreground mb-4">
-              Ready to Join?
+              Prêt à nous rejoindre ?
             </h2>
             <p className="text-primary-foreground/90 mb-8">
-              Whether you&apos;re a beginner or an expert, there&apos;s a place for you in Kernel Forge. Get in touch with us to learn more about joining our community.
+              Débutant ou expert, vous avez votre place chez Kernel Forge. Écrivez-nous pour découvrir comment contribuer à la communauté.
             </p>
             <a
               href="/contact"
               className="duo-outline inline-flex px-8 py-3 transition-all"
             >
-              Get in Touch
+              Nous contacter
             </a>
           </div>
         </div>

@@ -5,12 +5,12 @@ import { TeamGrid } from '@/components/team-grid'
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Our Team - Kernel Forge Contributors',
-  description: 'Meet the talented developers, designers, and creators behind Kernel Forge. Connect with our passionate team members working on open-source innovation.',
+  title: 'Notre équipe - Contributeurs Kernel Forge',
+  description: 'Découvrez les développeurs, designers et créateurs qui construisent Kernel Forge et contribuent au logiciel libre.',
   keywords: ['team', 'developers', 'contributors', 'software engineers', 'creators'],
   openGraph: {
-    title: 'Our Team - Kernel Forge',
-    description: 'Meet the talented people behind Kernel Forge',
+    title: 'Notre équipe - Kernel Forge',
+    description: 'Rencontrez les personnes qui font vivre Kernel Forge.',
     images: [
       {
         url: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202026-07-21%20at%2016.14.57-3sws87d7kKN9W5WMT4IcP74PjoJ2tp.jpeg',
@@ -31,10 +31,10 @@ export default function TeamPage() {
           {/* Page Header */}
           <div className="max-w-3xl mx-auto text-center mb-16">
             <h1 className="text-4xl md:text-5xl font-bold mb-4 text-foreground">
-              Meet the Team
+              Rencontrer l’équipe
             </h1>
             <p className="text-lg text-muted-foreground">
-              Talented developers, designers, and creators working together to build amazing things
+              Des développeurs, designers et créateurs qui apprennent et construisent ensemble.
             </p>
           </div>
 

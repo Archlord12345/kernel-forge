@@ -1,5 +1,5 @@
-import { supabase } from '@/lib/supabase'
 import { NextRequest, NextResponse } from 'next/server'
+import { supabase, isSupabaseConfigured } from '@/lib/supabase'
 
 export async function POST(request: NextRequest) {
   try {
@@ -9,8 +9,15 @@ export async function POST(request: NextRequest) {
     // Validation
     if (!name || !email || !subject || !message) {
       return NextResponse.json(
-        { error: 'Missing required fields' },
+        { error: 'Tous les champs sont obligatoires.' },
         { status: 400 }
+      )
+    }
+
+    if (!isSupabaseConfigured) {
+      return NextResponse.json(
+        { error: 'Le service de contact n’est pas encore configuré. Écrivez-nous directement à ravelnghomsi@kernelforge.codes.' },
+        { status: 503 },
       )
     }
 
@@ -30,13 +37,13 @@ export async function POST(request: NextRequest) {
     if (error) throw error
 
     return NextResponse.json(
-      { message: 'Message sent successfully', data },
+      { message: 'Message envoyé avec succès.', data },
       { status: 201 }
     )
   } catch (error) {
     console.error('Contact API error:', error)
     return NextResponse.json(
-      { error: 'Failed to send message' },
+      { error: 'Impossible d’envoyer le message pour le moment.' },
       { status: 500 }
     )
   }

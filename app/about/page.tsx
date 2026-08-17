@@ -3,12 +3,12 @@ import { Footer } from '@/components/footer'
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'About Kernel Forge - Our Mission & Vision',
-  description: 'Learn about Kernel Forge Academy, a student software development collective at the University of Yaoundé I dedicated to open-source innovation and community building.',
+  title: 'À propos de Kernel Forge - Mission et vision',
+  description: 'Découvrez Kernel Forge, collectif étudiant de l’Université de Yaoundé I dédié au logiciel libre, à l’apprentissage et à l’innovation.',
   keywords: ['about', 'mission', 'vision', 'open source collective', 'student developers', 'UY1'],
   openGraph: {
-    title: 'About Kernel Forge - Our Mission & Vision',
-    description: 'Discover the story and mission behind Kernel Forge, a student software development collective.',
+    title: 'À propos de Kernel Forge - Mission et vision',
+    description: 'Découvrez l’histoire, la mission et les valeurs du collectif Kernel Forge.',
     images: [
       {
         url: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Affiche%20Kernel%20Forge%20Academy.png-km9Xou1MF4bDNLZ4sqkXNoMiDQLHmF.jpeg',
@@ -30,10 +30,10 @@ export default function AboutPage() {
             {/* Page Header */}
             <div className="mb-16">
               <h1 className="text-4xl md:text-5xl font-bold mb-6 text-foreground">
-                About Kernel Forge
+                À propos de Kernel Forge
               </h1>
               <p className="text-lg text-muted-foreground">
-                Kernel Forge is a student software development collective at the University of Yaoundé I dedicated to creating exceptional open-source software and fostering a community of innovation.
+                Kernel Forge est un collectif étudiant de l’Université de Yaoundé I qui apprend, construit et partage des logiciels libres utiles, accessibles et durables.
               </p>
             </div>
 
@@ -41,30 +41,30 @@ export default function AboutPage() {
             <div className="space-y-12">
               {/* Mission */}
               <div>
-                <h2 className="text-3xl font-bold text-foreground mb-4">Our Mission</h2>
+                <h2 className="text-3xl font-bold text-foreground mb-4">Notre mission</h2>
                 <p className="text-muted-foreground leading-relaxed mb-4">
-                  Our mission is to empower students to build amazing software, contribute to the open-source community, and make a positive impact on the world. We believe that everyone has the potential to create great things, regardless of their background or experience level.
+                  Notre mission est de donner aux étudiants les moyens de construire de vrais logiciels, de contribuer au monde open source et de créer un impact positif. Nous croyons que chacun peut apprendre en construisant, quel que soit son niveau de départ.
                 </p>
               </div>
 
               {/* Vision */}
               <div>
-                <h2 className="text-3xl font-bold text-foreground mb-4">Our Vision</h2>
+                <h2 className="text-3xl font-bold text-foreground mb-4">Notre vision</h2>
                 <p className="text-muted-foreground leading-relaxed mb-4">
-                  We envision a world where open-source software is created collaboratively by passionate individuals from diverse backgrounds. Our vision is to build a thriving community where innovation and creativity flourish, and where everyone has the opportunity to learn, grow, and make a difference.
+                  Nous voulons faire émerger une communauté où le logiciel libre se construit de manière collaborative, avec des profils variés, des idées concrètes et une culture de transmission.
                 </p>
               </div>
 
               {/* Values */}
               <div>
-                <h2 className="text-3xl font-bold text-foreground mb-4">Our Values</h2>
+                <h2 className="text-3xl font-bold text-foreground mb-4">Nos valeurs</h2>
                 <ul className="space-y-3">
                   {[
-                    'Collaboration: We believe in the power of working together',
-                    'Innovation: We embrace new ideas and creative solutions',
-                    'Transparency: We operate with honesty and openness',
-                    'Learning: We prioritize continuous growth and development',
-                    'Community: We foster a supportive and inclusive environment',
+                    'Collaboration : nous croyons à la force du travail collectif',
+                    'Innovation : nous accueillons les idées nouvelles et les solutions créatives',
+                    'Transparence : nous partageons nos décisions et nos apprentissages',
+                    'Apprentissage : nous progressons en construisant et en transmettant',
+                    'Communauté : nous cultivons un environnement accueillant et solidaire',
                   ].map((value) => (
                     <li key={value} className="flex gap-3">
                       <span className="text-primary font-bold">•</span>
@@ -76,12 +76,12 @@ export default function AboutPage() {
 
               {/* History */}
               <div>
-                <h2 className="text-3xl font-bold text-foreground mb-4">Our Story</h2>
+                <h2 className="text-3xl font-bold text-foreground mb-4">Notre histoire</h2>
                 <p className="text-muted-foreground leading-relaxed mb-4">
-                  Kernel Forge was founded by a group of passionate students at the University of Yaoundé I who shared a vision of building great software and contributing to the open-source community. What started as a small group of friends has grown into a vibrant collective of developers, designers, and creators.
+                  Kernel Forge est né de la rencontre d’étudiants passionnés de l’Université de Yaoundé I qui partageaient une même envie : apprendre ensemble, créer des logiciels utiles et contribuer à l’open source. Le collectif réunit développeurs, designers et créateurs autour de projets concrets.
                 </p>
                 <p className="text-muted-foreground leading-relaxed">
-                  Today, we continue to pursue our mission of empowering students and creating exceptional open-source software that makes a positive impact.
+                  Nous poursuivons cette mission avec une conviction simple : le meilleur moyen d’apprendre est de bâtir, documenter, partager et recommencer.
                 </p>
               </div>
             </div>
