@@ -2,10 +2,12 @@ import { ProjectOverride } from '@/lib/supabase'
 import { Star, Code, ExternalLink } from 'lucide-react'
 
 export function ProjectCard({ project }: { project: ProjectOverride }) {
-  const repoName = new URL(project.github_repo_url).pathname.split('/')[2]
+  const repoName = new URL(project.github_repo_url).pathname.split('/').filter(Boolean).pop() || project.display_name || 'Projet Kernel Forge'
 
   return (
-    <div className="group p-6 rounded-xl bg-card border border-border hover:border-primary transition-all hover:shadow-lg hover:-translate-y-1 duration-300">
+    <div className="group overflow-hidden rounded-xl border border-border bg-card transition-all duration-300 hover:-translate-y-1 hover:border-primary hover:shadow-lg">
+      {project.image_url && <img src={project.image_url} alt={`Aperçu de ${project.display_name || repoName}`} className="h-44 w-full object-cover" />}
+      <div className="p-6">
       {/* Header */}
       <div className="flex items-start justify-between mb-4">
         <div className="flex-1">
@@ -54,6 +56,7 @@ export function ProjectCard({ project }: { project: ProjectOverride }) {
         Voir le dépôt
         <ExternalLink className="w-4 h-4" />
       </a>
+      </div>
     </div>
   )
 }

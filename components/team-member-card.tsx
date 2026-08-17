@@ -11,6 +11,7 @@ interface TeamMemberCardProps {
       bio: string | null
       github_username: string | null
       twitter_handle: string | null
+      email?: string | null
     }
   }
 }
@@ -78,9 +79,9 @@ export function TeamMemberCard({ member }: TeamMemberCardProps) {
             </svg>
           </a>
         )}
-        {profile?.username && (
+        {profile?.email && (
           <a
-            href={`mailto:${profile.username}@kernelforge.dev`}
+            href={`mailto:${profile.email}`}
             className="p-2 rounded-lg hover:bg-secondary transition-colors text-muted-foreground hover:text-primary"
             aria-label="Email"
           >

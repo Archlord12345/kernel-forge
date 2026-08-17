@@ -3,46 +3,45 @@ import type { Metadata, Viewport } from 'next'
 import './globals.css'
 
 export const metadata: Metadata = {
-  title: 'Kernel Forge - Open Source Software Collective at UY1',
-  description: 'Join Kernel Forge, a student software development collective at the University of Yaoundé I. Build, learn, share, and contribute to amazing open-source projects.',
-  keywords: ['open source', 'software development', 'student collective', 'Yaoundé', 'coding', 'programming'],
-  generator: 'v0.app',
+  title: { default: 'Kernel Forge — Code. Forge. Impact.', template: '%s | Kernel Forge' },
+  description: 'Kernel Forge est un collectif étudiant de l’Université de Yaoundé I. Nous construisons, apprenons et partageons des logiciels libres utiles, accessibles et durables.',
+  keywords: ['Kernel Forge', 'logiciel libre Cameroun', 'open source Yaoundé', 'Université de Yaoundé I', 'UniFlow', 'développement logiciel', 'collectif étudiant'],
   applicationName: 'Kernel Forge',
   authors: [{ name: 'Kernel Forge Team' }],
   creator: 'Kernel Forge',
   publisher: 'Kernel Forge',
-  metadataBase: new URL('https://kernel-forge.dev'),
+  metadataBase: new URL('https://kernelforge.codes'),
   openGraph: {
     type: 'website',
-    locale: 'en_US',
-    url: 'https://kernel-forge.dev',
+    locale: 'fr_FR',
+    url: 'https://kernelforge.codes',
     siteName: 'Kernel Forge',
-    title: 'Kernel Forge - Open Source Software Collective',
-    description: 'A student software development collective dedicated to building, learning, and contributing to open-source software at the University of Yaoundé I.',
+    title: 'Kernel Forge — Code. Forge. Impact.',
+    description: 'Le collectif open source de l’Université de Yaoundé I : bâtir, apprendre, partager et contribuer.',
     images: [
       {
-        url: '/kernel-forge-logo.png',
-        width: 400,
-        height: 400,
-        alt: 'Kernel Forge Logo',
+        url: '/kernel-forge-academy.png',
+        width: 2048,
+        height: 1152,
+        alt: 'Kernel Forge Academy — Build, Learn, Share, Contribute',
         type: 'image/png',
       },
       {
-        url: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Affiche%20Kernel%20Forge%20Academy.png-km9Xou1MF4bDNLZ4sqkXNoMiDQLHmF.jpeg',
-        width: 1200,
-        height: 675,
-        alt: 'Kernel Forge Academy Poster',
+        url: '/kernel-forge-mascot.jpeg',
+        width: 1024,
+        height: 1024,
+        alt: 'Mascotte Kernel Forge',
         type: 'image/jpeg',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    site: '@kernel_forge',
-    creator: '@kernel_forge',
-    title: 'Kernel Forge - Open Source Software Collective',
-    description: 'Join our student software development collective at UY1.',
-    images: ['https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202026-07-21%20at%2016.14.57-3sws87d7kKN9W5WMT4IcP74PjoJ2tp.jpeg'],
+    site: '@KERNEL_FORGE_G',
+    creator: '@KERNEL_FORGE_G',
+    title: 'Kernel Forge — Code. Forge. Impact.',
+    description: 'Construire, apprendre, partager et contribuer au logiciel libre à l’Université de Yaoundé I.',
+    images: ['/kernel-forge-academy.png'],
   },
   icons: {
     icon: '/kernel-forge-logo.png',
@@ -56,7 +55,7 @@ export const metadata: Metadata = {
 
 export const viewport: Viewport = {
   colorScheme: 'light',
-  themeColor: '#58cc02',
+  themeColor: '#f97316',
 }
 
 export default function RootLayout({
