@@ -24,7 +24,7 @@ export function ProjectCard({ project }: { project: ProjectOverride }) {
 
       {/* Description */}
       <p className="text-muted-foreground mb-4 line-clamp-3 text-sm">
-        {project.description || 'No description available'}
+        {project.description || 'Description bientôt disponible.'}
       </p>
 
       {/* Category and Tags */}
@@ -51,7 +51,7 @@ export function ProjectCard({ project }: { project: ProjectOverride }) {
         rel="noopener noreferrer"
         className="inline-flex items-center gap-2 text-sm font-semibold text-primary group-hover:gap-3 transition-all hover:underline"
       >
-        View Repository
+        Voir le dépôt
         <ExternalLink className="w-4 h-4" />
       </a>
     </div>
