@@ -11,6 +11,7 @@ export const metadata: Metadata = {
   creator: 'Kernel Forge',
   publisher: 'Kernel Forge',
   metadataBase: new URL('https://kernelforge.codes'),
+  verification: { google: 'googlef0892b997568f046' },
   openGraph: {
     type: 'website',
     locale: 'fr_FR',
