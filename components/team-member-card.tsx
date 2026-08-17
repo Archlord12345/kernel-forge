@@ -43,7 +43,7 @@ export function TeamMemberCard({ member }: TeamMemberCardProps) {
         <div className="flex items-center gap-2">
           {profile?.github_username && <a href={`https://github.com/${profile.github_username}`} target="_blank" rel="noopener noreferrer" className="inline-flex h-9 w-9 items-center justify-center rounded-xl border border-[#eadfd4] text-[#65584f] transition hover:border-[#17120f] hover:bg-[#17120f] hover:text-white" aria-label={`GitHub de ${name}`}><GitBranch className="h-4 w-4" /></a>}
           {profile?.email && <a href={`mailto:${profile.email}`} className="inline-flex h-9 w-9 items-center justify-center rounded-xl border border-[#eadfd4] text-[#65584f] transition hover:border-[#ff7626] hover:bg-[#ff7626] hover:text-[#17120f]" aria-label={`Envoyer un e-mail à ${name}`}><Mail className="h-4 w-4" /></a>}
-          {profile?.github_username && <a href={`https://github.com/${profile.github_username}`} target="_blank" rel="noopener noreferrer" className="hidden items-center gap-1 text-xs font-black text-[#e95716] sm:inline-flex">Profil <ArrowUpRight className="h-3.5 w-3.5" /></a>}
+          {profile?.github_username && <a href={`/team/${member.id}`} className="inline-flex items-center gap-1 text-xs font-black text-[#e95716] sm:inline-flex">CV <ArrowUpRight className="h-3.5 w-3.5" /></a>}
         </div>
       </div>
     </article>
