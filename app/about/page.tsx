@@ -1,93 +1,36 @@
+import { Metadata } from 'next'
+import { ArrowUpRight, BookOpen, Code2, GitBranch, Target, Users } from 'lucide-react'
 import { Header } from '@/components/header'
 import { Footer } from '@/components/footer'
-import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'À propos de Kernel Forge - Mission et vision',
-  description: 'Découvrez Kernel Forge, collectif étudiant de l’Université de Yaoundé I dédié au logiciel libre, à l’apprentissage et à l’innovation.',
-  keywords: ['about', 'mission', 'vision', 'open source collective', 'student developers', 'UY1'],
-  openGraph: {
-    title: 'À propos de Kernel Forge - Mission et vision',
-    description: 'Découvrez l’histoire, la mission et les valeurs du collectif Kernel Forge.',
-    images: [
-      {
-        url: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Affiche%20Kernel%20Forge%20Academy.png-km9Xou1MF4bDNLZ4sqkXNoMiDQLHmF.jpeg',
-        width: 1600,
-        height: 900,
-        alt: 'Kernel Forge Academy Building',
-      },
-    ],
-  },
+  title: 'À propos — Mission, vision et valeurs | Kernel Forge',
+  description: 'Découvrez Kernel Forge, collectif étudiant de l’Université de Yaoundé I : une forge ouverte pour apprendre, construire et partager des logiciels libres utiles.',
+  keywords: ['Kernel Forge à propos', 'mission logiciel libre Cameroun', 'collectif open source Yaoundé', 'Université de Yaoundé I', 'équipe développeurs Cameroun'],
+  alternates: { canonical: 'https://kernelforge.codes/about' },
+  openGraph: { title: 'À propos de Kernel Forge', description: 'Apprendre en construisant et faire grandir le logiciel libre depuis Yaoundé.', url: 'https://kernelforge.codes/about', images: [{ url: '/kernel-forge-academy.png', width: 2048, height: 1152, alt: 'Kernel Forge Academy' }] },
 }
+
+const values = [
+  { icon: Users, title: 'Construire ensemble', text: 'Nous réunissons des développeurs, designers et créateurs autour de problèmes réels et de livrables concrets.' },
+  { icon: BookOpen, title: 'Apprendre en public', text: 'La documentation, les retours et la transmission font partie du produit, pas une étape ajoutée à la fin.' },
+  { icon: Target, title: 'Viser l’impact', text: 'Nous cherchons des solutions utiles, accessibles et durables pour notre communauté et notre contexte local.' },
+  { icon: Code2, title: 'Partager le code', text: 'Nos projets grandissent grâce à l’open source, aux contributions et à une culture de transparence.' },
+]
 
 export default function AboutPage() {
   return (
     <main className="min-h-screen bg-background text-foreground">
       <Header />
-      <section className="py-20 md:py-32">
-        <div className="container mx-auto px-4">
-          <div className="max-w-3xl mx-auto">
-            {/* Page Header */}
-            <div className="mb-16">
-              <h1 className="text-4xl md:text-5xl font-bold mb-6 text-foreground">
-                À propos de Kernel Forge
-              </h1>
-              <p className="text-lg text-muted-foreground">
-                Kernel Forge est un collectif étudiant de l’Université de Yaoundé I qui apprend, construit et partage des logiciels libres utiles, accessibles et durables.
-              </p>
-            </div>
+      <section className="relative overflow-hidden bg-[#17120f] px-4 py-24 text-white md:py-32"><div className="absolute inset-0 opacity-25" style={{ backgroundImage: 'linear-gradient(rgba(255,118,38,.18) 1px, transparent 1px), linear-gradient(90deg, rgba(255,118,38,.18) 1px, transparent 1px)', backgroundSize: '42px 42px' }} /><div className="container relative mx-auto grid max-w-6xl items-end gap-10 lg:grid-cols-[1.15fr_.85fr]"><div><p className="text-xs font-black uppercase tracking-[0.2em] text-[#ff9a5a]">À propos de la forge</p><h1 className="mt-5 max-w-4xl text-4xl font-black leading-tight md:text-7xl">Nous apprenons en construisant ce qui compte.</h1><p className="mt-7 max-w-2xl text-lg leading-8 text-white/70">Kernel Forge est un collectif étudiant de l’Université de Yaoundé I qui transforme la curiosité technique en logiciels libres utiles, accessibles et durables.</p><div className="mt-8 flex flex-wrap gap-3"><a href="/projects" className="inline-flex items-center gap-2 rounded-xl bg-[#ff7626] px-5 py-3 text-sm font-black text-[#17120f] shadow-[0_4px_0_#b83c0d]">Voir nos projets <ArrowUpRight className="h-4 w-4" /></a><a href="/team" className="inline-flex items-center gap-2 rounded-xl border border-white/20 px-5 py-3 text-sm font-black text-white hover:border-[#ff9a5a] hover:text-[#ff9a5a]">Rencontrer l’équipe <ArrowUpRight className="h-4 w-4" /></a></div></div><div className="rounded-[1.5rem] border border-white/15 bg-white/5 p-3"><img src="/kernel-forge-academy.png" alt="Kernel Forge Academy" className="aspect-[16/10] w-full rounded-[1.1rem] object-cover" /><p className="px-2 pb-2 pt-4 text-xs font-black uppercase tracking-[0.18em] text-white/60">Build · Learn · Share · Contribute</p></div></div></section>
 
-            {/* Content Sections */}
-            <div className="space-y-12">
-              {/* Mission */}
-              <div>
-                <h2 className="text-3xl font-bold text-foreground mb-4">Notre mission</h2>
-                <p className="text-muted-foreground leading-relaxed mb-4">
-                  Notre mission est de donner aux étudiants les moyens de construire de vrais logiciels, de contribuer au monde open source et de créer un impact positif. Nous croyons que chacun peut apprendre en construisant, quel que soit son niveau de départ.
-                </p>
-              </div>
+      <section className="px-4 py-20 md:py-28"><div className="container mx-auto max-w-6xl"><div className="grid gap-5 md:grid-cols-3"><div className="rounded-[1.35rem] bg-[#17120f] p-7 text-white"><p className="text-4xl font-black text-[#ff7626]">01</p><h2 className="mt-8 text-xl font-black">Une forge étudiante</h2><p className="mt-3 text-sm leading-6 text-white/65">Un espace où l’on passe de l’idée au dépôt, du dépôt à l’apprentissage, puis de l’apprentissage à l’impact.</p></div><div className="rounded-[1.35rem] border border-[#eadfd4] bg-[#fffaf0] p-7"><p className="text-4xl font-black text-[#e95716]">02</p><h2 className="mt-8 text-xl font-black text-[#17120f]">Des projets réels</h2><p className="mt-3 text-sm leading-6 text-[#65584f]">UniFlow, ses applications et nos projets étudiants sont des terrains d’expérimentation concrets.</p></div><div className="rounded-[1.35rem] border border-[#eadfd4] bg-[#fffaf0] p-7"><p className="text-4xl font-black text-[#237453]">03</p><h2 className="mt-8 text-xl font-black text-[#17120f]">Une communauté ouverte</h2><p className="mt-3 text-sm leading-6 text-[#65584f]">Les débutants comme les profils expérimentés peuvent contribuer, apprendre et transmettre.</p></div></div></div></section>
 
-              {/* Vision */}
-              <div>
-                <h2 className="text-3xl font-bold text-foreground mb-4">Notre vision</h2>
-                <p className="text-muted-foreground leading-relaxed mb-4">
-                  Nous voulons faire émerger une communauté où le logiciel libre se construit de manière collaborative, avec des profils variés, des idées concrètes et une culture de transmission.
-                </p>
-              </div>
+      <section className="bg-[#f3eadf] px-4 py-20 md:py-28"><div className="container mx-auto max-w-6xl"><div className="mx-auto mb-12 max-w-2xl text-center"><p className="text-xs font-black uppercase tracking-[0.2em] text-[#e95716]">Ce qui nous guide</p><h2 className="mt-3 text-3xl font-black md:text-5xl">Une culture qui se pratique.</h2></div><div className="grid gap-5 md:grid-cols-2">{values.map(({ icon: Icon, title, text }) => <article key={title} className="rounded-[1.35rem] border border-[#eadfd4] bg-[#fffaf0] p-7 transition hover:-translate-y-1 hover:border-[#ff7626]"><span className="inline-flex h-11 w-11 items-center justify-center rounded-2xl bg-[#17120f] text-[#ff9a5a]"><Icon className="h-5 w-5" /></span><h3 className="mt-6 text-xl font-black text-[#17120f]">{title}</h3><p className="mt-3 leading-7 text-[#65584f]">{text}</p></article>)}</div></div></section>
 
-              {/* Values */}
-              <div>
-                <h2 className="text-3xl font-bold text-foreground mb-4">Nos valeurs</h2>
-                <ul className="space-y-3">
-                  {[
-                    'Collaboration : nous croyons à la force du travail collectif',
-                    'Innovation : nous accueillons les idées nouvelles et les solutions créatives',
-                    'Transparence : nous partageons nos décisions et nos apprentissages',
-                    'Apprentissage : nous progressons en construisant et en transmettant',
-                    'Communauté : nous cultivons un environnement accueillant et solidaire',
-                  ].map((value) => (
-                    <li key={value} className="flex gap-3">
-                      <span className="text-primary font-bold">•</span>
-                      <span className="text-muted-foreground">{value}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
+      <section className="px-4 py-20 md:py-28"><div className="container mx-auto max-w-4xl"><div className="border-l-4 border-[#ff7626] pl-6 md:pl-10"><p className="text-xs font-black uppercase tracking-[0.2em] text-[#e95716]">Notre histoire</p><h2 className="mt-3 text-3xl font-black md:text-5xl">Bâtir, documenter, partager, recommencer.</h2><p className="mt-6 text-lg leading-8 text-[#65584f]">Kernel Forge est né de la rencontre d’étudiants passionnés de l’Université de Yaoundé I. Nous voulions apprendre autrement : en créant des outils qui répondent à des besoins réels, en ouvrant notre travail et en donnant à chacun une place pour progresser.</p><p className="mt-5 text-lg leading-8 text-[#65584f]">Aujourd’hui, le collectif rassemble des profils frontend, mobile, backend, design et infrastructure autour d’une même conviction : la meilleure façon d’apprendre est de bâtir avec les autres.</p></div></div></section>
 
-              {/* History */}
-              <div>
-                <h2 className="text-3xl font-bold text-foreground mb-4">Notre histoire</h2>
-                <p className="text-muted-foreground leading-relaxed mb-4">
-                  Kernel Forge est né de la rencontre d’étudiants passionnés de l’Université de Yaoundé I qui partageaient une même envie : apprendre ensemble, créer des logiciels utiles et contribuer à l’open source. Le collectif réunit développeurs, designers et créateurs autour de projets concrets.
-                </p>
-                <p className="text-muted-foreground leading-relaxed">
-                  Nous poursuivons cette mission avec une conviction simple : le meilleur moyen d’apprendre est de bâtir, documenter, partager et recommencer.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      <section className="px-4 pb-24"><div className="container mx-auto max-w-4xl rounded-[1.5rem] bg-[#17120f] p-8 text-center text-white md:p-12"><GitBranch className="mx-auto h-8 w-8 text-[#ff7626]" /><h2 className="mt-5 text-3xl font-black md:text-4xl">La prochaine contribution peut commencer avec vous.</h2><p className="mx-auto mt-4 max-w-2xl leading-7 text-white/70">Explorez nos dépôts, rejoignez les discussions ou contactez-nous pour transformer une idée en projet.</p><div className="mt-7 flex flex-wrap justify-center gap-3"><a href="https://github.com/KERNEL-FORGE-G" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 rounded-xl bg-[#ff7626] px-5 py-3 text-sm font-black text-[#17120f]">Voir GitHub <ArrowUpRight className="h-4 w-4" /></a><a href="/contact" className="inline-flex items-center gap-2 rounded-xl border border-white/20 px-5 py-3 text-sm font-black text-white">Nous contacter <ArrowUpRight className="h-4 w-4" /></a></div></div></section>
       <Footer />
     </main>
   )
