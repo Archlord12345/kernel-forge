@@ -1,0 +1,75 @@
+import { Analytics } from '@vercel/analytics/next'
+import type { Metadata, Viewport } from 'next'
+import './globals.css'
+
+export const metadata: Metadata = {
+  title: 'Kernel Forge - Open Source Software Collective at UY1',
+  description: 'Join Kernel Forge, a student software development collective at the University of Yaoundé I. Build, learn, share, and contribute to amazing open-source projects.',
+  keywords: ['open source', 'software development', 'student collective', 'Yaoundé', 'coding', 'programming'],
+  generator: 'v0.app',
+  applicationName: 'Kernel Forge',
+  authors: [{ name: 'Kernel Forge Team' }],
+  creator: 'Kernel Forge',
+  publisher: 'Kernel Forge',
+  metadataBase: new URL('https://kernel-forge.dev'),
+  openGraph: {
+    type: 'website',
+    locale: 'en_US',
+    url: 'https://kernel-forge.dev',
+    siteName: 'Kernel Forge',
+    title: 'Kernel Forge - Open Source Software Collective',
+    description: 'A student software development collective dedicated to building, learning, and contributing to open-source software at the University of Yaoundé I.',
+    images: [
+      {
+        url: '/kernel-forge-logo.png',
+        width: 400,
+        height: 400,
+        alt: 'Kernel Forge Logo',
+        type: 'image/png',
+      },
+      {
+        url: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Affiche%20Kernel%20Forge%20Academy.png-km9Xou1MF4bDNLZ4sqkXNoMiDQLHmF.jpeg',
+        width: 1200,
+        height: 675,
+        alt: 'Kernel Forge Academy Poster',
+        type: 'image/jpeg',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    site: '@kernel_forge',
+    creator: '@kernel_forge',
+    title: 'Kernel Forge - Open Source Software Collective',
+    description: 'Join our student software development collective at UY1.',
+    images: ['https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202026-07-21%20at%2016.14.57-3sws87d7kKN9W5WMT4IcP74PjoJ2tp.jpeg'],
+  },
+  icons: {
+    icon: '/kernel-forge-logo.png',
+    apple: '/kernel-forge-logo.png',
+    other: {
+      rel: 'logo',
+      url: '/kernel-forge-logo.png',
+    },
+  },
+}
+
+export const viewport: Viewport = {
+  colorScheme: 'light',
+  themeColor: '#58cc02',
+}
+
+export default function RootLayout({
+  children,
+}: Readonly<{
+  children: React.ReactNode
+}>) {
+  return (
+    <html className="bg-background">
+      <body className="antialiased">
+        {children}
+        {process.env.NODE_ENV === 'production' && <Analytics />}
+      </body>
+    </html>
+  )
+}
