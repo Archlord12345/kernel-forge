@@ -36,7 +36,7 @@ export default function Home() {
         logo: 'https://kernelforge.codes/kernel-forge-logo.png',
         description: 'Collectif étudiant open source de l’Université de Yaoundé I.',
         email: 'ravelnghomsi@kernelforge.codes',
-        sameAs: ['https://github.com/KERNEL-FORGE-G', 'https://uniflow.kernelforge.codes/'],
+        sameAs: ['https://github.com/KERNEL-FORGE-G', 'https://uniflow.kernelforge.codes/', 'https://discord.gg/qqhVxZzQg', 'https://t.me/kernelforge', 'https://chat.whatsapp.com/IFkGMr4Ev2KCFAKw9EmEde'],
         address: { '@type': 'PostalAddress', addressLocality: 'Yaoundé', addressCountry: 'CM' },
       }) }} />
       <Header />

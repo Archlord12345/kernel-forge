@@ -1,6 +1,6 @@
 import { Header } from '@/components/header'
 import { Footer } from '@/components/footer'
-import { Users, BookOpen, Code2, Lightbulb } from 'lucide-react'
+import { Users, BookOpen, Code2, Lightbulb, MessageCircle, Send, UsersRound, ArrowUpRight } from 'lucide-react'
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
@@ -82,6 +82,25 @@ export default function CommunityPage() {
               )
             })}
           </div>
+
+          <section className="mb-16 rounded-[1.5rem] border border-[#eadfd4] bg-[#17120f] p-8 text-white shadow-[0_18px_45px_rgba(23,18,15,0.12)] md:p-10">
+            <div className="mb-7 max-w-2xl">
+              <p className="text-xs font-black uppercase tracking-[0.18em] text-[#ff9a5a]">Les espaces Kernel Forge</p>
+              <h2 className="mt-2 text-2xl font-black md:text-3xl">Construisons la suite ensemble</h2>
+              <p className="mt-3 text-sm leading-6 text-white/70">Choisissez le canal qui vous convient pour suivre les annonces, poser une question ou rejoindre les discussions du collectif.</p>
+            </div>
+            <div className="grid gap-4 md:grid-cols-3">
+              <a href="https://discord.gg/qqhVxZzQg" target="_blank" rel="noopener noreferrer" className="group rounded-2xl border border-[#7289da]/40 bg-[#5865f2]/15 p-5 transition hover:-translate-y-1 hover:border-[#7289da]">
+                <MessageCircle className="h-7 w-7 text-[#aeb8ff]" /><h3 className="mt-4 font-black">Discord</h3><p className="mt-1 text-xs leading-5 text-white/65">Discussions et entraide en direct.</p><span className="mt-4 inline-flex items-center gap-1 text-xs font-black text-[#aeb8ff]">Rejoindre <ArrowUpRight className="h-3.5 w-3.5" /></span>
+              </a>
+              <a href="https://t.me/kernelforge" target="_blank" rel="noopener noreferrer" className="group rounded-2xl border border-[#29a9ea]/40 bg-[#29a9ea]/15 p-5 transition hover:-translate-y-1 hover:border-[#29a9ea]">
+                <Send className="h-7 w-7 text-[#7dd3fc]" /><h3 className="mt-4 font-black">Telegram</h3><p className="mt-1 text-xs leading-5 text-white/65">Actualités et annonces du collectif.</p><span className="mt-4 inline-flex items-center gap-1 text-xs font-black text-[#7dd3fc]">Suivre <ArrowUpRight className="h-3.5 w-3.5" /></span>
+              </a>
+              <a href="https://chat.whatsapp.com/IFkGMr4Ev2KCFAKw9EmEde" target="_blank" rel="noopener noreferrer" className="group rounded-2xl border border-[#25d366]/40 bg-[#25d366]/15 p-5 transition hover:-translate-y-1 hover:border-[#25d366]">
+                <UsersRound className="h-7 w-7 text-[#86efac]" /><h3 className="mt-4 font-black">WhatsApp</h3><p className="mt-1 text-xs leading-5 text-white/65">Le groupe pour rester connecté.</p><span className="mt-4 inline-flex items-center gap-1 text-xs font-black text-[#86efac]">Rejoindre <ArrowUpRight className="h-3.5 w-3.5" /></span>
+              </a>
+            </div>
+          </section>
 
           {/* Call to Action */}
           <div className="bg-primary rounded-xl border-b-[3px] border-[#46a302] p-8 md:p-12 text-center max-w-2xl mx-auto">
