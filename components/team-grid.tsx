@@ -43,6 +43,6 @@ export function TeamGrid() {
 
   return <div>
     {loading && <div className="flex items-center justify-center py-12"><Loader className="h-6 w-6 animate-spin text-primary" /></div>}
-    {!loading && <div className="space-y-14">{positionOrder.map((position) => groupedMembers[position]?.length ? <section key={position}><h2 className="mb-7 text-center text-2xl font-bold text-foreground">{position}</h2><div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">{groupedMembers[position].map((member: any) => <TeamMemberCard key={member.id} member={member} />)}</div></section> : null)}</div>}
+    {!loading && <div className="mx-auto max-w-6xl space-y-16">{positionOrder.map((position) => groupedMembers[position]?.length ? <section key={position} className="mx-auto"><h2 className="mb-8 text-center text-2xl font-black text-foreground md:text-3xl">{position}</h2><div className="mx-auto grid max-w-5xl grid-cols-1 justify-items-center gap-8 md:grid-cols-2 lg:grid-cols-3">{groupedMembers[position].map((member: any) => <TeamMemberCard key={member.id} member={member} />)}</div></section> : null)}</div>}
   </div>
 }
