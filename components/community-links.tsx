@@ -1,10 +1,11 @@
-import { ArrowUpRight, MessageCircle, Send, UsersRound } from 'lucide-react'
+import { ArrowUpRight, MessageCircle, Play, Send, UsersRound } from 'lucide-react'
 
 const communities = [
   { name: 'Discord', label: 'Discuter en direct', description: 'Entraide, échanges techniques et ateliers avec les contributeurs.', href: 'https://discord.gg/qqhVxZzQg', icon: MessageCircle, tone: 'border-[#7289da]/40 bg-[#5865f2]/10 text-[#5865f2]' },
   { name: 'Telegram', label: 'Suivre les annonces', description: 'Les actualités, sorties et rendez-vous du collectif.', href: 'https://t.me/kernelforge', icon: Send, tone: 'border-[#29a9ea]/40 bg-[#29a9ea]/10 text-[#1688c2]' },
   { name: 'WhatsApp', label: 'Rejoindre le groupe', description: 'Un espace simple pour rester connecté au quotidien.', href: 'https://chat.whatsapp.com/IFkGMr4Ev2KCFAKw9EmEde', icon: UsersRound, tone: 'border-[#25d366]/40 bg-[#25d366]/10 text-[#168b43]' },
   { name: 'LinkedIn', label: 'Suivre Kernel Forge', description: 'Notre présence professionnelle, nos projets et nos collaborations.', href: 'https://www.linkedin.com/in/kernelforge', icon: ArrowUpRight, tone: 'border-[#0a66c2]/40 bg-[#0a66c2]/10 text-[#0a66c2]' },
+  { name: 'YouTube', label: 'Voir nos vidéos', description: 'Démonstrations, coulisses, tutoriels et moments forts du collectif.', href: 'https://www.youtube.com/@KERNEL-FORGE.c', icon: Play, tone: 'border-[#ff0000]/40 bg-[#ff0000]/10 text-[#d60000]' },
 ]
 
 export function CommunityLinks() {
@@ -19,7 +20,7 @@ export function CommunityLinks() {
           </div>
           <a href="/community" className="inline-flex items-center gap-2 text-sm font-black text-[#e95716] transition hover:gap-3">Découvrir la communauté <ArrowUpRight className="h-4 w-4" /></a>
         </div>
-        <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
           {communities.map(({ name, label, description, href, icon: Icon, tone }) => (
             <a key={name} href={href} target="_blank" rel="noopener noreferrer" className={`group rounded-[1.35rem] border bg-[#fffaf0] p-6 transition hover:-translate-y-1 hover:shadow-[0_16px_35px_rgba(23,18,15,0.1)] ${tone.split(' ').slice(0, 1).join(' ')}`}>
               <div className={`inline-flex h-11 w-11 items-center justify-center rounded-2xl border ${tone}`}><Icon className="h-5 w-5" /></div>

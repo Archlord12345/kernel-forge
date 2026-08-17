@@ -13,7 +13,6 @@ const PUBLIC_TEAM = [
   ['sandra', 'Mobile', 'FEBNCHAK M. Borelle Sandra', 'Mobile Developer', 'Frontend Mobile App', 'FEBNCHAK', 'https://ui-avatars.com/api/?name=FEBNCHAK%20M.%20Borelle%20Sandra&background=0d9488&color=fff&size=256&bold=true', 'sandraborelle0@gmail.com'],
   ['hassane', 'Backend & Data', 'HASSANE YOUSSOF OUMAR', 'Backend Developer', 'Backend Microservices', 'hawadja1', 'https://ui-avatars.com/api/?name=HASSANE%20YOUSSOF%20OUMAR&background=d97706&color=fff&size=256&bold=true', 'h.hawadja1@gmail.com'],
   ['ange', 'Backend & Data', 'Mokam Ange', 'Backend Developer', 'SGBD & Infrastructure', 'Ange55-star', 'https://ui-avatars.com/api/?name=Mokam%20Ange&background=7c3aed&color=fff&size=256&bold=true', 'ange.mokam@facsciences-uy1.cm'],
-  ['aristide', 'Frontend', 'EMTCHEU ARISTIDE BIENVENU', 'Full Frontend Developer', 'Frontend Interactif', 'paccotiktok37', 'https://ui-avatars.com/api/?name=EMTCHEU%20ARISTIDE%20BIENVENU&background=d97706&color=fff&size=256&bold=true', 'paccotiktok37@gmail.com'],
   ['juvenal', 'Backend & Data', 'SINENG KENGNI JUVENAL', 'Backend Developer', 'APIs, bases de données & services multiplateformes', 'skjuv', 'https://github.com/skjuv.png', 'sinengjuvenal@gmail.com'],
 ].map(([id, position, full_name, role, bio, github_username, avatar_url, email]) => ({ id, position, order_priority: 0, profile: { username: github_username, full_name, avatar_url, bio: `${role} · ${bio}`, github_username, twitter_handle: null, email } }))
 

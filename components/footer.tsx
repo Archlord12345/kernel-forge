@@ -1,11 +1,12 @@
 import Link from 'next/link'
-import { ArrowUpRight, GitBranch, Mail, MessageCircle, Send, UsersRound } from 'lucide-react'
+import { ArrowUpRight, GitBranch, Mail, MessageCircle, Play, Send, UsersRound } from 'lucide-react'
 
 const socialLinks = [
   { href: 'https://discord.gg/qqhVxZzQg', label: 'Discord Kernel Forge', icon: MessageCircle, color: 'text-[#aeb8ff]', border: 'border-[#7289da]/40', hover: 'hover:bg-[#5865f2]/20' },
   { href: 'https://t.me/kernelforge', label: 'Telegram Kernel Forge', icon: Send, color: 'text-[#7dd3fc]', border: 'border-[#29a9ea]/40', hover: 'hover:bg-[#29a9ea]/20' },
   { href: 'https://chat.whatsapp.com/IFkGMr4Ev2KCFAKw9EmEde', label: 'WhatsApp Kernel Forge', icon: UsersRound, color: 'text-[#86efac]', border: 'border-[#25d366]/40', hover: 'hover:bg-[#25d366]/20' },
   { href: 'https://www.linkedin.com/in/kernelforge', label: 'LinkedIn Kernel Forge', icon: ArrowUpRight, color: 'text-[#7db9f2]', border: 'border-[#0a66c2]/40', hover: 'hover:bg-[#0a66c2]/20' },
+  { href: 'https://www.youtube.com/@KERNEL-FORGE.c', label: 'YouTube Kernel Forge', icon: Play, color: 'text-[#ff8c8c]', border: 'border-[#ff0000]/40', hover: 'hover:bg-[#ff0000]/20' },
 ]
 
 export function Footer() {
