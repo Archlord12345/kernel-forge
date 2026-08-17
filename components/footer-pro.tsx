@@ -90,7 +90,7 @@ export function Footer() {
             <h3 className="font-bold text-foreground mb-4">Follow Us</h3>
             <div className="flex gap-4">
               <a
-                href="https://github.com/kernel-forge"
+                href="https://github.com/KERNEL-FORGE-G"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-2 rounded-lg bg-secondary hover:bg-primary/20 text-muted-foreground hover:text-primary transition-all"

@@ -1,67 +1,26 @@
+'use client'
+
 import Link from 'next/link'
-import { Zap, Code2, Users } from 'lucide-react'
+import { ArrowDown, ArrowRight, Code2, GitBranch, Sparkles, Terminal } from 'lucide-react'
 
 export function HeroSection() {
   return (
-    <section className="py-20 md:py-32 bg-gradient-to-br from-background to-secondary/50">
-      <div className="container mx-auto px-4">
-        <div className="max-w-4xl mx-auto text-center">
-          {/* Badge */}
-          <div className="inline-block mb-8 px-4 py-2 rounded-full bg-accent/20 border border-accent/40">
-            <span className="text-sm font-medium text-accent">Welcome to Kernel Forge</span>
+    <section className="relative overflow-hidden bg-[#17120f] text-[#fffaf0]">
+      <div className="absolute inset-0 opacity-25" aria-hidden="true"><div className="forge-grid h-full w-full" /></div>
+      <div className="absolute -right-40 -top-48 h-[34rem] w-[34rem] rounded-full bg-[#ff6b1a]/20 blur-3xl" aria-hidden="true" />
+      <div className="absolute -bottom-48 -left-40 h-[30rem] w-[30rem] rounded-full bg-[#56d5a0]/15 blur-3xl" aria-hidden="true" />
+      <div className="container relative mx-auto px-4 pb-20 pt-16 sm:px-6 md:pb-28 md:pt-24">
+        <div className="grid items-center gap-14 lg:grid-cols-[1.02fr_.98fr] lg:gap-16">
+          <div className="max-w-2xl">
+            <div className="mb-7 inline-flex items-center gap-2 rounded-full border border-[#ff6b1a]/40 bg-[#ff6b1a]/10 px-4 py-2 text-xs font-extrabold uppercase tracking-[0.2em] text-[#ff9a5a]"><Sparkles className="h-4 w-4" />Collectif open source · UY1</div>
+            <h1 className="max-w-3xl text-5xl font-black leading-[0.96] tracking-[-0.05em] sm:text-6xl lg:text-8xl">Code.<br /><span className="text-[#ff7626]">Forge.</span><br />Impact.</h1>
+            <p className="mt-8 max-w-xl text-lg leading-8 text-[#d9cec3] sm:text-xl">Kernel Forge rassemble des étudiants, des créateurs et des développeurs qui transforment des idées en logiciels libres utiles, accessibles et durables.</p>
+            <div className="mt-9 flex flex-col gap-3 sm:flex-row"><Link href="/projects" className="duo-button inline-flex items-center justify-center gap-2 px-6 py-3.5 text-sm">Explorer les projets<ArrowRight className="h-4 w-4" /></Link><a href="https://github.com/KERNEL-FORGE-G" target="_blank" rel="noreferrer" className="inline-flex items-center justify-center gap-2 rounded-xl border border-[#fffaf0]/25 bg-[#fffaf0]/5 px-6 py-3.5 text-sm font-extrabold text-[#fffaf0] transition hover:border-[#ff7626] hover:bg-[#ff7626]/10"><GitBranch className="h-4 w-4" />Voir sur GitHub</a></div>
+            <div className="mt-10 flex flex-wrap gap-x-7 gap-y-3 border-t border-[#fffaf0]/15 pt-6 text-sm text-[#b9aea4]"><span className="inline-flex items-center gap-2"><Code2 className="h-4 w-4 text-[#56d5a0]" />Build en public</span><span className="inline-flex items-center gap-2"><Terminal className="h-4 w-4 text-[#ff9a5a]" />Linux & open source</span><span className="inline-flex items-center gap-2"><span className="h-2 w-2 rounded-full bg-[#56d5a0]" />Communauté étudiante</span></div>
           </div>
-
-          {/* Heading */}
-          <h1 className="text-4xl md:text-6xl font-bold mb-6 text-foreground text-balance leading-tight">
-            Build, Learn, Share, Contribute
-          </h1>
-
-          {/* Subheading */}
-          <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-2xl mx-auto text-balance">
-            A student software development collective at the University of Yaoundé I dedicated to creating exceptional open-source software and fostering a community of innovation.
-          </p>
-
-          {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
-            <Link
-              href="/projects"
-              className="px-8 py-4 rounded-lg bg-primary text-primary-foreground font-semibold hover:shadow-lg hover:scale-105 transition-all"
-            >
-              Explore Projects
-            </Link>
-            <Link
-              href="/community"
-              className="px-8 py-4 rounded-lg border-2 border-primary text-primary font-semibold hover:bg-primary/10 transition-colors"
-            >
-              Join Community
-            </Link>
-          </div>
-
-          {/* Stats */}
-          <div className="grid grid-cols-3 gap-8 pt-12 border-t border-border">
-            <div className="space-y-2">
-              <div className="flex items-center justify-center mb-3">
-                <Code2 className="w-8 h-8 text-primary" />
-              </div>
-              <p className="text-3xl font-bold text-foreground">25+</p>
-              <p className="text-sm text-muted-foreground">Open Source Projects</p>
-            </div>
-            <div className="space-y-2">
-              <div className="flex items-center justify-center mb-3">
-                <Users className="w-8 h-8 text-accent" />
-              </div>
-              <p className="text-3xl font-bold text-foreground">50+</p>
-              <p className="text-sm text-muted-foreground">Active Members</p>
-            </div>
-            <div className="space-y-2">
-              <div className="flex items-center justify-center mb-3">
-                <Zap className="w-8 h-8 text-primary" />
-              </div>
-              <p className="text-3xl font-bold text-foreground">100%</p>
-              <p className="text-sm text-muted-foreground">Community Driven</p>
-            </div>
-          </div>
+          <div className="relative lg:pl-6"><div className="absolute -left-5 top-8 hidden h-24 w-24 rounded-2xl border border-[#ff7626]/50 sm:block" aria-hidden="true" /><div className="relative overflow-hidden rounded-[2rem] border border-[#fffaf0]/20 bg-[#271b15] p-2 shadow-2xl shadow-black/40"><img src="/kernel-forge-academy.png" alt="Kernel Forge Academy — Build, Learn, Share, Contribute" className="aspect-[16/10] w-full rounded-[1.5rem] object-cover" /><div className="flex items-center justify-between gap-4 px-4 pb-2 pt-4 text-xs font-bold uppercase tracking-[0.16em] text-[#cfc1b5]"><span>Build · Learn · Share</span><span className="text-[#ff7626]">Innovate · Repeat</span></div></div><div className="absolute -bottom-7 -right-4 hidden w-44 rounded-2xl border border-[#fffaf0]/15 bg-[#fffaf0] p-3 text-[#17120f] shadow-xl sm:block"><img src="/kernel-forge-mascot.jpeg" alt="Mascotte Kernel Forge" className="h-24 w-full rounded-xl object-cover object-top" /><p className="mt-2 text-center text-[10px] font-black uppercase tracking-[0.18em]">Open source software</p></div></div>
         </div>
+        <a href="#manifesto" className="mt-16 inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.2em] text-[#b9aea4] transition hover:text-[#ff9a5a]">Découvrir Kernel Forge <ArrowDown className="h-4 w-4" /></a>
       </div>
     </section>
   )

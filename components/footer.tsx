@@ -1,135 +1,22 @@
 import Link from 'next/link'
-import { Mail } from 'lucide-react'
+import { ArrowUpRight, GitBranch, Mail } from 'lucide-react'
 
 export function Footer() {
   const currentYear = new Date().getFullYear()
-
   return (
-    <footer className="bg-card border-t border-border">
-      <div className="container mx-auto px-4 py-12">
-        {/* Main Footer Content */}
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
-          {/* About */}
+    <footer className="bg-[#17120f] text-[#d9cec3]">
+      <div className="container mx-auto px-4 py-16 sm:px-6">
+        <div className="grid gap-12 md:grid-cols-[1.4fr_.8fr_.8fr_1fr]">
           <div>
-            <div className="flex items-center gap-2 mb-4">
-              <div className="w-8 h-8 rounded-lg bg-primary flex items-center justify-center text-primary-foreground font-bold text-sm">
-                K
-              </div>
-              <span className="font-bold text-foreground">Kernel Forge</span>
-            </div>
-            <p className="text-sm text-muted-foreground">
-              A student software development collective at the University of Yaoundé I.
-            </p>
+            <div className="flex items-center gap-3"><img src="/kernel-forge-mascot.jpeg" alt="Kernel Forge" className="h-12 w-12 rounded-2xl object-cover object-top" /><div><strong className="block text-sm font-black uppercase tracking-[0.16em] text-[#fffaf0]">Kernel</strong><strong className="block text-sm font-black uppercase tracking-[0.16em] text-[#ff7626]">Forge</strong></div></div>
+            <p className="mt-5 max-w-sm text-sm leading-7 text-[#a99b90]">Collectif étudiant de l’Université de Yaoundé I. Nous construisons, apprenons et partageons du logiciel libre.</p>
+            <a href="mailto:ravelnghomsi@kernelforge.codes" className="mt-5 inline-flex items-center gap-2 text-sm font-bold text-[#ff9a5a] hover:text-[#fffaf0]"><Mail className="h-4 w-4" />ravelnghomsi@kernelforge.codes</a>
           </div>
-
-          {/* Links */}
-          <div>
-            <h3 className="font-semibold text-foreground mb-4">Navigation</h3>
-            <ul className="space-y-2">
-              <li>
-                <Link href="/" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
-                  Home
-                </Link>
-              </li>
-              <li>
-                <Link href="/projects" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
-                  Projects
-                </Link>
-              </li>
-              <li>
-                <Link href="/team" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
-                  Team
-                </Link>
-              </li>
-              <li>
-                <Link href="/community" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
-                  Community
-                </Link>
-              </li>
-            </ul>
-          </div>
-
-          {/* Resources */}
-          <div>
-            <h3 className="font-semibold text-foreground mb-4">Resources</h3>
-            <ul className="space-y-2">
-              <li>
-                <Link href="/about" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
-                  About Us
-                </Link>
-              </li>
-              <li>
-                <Link href="/contact" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
-                  Contact
-                </Link>
-              </li>
-              <li>
-                <a href="https://github.com/kernel-forge" target="_blank" rel="noopener noreferrer" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
-                  GitHub
-                </a>
-              </li>
-              <li>
-                <a href="https://twitter.com/kernel_forge" target="_blank" rel="noopener noreferrer" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
-                  Twitter
-                </a>
-              </li>
-            </ul>
-          </div>
-
-          {/* Social */}
-          <div>
-            <h3 className="font-semibold text-foreground mb-4">Follow Us</h3>
-            <div className="flex gap-4">
-              <a
-                href="https://github.com/kernel-forge"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="p-2 rounded-lg hover:bg-secondary transition-colors text-muted-foreground hover:text-primary"
-                aria-label="GitHub"
-              >
-                <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v 3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
-                </svg>
-              </a>
-              <a
-                href="https://twitter.com/kernel_forge"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="p-2 rounded-lg hover:bg-secondary transition-colors text-muted-foreground hover:text-primary"
-                aria-label="Twitter"
-              >
-                <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2s9 5 20 5a9.5 9.5 0 00-9-5.5c4.75 2.25 7-7 7-7-2.25 2.25-7 3.5-7 3.5" />
-                </svg>
-              </a>
-              <a
-                href="mailto:hello@kernelforge.dev"
-                className="p-2 rounded-lg hover:bg-secondary transition-colors text-muted-foreground hover:text-primary"
-                aria-label="Email"
-              >
-                <Mail className="w-5 h-5" />
-              </a>
-            </div>
-          </div>
+          <div><h3 className="mb-4 text-xs font-black uppercase tracking-[0.18em] text-[#fffaf0]">Explorer</h3><ul className="space-y-3 text-sm"><li><Link href="/projects" className="hover:text-[#ff9a5a]">Projets</Link></li><li><Link href="/team" className="hover:text-[#ff9a5a]">Équipe</Link></li><li><Link href="/community" className="hover:text-[#ff9a5a]">Communauté</Link></li><li><Link href="/contact" className="hover:text-[#ff9a5a]">Contact</Link></li></ul></div>
+          <div><h3 className="mb-4 text-xs font-black uppercase tracking-[0.18em] text-[#fffaf0]">Écosystème</h3><ul className="space-y-3 text-sm"><li><a href="https://uniflow.kernelforge.codes/" target="_blank" rel="noreferrer" className="inline-flex items-center gap-1 hover:text-[#56d5a0]">UniFlow <ArrowUpRight className="h-3.5 w-3.5" /></a></li><li><a href="https://github.com/KERNEL-FORGE-G" target="_blank" rel="noreferrer" className="inline-flex items-center gap-1 hover:text-[#56d5a0]">Dépôt GitHub <ArrowUpRight className="h-3.5 w-3.5" /></a></li><li><Link href="/about" className="hover:text-[#56d5a0]">Notre mission</Link></li></ul></div>
+          <div><h3 className="mb-4 text-xs font-black uppercase tracking-[0.18em] text-[#fffaf0]">Rejoindre la forge</h3><p className="text-sm leading-6 text-[#a99b90]">Une idée, un projet ou une envie de contribuer ? Échangeons et construisons la suite ensemble.</p><Link href="/contact" className="mt-5 inline-flex items-center gap-2 rounded-xl bg-[#ff7626] px-4 py-2.5 text-sm font-black text-[#17120f] shadow-[0_3px_0_#b83c0d] transition hover:-translate-y-0.5">Parler au collectif <ArrowUpRight className="h-4 w-4" /></Link></div>
         </div>
-
-        {/* Divider */}
-        <div className="border-t border-border my-8" />
-
-        {/* Bottom Footer */}
-        <div className="flex flex-col md:flex-row items-center justify-between">
-          <p className="text-sm text-muted-foreground">
-            © {currentYear} Kernel Forge. All rights reserved.
-          </p>
-          <div className="flex gap-6 mt-4 md:mt-0">
-            <a href="#" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
-              Privacy Policy
-            </a>
-            <a href="#" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
-              Terms of Service
-            </a>
-          </div>
-        </div>
+        <div className="mt-14 flex flex-col gap-4 border-t border-[#fffaf0]/10 pt-7 text-xs text-[#8e8177] sm:flex-row sm:items-center sm:justify-between"><p>© {currentYear} Kernel Forge · Université de Yaoundé I</p><div className="flex items-center gap-4"><a href="https://github.com/KERNEL-FORGE-G" target="_blank" rel="noreferrer" aria-label="GitHub" className="hover:text-[#fffaf0]"><GitBranch className="h-4 w-4" /></a><span>Code. Forge. Impact.</span></div></div>
       </div>
     </footer>
   )
