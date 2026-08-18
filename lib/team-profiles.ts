@@ -12,6 +12,8 @@ export type TeamProfile = {
   projects: { name: string; description: string; href: string }[]
   links: { label: string; href: string }[]
   certifications: { name: string; issuer?: string; verification?: string }[]
+  languages?: string[]
+  interests?: string[]
   evidence: string
 }
 
@@ -112,22 +114,25 @@ export const TEAM_PROFILES: TeamProfile[] = [
   },
   {
     id: 'sandra',
-    name: 'FEBNCHAK M. Borelle Sandra',
-    position: 'Mobile',
-    role: 'Mobile Developer',
-    expertise: 'Fondamentaux frontend et développement d’interfaces web.',
+    name: 'FEBNCHAK SANDRA',
+    position: 'Full-Stack',
+    role: 'Développeuse Full-Stack · Mobile & Web',
+    expertise: 'Conception d’applications mobiles et web de bout en bout, interfaces responsives, déploiement et exploration autonome de technologies modernes.',
     githubUsername: 'FEBNCHAK',
-    avatarUrl: 'https://ui-avatars.com/api/?name=FEBNCHAK%20M.%20Borelle%20Sandra&background=0d9488&color=fff&size=256&bold=true',
-    summary: 'Contributrice mobile de Kernel Forge. Son profil public met en évidence des dépôts HTML et des travaux de pratique frontend.',
-    skills: ['HTML', 'Fondamentaux frontend', 'Interfaces web'],
-    education: ['Parcours académique détaillé non publié sur le profil public consulté.'],
+    avatarUrl: 'https://ui-avatars.com/api/?name=FEBNCHAK%20SANDRA&background=0d9488&color=fff&size=256&bold=true',
+    summary: 'Développeuse full-stack et contributrice de Kernel Forge. Elle travaille sur des applications mobiles et web, depuis la conception des interfaces jusqu’à l’hébergement, et développe son expertise de manière autodidacte à travers des projets concrets.',
+    skills: ['HTML', 'CSS', 'JavaScript', 'React', 'React Native', 'Flutter', 'WordPress', 'Supabase', 'Oracle', 'Git', 'GitHub', 'XAMPP', 'Interfaces responsives', 'Déploiement web'],
+    education: ['Licence en Génie Logiciel — en cours', 'Licence 2 ICT4D (Information & Communication Technologies for Development) — Université, en cours', 'Baccalauréat — 2023', 'Probatoire — 2022', 'Brevet d’Études du Premier Cycle (BEPC) — 2020', 'Certificat d’Études Primaires (CEP) — 2016'],
     projects: [
-      { name: 'HTML', description: 'Dépôt public de pratique HTML.', href: 'https://github.com/FEBNCHAK/HTML' },
-      { name: 'Nguiffo-Ivan', description: 'Projet public en HTML.', href: 'https://github.com/FEBNCHAK/Nguiffo-Ivan' },
+      { name: 'Projets mobiles et web personnels', description: 'Conception et développement de projets personnels de l’idée initiale jusqu’au déploiement, avec des interfaces adaptées aux différents écrans.', href: 'https://github.com/FEBNCHAK' },
+      { name: 'HTML', description: 'Dépôt public de pratique HTML visible sur son profil GitHub.', href: 'https://github.com/FEBNCHAK/HTML' },
+      { name: 'Nguiffo-Ivan', description: 'Projet public en HTML visible sur son profil GitHub.', href: 'https://github.com/FEBNCHAK/Nguiffo-Ivan' },
     ],
     links: [{ label: 'GitHub', href: 'https://github.com/FEBNCHAK' }],
     certifications: [],
-    evidence: 'Profil GitHub public consulté. Le profil ne contient pas de biographie professionnelle ou de parcours académique détaillé.',
+    languages: ['Français — courant', 'Anglais — intermédiaire'],
+    interests: ['Jeux vidéo', 'Musique', 'Lecture'],
+    evidence: 'CV fourni par Sandra et profil GitHub public consulté. Les coordonnées personnelles du CV ne sont pas reproduites sur cette page publique.',
   },
   {
     id: 'hassane',
