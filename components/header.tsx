@@ -1,6 +1,7 @@
 'use client'
 
 import Link from 'next/link'
+import Image from 'next/image'
 import { usePathname } from 'next/navigation'
 import { GitBranch, ExternalLink } from 'lucide-react'
 import { ThemeToggle } from '@/components/theme-toggle'
@@ -21,7 +22,7 @@ export function Header() {
       <nav className="container mx-auto flex items-center justify-between gap-6 px-4 py-3 sm:px-6">
         <Link href="/" className="group flex shrink-0 items-center gap-3">
           <span className="relative flex h-11 w-11 items-center justify-center overflow-hidden rounded-2xl border-2 border-[#ff7626] bg-[#17120f] shadow-[3px_3px_0_#ff7626] transition-transform group-hover:-translate-y-0.5">
-            <img src="/kernel-forge-mascot.jpeg" alt="Kernel Forge" className="h-full w-full object-cover object-top" />
+            <Image src="/kernel-forge-mascot.jpeg" alt="Kernel Forge" width={44} height={44} className="h-full w-full object-cover object-top" />
           </span>
           <span className="hidden leading-none sm:block"><strong className="block text-sm font-black uppercase tracking-[0.12em] text-[#17120f]">Kernel</strong><strong className="block text-sm font-black uppercase tracking-[0.12em] text-[#e95716]">Forge</strong></span>
         </Link>
