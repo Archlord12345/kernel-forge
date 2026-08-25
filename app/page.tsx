@@ -2,6 +2,7 @@ import { Suspense } from 'react'
 import { Metadata } from 'next'
 import { Header } from '@/components/header'
 import { HeroSection } from '@/components/hero-section'
+import { ImpactSection } from '@/components/impact-section'
 import { FeaturedProjects } from '@/components/featured-projects'
 import { CTASection } from '@/components/cta-section'
 import { Footer } from '@/components/footer'
@@ -11,6 +12,7 @@ export const metadata: Metadata = {
   title: 'Kernel Forge — Logiciel libre à l’Université de Yaoundé I',
   description: 'Kernel Forge est le collectif open source de l’Université de Yaoundé I : nous construisons, apprenons, partageons et contribuons à des projets logiciels utiles.',
   keywords: ['Kernel Forge', 'KERNEL FORGE', 'logiciel libre', 'open source Cameroun', 'Université de Yaoundé I', 'UniFlow', 'collectif développeurs Yaoundé'],
+  alternates: { canonical: 'https://kernelforge.codes/' },
   openGraph: {
     title: 'Kernel Forge — Code. Forge. Impact.',
     description: 'Le collectif étudiant de l’Université de Yaoundé I dédié au logiciel libre et aux projets open source.',
@@ -42,6 +44,7 @@ export default function Home() {
       }) }} />
       <Header />
       <HeroSection />
+      <ImpactSection />
       <Suspense fallback={<div className="h-96 bg-secondary animate-pulse" />}>
         <FeaturedProjects />
       </Suspense>

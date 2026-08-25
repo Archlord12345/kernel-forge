@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Image from 'next/image'
 import { ArrowUpRight, GitBranch, Mail, MessageCircle, Play, Send, UsersRound } from 'lucide-react'
 
 const socialLinks = [
@@ -16,7 +17,7 @@ export function Footer() {
       <div className="container mx-auto px-4 py-16 sm:px-6">
         <div className="grid gap-12 md:grid-cols-[1.35fr_.8fr_.9fr_1fr]">
           <div>
-            <div className="flex items-center gap-3"><img src="/kernel-forge-mascot.jpeg" alt="Kernel Forge" className="h-12 w-12 rounded-2xl object-cover object-top" /><div><strong className="block text-sm font-black uppercase tracking-[0.16em] text-[#fffaf0]">Kernel</strong><strong className="block text-sm font-black uppercase tracking-[0.16em] text-[#ff7626]">Forge</strong></div></div>
+            <div className="flex items-center gap-3"><Image src="/kernel-forge-mascot.jpeg" alt="Kernel Forge" width={48} height={48} className="h-12 w-12 rounded-2xl object-cover object-top" /><div><strong className="block text-sm font-black uppercase tracking-[0.16em] text-[#fffaf0]">Kernel</strong><strong className="block text-sm font-black uppercase tracking-[0.16em] text-[#ff7626]">Forge</strong></div></div>
             <p className="mt-5 max-w-sm text-sm leading-7 text-[#a99b90]">Collectif étudiant de l’Université de Yaoundé I. Nous construisons, apprenons et partageons du logiciel libre.</p>
             <a href="mailto:ravelnghomsi@kernelforge.codes" className="mt-5 inline-flex items-center gap-2 text-sm font-bold text-[#ff9a5a] hover:text-[#fffaf0]"><Mail className="h-4 w-4" />ravelnghomsi@kernelforge.codes</a>
           </div>
