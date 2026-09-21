@@ -86,7 +86,7 @@ export default function AdminDashboard() {
               <a
                 key={card.title}
                 href={card.href}
-                className="p-6 rounded-xl bg-card border border-border hover:border-primary transition-all hover:shadow-lg cursor-pointer group"
+                className="p-6 rounded-2xl bg-card border border-border hover:border-primary transition-all hover:shadow-lg cursor-pointer group"
               >
                 <div className="flex items-center justify-between mb-4">
                   <Icon className="w-8 h-8 text-primary group-hover:scale-110 transition-transform" />
@@ -99,7 +99,7 @@ export default function AdminDashboard() {
         </div>
 
         {/* Recent Activity */}
-        <div className="bg-card border border-border rounded-xl p-6">
+        <div className="bg-card border border-border rounded-2xl p-6">
           <h2 className="text-xl font-bold text-foreground mb-4">Quick Actions</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
             {[
@@ -111,7 +111,7 @@ export default function AdminDashboard() {
               <a
                 key={action.title}
                 href={action.href}
-                className="p-4 rounded-lg bg-secondary hover:bg-secondary/80 text-foreground font-medium transition-colors text-center"
+                className="p-4 rounded-xl bg-secondary hover:bg-secondary/80 text-foreground font-medium transition-colors text-center"
               >
                 {action.title}
               </a>

@@ -121,13 +121,13 @@ export default function AdminMessagesPage() {
                 <div className="flex gap-2">
                   <a
                     href={`mailto:${selectedMessage.email}`}
-                    className="p-2 rounded-lg hover:bg-secondary transition-colors text-muted-foreground hover:text-primary"
+                    className="p-2 rounded-xl hover:bg-secondary transition-colors text-muted-foreground hover:text-primary"
                   >
                     <Mail className="w-5 h-5" />
                   </a>
                   <button
                     onClick={() => deleteMessage(selectedMessage.id)}
-                    className="p-2 rounded-lg hover:bg-red-500/10 transition-colors text-muted-foreground hover:text-red-500"
+                    className="p-2 rounded-xl hover:bg-red-500/10 transition-colors text-muted-foreground hover:text-red-500"
                   >
                     <Trash2 className="w-5 h-5" />
                   </button>

@@ -34,7 +34,7 @@ export function ProjectForm({ project, onSave, onCancel }: ProjectFormProps) {
         featured: formData.featured,
         featured_order: formData.featured ? formData.featured_order : null,
         category: formData.category || null,
-        tags: formData.tags ? formData.tags.split(',').map((t) => t.trim()) : null,
+        tags: formData.tags ? formData.tags.split(',').map((t: string) => t.trim()) : null,
       }
 
       if (project?.id) {
@@ -70,7 +70,7 @@ export function ProjectForm({ project, onSave, onCancel }: ProjectFormProps) {
             required
             value={formData.github_repo_url}
             onChange={(e) => setFormData({ ...formData, github_repo_url: e.target.value })}
-            className="w-full px-3 py-2 rounded-lg border border-border bg-background text-foreground focus:border-primary focus:outline-none transition-colors"
+            className="w-full px-3 py-2 rounded-xl border border-border bg-background text-foreground focus:border-primary focus:outline-none transition-colors"
             placeholder="https://github.com/user/repo"
           />
         </div>
@@ -82,7 +82,7 @@ export function ProjectForm({ project, onSave, onCancel }: ProjectFormProps) {
             type="text"
             value={formData.display_name}
             onChange={(e) => setFormData({ ...formData, display_name: e.target.value })}
-            className="w-full px-3 py-2 rounded-lg border border-border bg-background text-foreground focus:border-primary focus:outline-none transition-colors"
+            className="w-full px-3 py-2 rounded-xl border border-border bg-background text-foreground focus:border-primary focus:outline-none transition-colors"
             placeholder="My Project"
           />
         </div>
@@ -93,7 +93,7 @@ export function ProjectForm({ project, onSave, onCancel }: ProjectFormProps) {
           <select
             value={formData.category}
             onChange={(e) => setFormData({ ...formData, category: e.target.value })}
-            className="w-full px-3 py-2 rounded-lg border border-border bg-background text-foreground focus:border-primary focus:outline-none transition-colors"
+            className="w-full px-3 py-2 rounded-xl border border-border bg-background text-foreground focus:border-primary focus:outline-none transition-colors"
           >
             <option value="web">Web</option>
             <option value="cli">CLI</option>
@@ -109,7 +109,7 @@ export function ProjectForm({ project, onSave, onCancel }: ProjectFormProps) {
             rows={3}
             value={formData.description}
             onChange={(e) => setFormData({ ...formData, description: e.target.value })}
-            className="w-full px-3 py-2 rounded-lg border border-border bg-background text-foreground focus:border-primary focus:outline-none transition-colors resize-none"
+            className="w-full px-3 py-2 rounded-xl border border-border bg-background text-foreground focus:border-primary focus:outline-none transition-colors resize-none"
             placeholder="Project description"
           />
         </div>
@@ -123,7 +123,7 @@ export function ProjectForm({ project, onSave, onCancel }: ProjectFormProps) {
             type="text"
             value={formData.tags}
             onChange={(e) => setFormData({ ...formData, tags: e.target.value })}
-            className="w-full px-3 py-2 rounded-lg border border-border bg-background text-foreground focus:border-primary focus:outline-none transition-colors"
+            className="w-full px-3 py-2 rounded-xl border border-border bg-background text-foreground focus:border-primary focus:outline-none transition-colors"
             placeholder="react, typescript, web"
           />
         </div>
@@ -135,7 +135,7 @@ export function ProjectForm({ project, onSave, onCancel }: ProjectFormProps) {
             id="featured"
             checked={formData.featured}
             onChange={(e) => setFormData({ ...formData, featured: e.target.checked })}
-            className="w-4 h-4 rounded border-border bg-background cursor-pointer"
+            className="w-4 h-4 rounded-sm border-border bg-background cursor-pointer"
           />
           <label htmlFor="featured" className="text-sm font-medium text-foreground cursor-pointer">
             Featured
@@ -150,7 +150,7 @@ export function ProjectForm({ project, onSave, onCancel }: ProjectFormProps) {
               type="number"
               value={formData.featured_order}
               onChange={(e) => setFormData({ ...formData, featured_order: parseInt(e.target.value) })}
-              className="w-full px-3 py-2 rounded-lg border border-border bg-background text-foreground focus:border-primary focus:outline-none transition-colors"
+              className="w-full px-3 py-2 rounded-xl border border-border bg-background text-foreground focus:border-primary focus:outline-none transition-colors"
               placeholder="0"
             />
           </div>
@@ -162,7 +162,7 @@ export function ProjectForm({ project, onSave, onCancel }: ProjectFormProps) {
         <button
           type="submit"
           disabled={loading}
-          className="flex-1 px-4 py-2 rounded-lg bg-primary text-primary-foreground font-medium hover:shadow-lg transition-all disabled:opacity-50 flex items-center justify-center gap-2"
+          className="flex-1 px-4 py-2 rounded-xl bg-primary text-primary-foreground font-medium hover:shadow-lg transition-all disabled:opacity-50 flex items-center justify-center gap-2"
         >
           {loading && <Loader className="w-4 h-4 animate-spin" />}
           {project ? 'Update' : 'Add'} Project
@@ -170,7 +170,7 @@ export function ProjectForm({ project, onSave, onCancel }: ProjectFormProps) {
         <button
           type="button"
           onClick={onCancel}
-          className="px-4 py-2 rounded-lg border border-border text-foreground font-medium hover:bg-secondary transition-colors"
+          className="px-4 py-2 rounded-xl border border-border text-foreground font-medium hover:bg-secondary transition-colors"
         >
           Cancel
         </button>

@@ -26,7 +26,7 @@ export function AdminSidebar() {
       {/* Header */}
       <div className="p-6 border-b border-border">
         <Link href="/" className="flex items-center gap-2 group">
-          <div className="w-8 h-8 rounded-lg bg-primary flex items-center justify-center text-primary-foreground font-bold text-sm group-hover:shadow-lg transition-shadow">
+          <div className="w-8 h-8 rounded-xl bg-primary flex items-center justify-center text-primary-foreground font-bold text-sm group-hover:shadow-lg transition-shadow">
             K
           </div>
           <span className="font-bold text-foreground">Admin Panel</span>
@@ -42,7 +42,7 @@ export function AdminSidebar() {
             <Link
               key={item.href}
               href={item.href}
-              className={`flex items-center gap-3 px-4 py-3 rounded-lg transition-all ${
+              className={`flex items-center gap-3 px-4 py-3 rounded-xl transition-all ${
                 isActive
                   ? 'bg-primary text-primary-foreground'
                   : 'text-muted-foreground hover:bg-secondary hover:text-foreground'
@@ -59,7 +59,7 @@ export function AdminSidebar() {
       <div className="p-6 border-t border-border">
         <button
           onClick={handleLogout}
-          className="w-full flex items-center gap-3 px-4 py-3 rounded-lg text-muted-foreground hover:bg-secondary hover:text-foreground transition-all"
+          className="w-full flex items-center gap-3 px-4 py-3 rounded-xl text-muted-foreground hover:bg-secondary hover:text-foreground transition-all"
         >
           <LogOut className="w-5 h-5" />
           <span className="font-medium">Logout</span>

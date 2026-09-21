@@ -13,7 +13,7 @@ export default function AdminSettingsPage() {
 
       {/* Content */}
       <div className="p-8">
-        <div className="bg-card border border-border rounded-xl p-8 text-center">
+        <div className="bg-card border border-border rounded-2xl p-8 text-center">
           <p className="text-muted-foreground">Settings management coming soon</p>
         </div>
       </div>

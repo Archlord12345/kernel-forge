@@ -1,236 +1,121 @@
-# Kernel Forge - Open Source Software Collective
+# Kernel Forge — site du collectif
 
-A full-stack Next.js application for Kernel Forge, a student software development collective at the University of Yaoundé I.
+Site de **Kernel Forge**, collectif étudiant open source de l'Université de Yaoundé I.
+Production : [kernelforge.codes](https://kernelforge.codes)
 
-## Features
+## Stack
 
-### Public Pages
-- **Home**: Hero section with featured projects and call-to-action
-- **Projects**: Browse all open-source projects with filtering by category
-- **Team**: Meet the team members with their profiles and social links
-- **Community**: Learn about the community values and vision
-- **About**: Mission, vision, and story of Kernel Forge
-- **Contact**: Contact form for inquiries
+- [Next.js 16](https://nextjs.org) (App Router, React 19, TypeScript, Turbopack)
+- [Tailwind CSS v4](https://tailwindcss.com) : tokens et utilitaires dans `app/globals.css`, pas de `tailwind.config`
+- [Framer Motion](https://www.framer.com/motion/) : entrées de page, révélations au défilement, micro-interactions
+- [Supabase](https://supabase.com) (optionnel) : surcharges projets/équipe, messages de contact, authentification admin
+- Icônes : planches illustrées maison (`public/icons/*.webp`) via `SpotIcon`, plus `lucide-react` pour les glyphes utilitaires
 
-### Admin Dashboard
-- **Dashboard**: Overview stats of projects, members, and messages
-- **Projects Management**: Add, edit, and delete project metadata overrides
-- **Messages**: View and manage contact form submissions
-- **Team Management**: Coming soon
-- **Settings**: Coming soon
+## Démarrer
 
-### Technical Features
-- Responsive mobile-first design with light/dark mode support
-- Real-time data fetching with Supabase
-- Server-side rendering with Next.js 16
-- TypeScript for type safety
-- Tailwind CSS for styling with custom cream/orange/green theme
+```bash
+pnpm install
+cp .env.local.example .env.local   # optionnel, voir ci-dessous
+pnpm dev                           # http://localhost:3000
+```
 
-## Environment Setup
+Autres scripts : `pnpm build`, `pnpm start -p 3123`, `pnpm typecheck`.
 
-### Prerequisites
-- Node.js 18+ (pnpm)
-- Supabase account and project
+### Variables d'environnement
 
-### Installation
+| Variable | Rôle |
+|---|---|
+| `NEXT_PUBLIC_SUPABASE_URL` | URL du projet Supabase |
+| `NEXT_PUBLIC_SUPABASE_ANON_KEY` | Clé anonyme Supabase |
 
-1. **Clone and install dependencies:**
-   ```bash
-   npm install
-   # or
-   pnpm install
-   ```
+Sans ces variables, le site fonctionne intégralement avec les données statiques de `lib/data/`
+et `lib/team-profiles.ts` ; l'API `/api/contact` répond `503` et `/admin` affiche un écran
+« configuration requise ».
 
-2. **Set up environment variables:**
-   Create a `.env.local` file in the project root:
-   ```
-   NEXT_PUBLIC_SUPABASE_URL=your_supabase_url
-   NEXT_PUBLIC_SUPABASE_ANON_KEY=your_supabase_anon_key
-   ```
+### Supabase (optionnel)
 
-3. **Set up Supabase database:**
-   - Create a new Supabase project
-   - Run the SQL migration from `supabase/migrations/001_initial_schema.sql` in the Supabase SQL editor
-   - This creates tables for profiles, members, projects, messages, and settings
+1. Créer un projet Supabase et exécuter `supabase/migrations/001_initial_schema.sql`.
+   Tables : `profiles`, `members`, `project_overrides`, `site_settings`, `contact_messages`
+   (RLS activé, écriture réservée aux profils `role = 'admin'`).
+2. Renseigner `.env.local` (et les mêmes variables dans Vercel).
+3. Créer un utilisateur (Supabase Auth) et lui donner `role = 'admin'` dans `profiles` :
+   `/admin` est protégé par `components/admin/auth-gate.tsx` (connexion e-mail + mot de passe, vérification du rôle).
 
-4. **Start the development server:**
-   ```bash
-   pnpm dev
-   ```
+## Règle éditoriale : pas de lien de dépôt sur le site
 
-   The application will be available at `http://localhost:3000`
+Le code des projets est partagé **sur demande, via WhatsApp**. Le site ne doit donc afficher
+aucun lien vers un dépôt Git (ni organisation, ni projet, ni profil GitHub dans les CV) :
+les cartes projet affichent « Code sur demande » vers `SITE.whatsapp`, et les liens GitHub des
+profils sont filtrés dans `app/(site)/team/[id]/page.tsx`.
 
-## Project Structure
+Seule exception : le terminal de la page d'accueil (`components/home/terminal.tsx`) montre la
+commande `git clone` du dépôt **Joinus** (`SITE.joinRepo`), dont le README explique comment
+rejoindre l'équipe, le fonctionnement du collectif, les réseaux et les contacts.
+
+## Structure
 
 ```
 app/
-├── api/
-│   └── contact/          # Contact form API endpoint
-├── admin/
-│   ├── page.tsx          # Admin dashboard
-│   ├── projects/         # Project management
-│   ├── messages/         # Message management
-│   ├── team/             # Team management
-│   └── settings/         # Settings management
-├── projects/             # Projects page
-├── team/                 # Team page
-├── community/            # Community page
-├── about/                # About page
-├── contact/              # Contact page
-├── page.tsx              # Home page
-├── layout.tsx            # Root layout
-└── globals.css           # Global styles with design tokens
+├── layout.tsx              # polices, métadonnées globales, Open Graph, icônes, lang="fr"
+├── (site)/                 # pages publiques : layout (header/footer), template (transition), loading, error
+│   ├── page.tsx            # accueil
+│   ├── about/ services/ projects/ team/ team/[id]/ community/ contact/
+├── admin/                  # tableau de bord protégé (AuthGate)
+├── api/contact/route.ts    # POST : validation, honeypot, limitation de débit, insertion Supabase
+├── not-found.tsx global-error.tsx manifest.ts sitemap.ts robots.ts
+└── globals.css             # design system
 
 components/
-├── header.tsx            # Navigation header
-├── footer.tsx            # Footer
-├── hero-section.tsx      # Hero section
-├── featured-projects.tsx # Featured projects carousel
-├── projects-grid.tsx     # Projects filtering grid
-├── project-card.tsx      # Individual project card
-├── team-grid.tsx         # Team members grid
-├── team-member-card.tsx  # Individual team member
-├── contact-form.tsx      # Contact form component
-├── theme-toggle.tsx      # Light/dark mode toggle
-├── admin/
-│   ├── admin-sidebar.tsx # Admin navigation sidebar
-│   └── project-form.tsx  # Project management form
-└── cta-section.tsx       # Call to action section
+├── ui/                     # Button, Sticker, Burst, Avatar, Monogram, SpotIcon/IconTile, WhatsAppButton
+├── site/                   # Header, Footer, PageIntro, SectionHeading, Marquee, ChannelsGrid
+├── home/                   # Hero, Terminal, Pillars, FeaturedProjects, ServicesTeaser, TeamStrip, CommunityBand, FinalCta
+├── projects/ team/ contact/ admin/ motion/
+└── mascot.tsx              # Arch dans ses cinq poses
 
 lib/
-└── supabase.ts           # Supabase client and type definitions
+├── data/                   # site.ts (constantes, navigation, canaux), team.ts, projects.ts, services.ts, content.ts
+├── team-profiles.ts        # CV publics des membres (/team/[id])
+├── supabase.ts utils.ts
+public/
+├── arch/                   # pointing, waving, lost, fixing, coding (WebP détourés)
+├── icons/                  # 24 icônes illustrées (WebP)
+├── projects/               # couvertures et captures des projets
+└── og-kernel-forge.jpg kernel-forge-crew.webp icon-*.png apple-touch-icon.png
 ```
 
-## Database Schema
+## Design system
 
-### Tables
+Tout est dans `app/globals.css` (`@theme`).
 
-**profiles**
-- Extends auth.users with additional profile information
-- Fields: username, full_name, avatar_url, bio, role, github_username, twitter_handle
+**Couleurs** : `forge #ff7626` / `forge-deep`, `ember #ffb27a`, `ink #17120f` (+ `ink-2`, `ink-3`),
+`paper #fffbef` / `paper-2`, `sand`, `smoke`, `creeper #4bc03a` / `creeper-deep`, `tnt #e5352b`.
+Les tokens sémantiques (`background`, `primary`, `accent`, `destructive`…) pointent vers ces couleurs.
 
-**members**
-- Team members with position and display order
-- Fields: user_id, position, order_priority
+**Typographie** : Bricolage Grotesque (titres, `font-display`), Instrument Sans (texte), Silkscreen (`font-pixel`, accents rétro).
 
-**project_overrides**
-- Custom metadata for GitHub projects
-- Fields: github_repo_url, display_name, description, featured, category, tags, image_url
+**Langage visuel** : contours encre 2 px, ombres dures décalées (`shadow-hard*`), autocollants (`.sticker`, `.sticker-sm`, `.sticker-forge`),
+trames (`.halftone`, `.forge-grid`, `.scanlines`), ligne de forge animée (`.forge-line`).
 
-**site_settings**
-- Global site configuration
-- Fields: key, value (JSONB)
+**Animations** : `animate-float`, `animate-drift`, `animate-pop`, `animate-shimmer`, `animate-blink`, `animate-glitch`, `animate-marquee`,
+plus `.press` (enfoncement au clic) et `.shine` (reflet au survol) sur les boutons. Toutes respectent `prefers-reduced-motion`.
 
-**contact_messages**
-- Contact form submissions
-- Fields: name, email, subject, message, read
+## Images
 
-All tables include RLS policies for security and appropriate timestamps.
+- Visuels servis en **WebP** pré-optimisés (`images.unoptimized: true`), largeur d'affichage ×2, qualité ~80.
+- La mascotte Arch et les icônes sont générées puis détourées ; ne pas réintroduire de PNG lourds dans `public/`.
+- `public/og-kernel-forge.jpg` (1200×630) est l'image de partage ; garder ce format.
 
-## Design System
+## SEO et accessibilité
 
-### Color Palette
-- **Primary**: Orange (`oklch(0.55 0.25 40)`) - CTA buttons and highlights
-- **Accent**: Mint Green (`oklch(0.65 0.15 155)`) - Secondary accents
-- **Background**: Cream (`oklch(0.98 0.005 70)`) - Light mode background
-- **Neutrals**: Grays for text and borders
+- Métadonnées par page, `metadataBase` = `https://kernelforge.codes`, JSON-LD `Organization` et `Person`.
+- `sitemap.ts` inclut les pages principales et les CV ; `robots.ts` bloque `/admin` et `/api/`.
+- Lien d'évitement, focus visibles, `aria-*` sur les menus et onglets, animations réduites si demandé.
 
-### Typography
-- **Headings**: Inter font family
-- **Body**: Inter font family
-- **Code**: JetBrains Mono (planned)
+## Déploiement (Vercel)
 
-### Spacing
-- Uses Tailwind CSS spacing scale for consistency
-- Base unit: 0.25rem (4px)
+`vercel.json` définit `pnpm install --frozen-lockfile` / `pnpm build`.
+Ajouter les variables Supabase dans le projet Vercel si besoin.
 
-## API Routes
+## Contact
 
-### POST /api/contact
-Submit a contact form message.
-
-**Request:**
-```json
-{
-  "name": "John Doe",
-  "email": "john@example.com",
-  "subject": "Inquiry",
-  "message": "Your message here"
-}
-```
-
-**Response:**
-```json
-{
-  "message": "Message sent successfully",
-  "data": { ... }
-}
-```
-
-## Authentication
-
-The admin dashboard uses Supabase Auth. Future implementations should:
-1. Add email/password authentication
-2. Protect `/admin/*` routes with auth middleware
-3. Implement role-based access control (RBAC)
-
-## Deployment
-
-### Deploy to Vercel
-
-```bash
-git add .
-git commit -m "Initial commit"
-git push
-```
-
-Then connect your GitHub repository to Vercel and configure the environment variables in the Vercel project settings.
-
-### Environment Variables (Vercel)
-Set the same `NEXT_PUBLIC_SUPABASE_*` variables in your Vercel project settings.
-
-## Contributing
-
-1. Clone the repository
-2. Create a feature branch
-3. Make your changes
-4. Submit a pull request
-
-## License
-
-MIT License - see LICENSE file for details
-
-## Support
-
-For issues or questions, please:
-1. Open an issue on GitHub
-2. Contact: hello@kernelforge.dev
-3. Follow us on Twitter: @kernel_forge
-
-## Roadmap
-
-- [ ] GitHub API integration for auto-syncing projects
-- [ ] Cloudinary integration for project images
-- [ ] Team member management interface
-- [ ] Site settings management
-- [ ] Email notifications
-- [ ] Advanced analytics
-- [ ] Blog/news section
-
----
-
-**Kernel Forge** - Code. Forge. Impact. Repeat.
-
-## Deploying on Vercel
-
-This project is configured for a straightforward Vercel deployment via `vercel.json`.
-
-1. Import the repository in Vercel and keep the detected framework as **Next.js**.
-2. Use the default commands from `vercel.json`:
-   - Install: `pnpm install --frozen-lockfile`
-   - Build: `pnpm build`
-   - Output: `.next`
-3. Add these environment variables in Vercel Project Settings:
-   - `NEXT_PUBLIC_SUPABASE_URL`
-   - `NEXT_PUBLIC_SUPABASE_ANON_KEY`
-4. Deploy. Vercel Analytics is already enabled in production.
+ravelnghomsi@kernelforge.codes · [Groupe WhatsApp](https://chat.whatsapp.com/IFkGMr4Ev2KCFAKw9EmEde)

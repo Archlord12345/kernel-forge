@@ -1,7 +1,5 @@
 'use client'
 
-import { useState } from 'react'
-
 export default function AdminTeamPage() {
   return (
     <div className="flex-1">
@@ -15,7 +13,7 @@ export default function AdminTeamPage() {
 
       {/* Content */}
       <div className="p-8">
-        <div className="bg-card border border-border rounded-xl p-8 text-center">
+        <div className="bg-card border border-border rounded-2xl p-8 text-center">
           <p className="text-muted-foreground">Team management coming soon</p>
         </div>
       </div>

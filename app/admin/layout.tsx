@@ -1,17 +1,16 @@
-'use client'
-
-import { ReactNode } from 'react'
+import type { Metadata } from 'next'
 import { AdminSidebar } from '@/components/admin-sidebar'
+import { AuthGate } from '@/components/admin/auth-gate'
 
-export default function AdminLayout({ children }: { children: ReactNode }) {
+export const metadata: Metadata = { title: 'Administration', robots: { index: false, follow: false } }
+
+export default function AdminLayout({ children }: { children: React.ReactNode }) {
   return (
-    <div className="min-h-screen bg-background text-foreground flex">
-      <AdminSidebar />
-      <div className="flex-1 flex flex-col">
-        <main className="flex-1 overflow-auto">
-          {children}
-        </main>
+    <AuthGate>
+      <div className="flex min-h-dvh bg-background text-foreground">
+        <AdminSidebar />
+        <main id="contenu" className="flex-1 overflow-auto">{children}</main>
       </div>
-    </div>
+    </AuthGate>
   )
 }
